@@ -37,22 +37,27 @@ namespace TheThirdAge
 	    }
 
 	    private static void HandleAncientShrines()
-	    {
-		    if (TTADefOf.ScatterShrines is GenStepDef scatterStep)
+        {
+            if (!ModStuff.Settings.LimitTechnology) return;
+            if (TTADefOf.ScatterShrines is GenStepDef scatterStep)
 		    {
 			    scatterStep.genStep = new GenStep_ScatterShrinesMedieval();
 		    }
 		    if (TTADefOf.Interior_AncientTemple is RuleDef templeInterior)
 		    {
-			    var symbolResolverInteriorAncientTempleMedieval = new SymbolResolver_Interior_AncientTempleMedieval();
-			    symbolResolverInteriorAncientTempleMedieval.minRectSize = new IntVec2(4,3);
-			    templeInterior.resolvers = new List<SymbolResolver>{ symbolResolverInteriorAncientTempleMedieval };
+                var symbolResolverInteriorAncientTempleMedieval = new SymbolResolver_Interior_AncientTempleMedieval
+                {
+                    minRectSize = new IntVec2(4, 3)
+                };
+                templeInterior.resolvers = new List<SymbolResolver>{ symbolResolverInteriorAncientTempleMedieval };
 		    }
 		    if (TTADefOf.AncientShrinesGroup is RuleDef shrineGroup)
 		    {
-			    var symbolResolverAncientShrinesGroupMedieval = new SymbolResolver_AncientShrinesGroupMedieval();
-			    symbolResolverAncientShrinesGroupMedieval.minRectSize = new IntVec2(4,3);
-			    shrineGroup.resolvers = new List<SymbolResolver>{ symbolResolverAncientShrinesGroupMedieval };
+                var symbolResolverAncientShrinesGroupMedieval = new SymbolResolver_AncientShrinesGroupMedieval
+                {
+                    minRectSize = new IntVec2(4, 3)
+                };
+                shrineGroup.resolvers = new List<SymbolResolver>{ symbolResolverAncientShrinesGroupMedieval };
 		    }
 	    }
 
@@ -173,6 +178,7 @@ namespace TheThirdAge
 
         private static void ChangeSteelToIron()
         {
+            if (!ModStuff.Settings.LimitTechnology) return;
             steelDefs = 0;
             foreach (ThingDef tdd in DefDatabase<ThingDef>.AllDefs.Where(tt =>
                 tt?.costList?.Any(y => y?.thingDef == ThingDefOf.Steel) ?? false))
@@ -190,6 +196,7 @@ namespace TheThirdAge
 
         private static void ReplaceModernResources()
         {
+            if (!ModStuff.Settings.LimitTechnology) return;
             if (ThingDefOf.Steel?.stuffProps?.commonality >= 0.9f)
                 ThingDefOf.Steel.stuffProps.commonality = 0.2f;
             if (ThingDefOf.Plasteel?.stuffProps?.commonality >= 0.04f)

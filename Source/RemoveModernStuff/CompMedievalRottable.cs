@@ -13,7 +13,7 @@ namespace TheThirdAge
         public override string CompInspectStringExtra()
         {
             StringBuilder sb = new StringBuilder();
-            switch (base.Stage)
+            switch (Stage)
             {
                 case RotStage.Fresh:
                     sb.AppendLine("RotStateFresh".Translate());
@@ -25,7 +25,7 @@ namespace TheThirdAge
                     sb.AppendLine("RotStateDessicated".Translate());
                     break;
             }
-            float num = (float)this.PropsRot.TicksToRotStart - base.RotProgress;
+            float num = (float)this.PropsRot.TicksToRotStart - RotProgress;
             if (num > 0f)
             {
                 float num2 = GenTemperature.GetTemperatureForCell(this.parent.PositionHeld, this.parent.Map);
@@ -51,7 +51,7 @@ namespace TheThirdAge
                 }
                 num2 = (float)Mathf.RoundToInt(num2);
                 float num3 = GenTemperature.RotRateAtTemperature(num2);
-                int ticksUntilRotAtCurrentTemp = (int)(base.TicksUntilRotAtCurrentTemp * factor);
+                int ticksUntilRotAtCurrentTemp = (int)(TicksUntilRotAtCurrentTemp * factor);
                 if (num3 < 0.001f)
                 {
                     sb.Append("CurrentlyFrozen".Translate() + ".");
@@ -156,8 +156,7 @@ namespace TheThirdAge
         {
             if (this.parent.ParentHolder != null)
             {
-                Thing thing = this.parent.ParentHolder as Thing;
-                if (thing != null && thing.def.category == ThingCategory.Building && thing.def.building.preventDeteriorationInside)
+                if (this.parent.ParentHolder is Thing thing && thing.def.category == ThingCategory.Building && thing.def.building.preventDeteriorationInside)
                 {
                     return false;
                 }
@@ -167,8 +166,7 @@ namespace TheThirdAge
 
         private void StageChanged()
         {
-            Corpse corpse = this.parent as Corpse;
-            if (corpse != null)
+            if (this.parent is Corpse corpse)
             {
                 corpse.RotStageChanged();
             }

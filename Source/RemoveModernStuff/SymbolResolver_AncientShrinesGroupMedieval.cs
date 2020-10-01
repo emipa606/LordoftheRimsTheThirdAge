@@ -8,8 +8,8 @@ namespace TheThirdAge
 	{
 		public override void Resolve(ResolveParams rp)
 		{
-			int num = (rp.rect.Width + 1) / (SymbolResolver_AncientShrinesGroupMedieval.StandardAncientShrineSize.x + 1);
-			int num2 = (rp.rect.Height + 1) / (SymbolResolver_AncientShrinesGroupMedieval.StandardAncientShrineSize.z + 1);
+			int num = (rp.rect.Width + 1) / (StandardAncientShrineSize.x + 1);
+			int num2 = (rp.rect.Height + 1) / (StandardAncientShrineSize.z + 1);
 			IntVec3 bottomLeft = rp.rect.BottomLeft;
 			//GeneratePods(rp, num2, num, bottomLeft);
 		}
@@ -49,10 +49,10 @@ namespace TheThirdAge
 							break;
 						}
 						CellRect rect = new CellRect(
-							bottomLeft.x + j * (SymbolResolver_AncientShrinesGroupMedieval.StandardAncientShrineSize.x + 1),
-							bottomLeft.z + i * (SymbolResolver_AncientShrinesGroupMedieval.StandardAncientShrineSize.z + 1),
-							SymbolResolver_AncientShrinesGroupMedieval.StandardAncientShrineSize.x,
-							SymbolResolver_AncientShrinesGroupMedieval.StandardAncientShrineSize.z);
+							bottomLeft.x + j * (StandardAncientShrineSize.x + 1),
+							bottomLeft.z + i * (StandardAncientShrineSize.z + 1),
+                            StandardAncientShrineSize.x,
+                            StandardAncientShrineSize.z);
 						if (rect.FullyContainedWithin(rp.rect))
 						{
 							ResolveParams resolveParams = rp;

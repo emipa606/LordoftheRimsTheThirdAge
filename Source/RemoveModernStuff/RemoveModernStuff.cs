@@ -26,9 +26,10 @@ namespace TheThirdAge
 
         static RemoveModernStuff()
         {
+            if (!ModStuff.Settings.LimitTechnology) return;
             DebugString.AppendLine("Lord of the Rings - The Third Age - Start Removal Log");
             DebugString.AppendLine("Tech Limiter Active: Max Level = " + MAX_TECHLEVEL.ToString());
-            giveApproppriateTechLevels();
+            GiveApproppriateTechLevels();
 
             removedDefs = 0;
 
@@ -258,7 +259,7 @@ namespace TheThirdAge
             DebugString = new StringBuilder();
         }
 
-        private static void giveApproppriateTechLevels()
+        private static void GiveApproppriateTechLevels()
         {
             DebugString.AppendLine("ElectricSmelter's tech level changed to Industrial");
             ThingDef.Named("ElectricSmelter").techLevel = TechLevel.Industrial;

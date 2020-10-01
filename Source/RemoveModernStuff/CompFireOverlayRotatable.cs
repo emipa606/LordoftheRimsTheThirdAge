@@ -137,7 +137,7 @@ namespace RimWorld
 
             Vector3 newPosRotated = drawPosRotated + radial * drawSizeRotated.x;
             Graphic graphic = FireGraphic.SubGraphics[mem2];
-            Matrix4x4 matrix = default(Matrix4x4);
+            Matrix4x4 matrix = default;
             matrix.SetTRS(newPosRotated, quaternion, drawSizeRotated);
             Graphics.DrawMesh(MeshPool.plane10, matrix, graphic.MatSingle, 0);
         }

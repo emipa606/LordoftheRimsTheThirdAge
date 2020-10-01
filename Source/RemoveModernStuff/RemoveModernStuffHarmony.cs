@@ -16,6 +16,7 @@ namespace TheThirdAge
 
         static RemoveModernStuffHarmony()
         {
+            if (!ModStuff.Settings.LimitTechnology) return;
             var harmony = new Harmony(id: "rimworld.removemodernstuff");
             //Log.Message("IsTravelingInTransportPodWorldObject");
             harmony.Patch(original: AccessTools.Method(type: typeof(PawnUtility), name: "IsTravelingInTransportPodWorldObject"),

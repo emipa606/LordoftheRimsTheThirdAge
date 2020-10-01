@@ -74,6 +74,7 @@
     <Compile Include="PlaceWorker_WallBuilding.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemoveModernStuff.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="SymbolResolver_AncientShrinesGroupMedieval.cs" />
     <Compile Include="SymbolResolver_Interior_AncientTempleMedieval.cs" />
     <Compile Include="RemoveModernStuffHarmony.cs" />

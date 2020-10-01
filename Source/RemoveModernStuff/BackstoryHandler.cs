@@ -20,17 +20,19 @@ public static class BackstoryHandler
     {
         public static void RemoveIncompatibleBackstories(StringBuilder DebugString)
         {
+            if (!ModStuff.Settings.LimitTechnology) return;
+
             DebugString.AppendLine("BackstoryDef Removal List");
             //StringBuilder listOfBackstoriesToRemove = new StringBuilder();
             var tempBackstoryKeys = BackstoryDatabase.allBackstories.Keys;
-            foreach (string badId in BackstoryHandler.GetIncompatibleBackstories())
+            foreach (string badId in GetIncompatibleBackstories())
             {
                 //listOfBackstoriesToRemove.AppendLine(badId);
                 foreach (string existingId in tempBackstoryKeys)
                 {
-                    var properId = BackstoryHandler.RemoveNumbers(existingId);
+                    var properId = RemoveNumbers(existingId);
                     //listOfBackstoriesToRemove.AppendLine(":: " + properId);
-                    if (properId == BackstoryHandler.RemoveNumbers(badId))
+                    if (properId == RemoveNumbers(badId))
                     {
                         BackstoryDatabase.allBackstories.Remove(existingId);
                         //listOfBackstoriesToRemove.AppendLine("::::::::::::: ");

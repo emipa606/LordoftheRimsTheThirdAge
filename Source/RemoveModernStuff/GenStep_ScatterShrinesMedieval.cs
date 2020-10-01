@@ -21,9 +21,9 @@ namespace TheThirdAge
 
 		protected override void ScatterAt(IntVec3 loc, Map map, GenStepParams parms, int stackCount = 1)
 		{
-			int randomInRange = GenStep_ScatterShrinesMedieval.ShrinesCountX.RandomInRange;
-			int randomInRange2 = GenStep_ScatterShrinesMedieval.ShrinesCountZ.RandomInRange;
-			int randomInRange3 = GenStep_ScatterShrinesMedieval.ExtraHeightRange.RandomInRange;
+			int randomInRange = ShrinesCountX.RandomInRange;
+			int randomInRange2 = ShrinesCountZ.RandomInRange;
+			int randomInRange3 = ExtraHeightRange.RandomInRange;
 			IntVec2 standardAncientShrineSize = SymbolResolver_AncientShrinesGroupMedieval.StandardAncientShrineSize;
 			int num = 1;
 			int num2 = randomInRange * standardAncientShrineSize.x + (randomInRange - 1) * num;
@@ -47,7 +47,7 @@ namespace TheThirdAge
 					}
 				}
 			}
-			if (!base.CanPlaceAncientBuildingInRange(rect, map))
+			if (!CanPlaceAncientBuildingInRange(rect, map))
 			{
 				return;
 			}

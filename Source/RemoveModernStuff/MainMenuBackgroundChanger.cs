@@ -23,6 +23,7 @@ namespace TheThirdAge
 
         static MainMenuTex()
         {
+            if (!ModStuff.Settings.LimitTechnology) return;
             LoadTextures();
         }
 
@@ -47,6 +48,7 @@ namespace TheThirdAge
 
         static SwapMainMenuGraphics()
         {
+            if (!ModStuff.Settings.LimitTechnology) return;
             var UI_BackgroundMainPatch = new Harmony("TTA.MainMenu.UI_BackgroundMainPatch");
             MethodInfo methInfBackgroundOnGUI = AccessTools.Method(typeof(UI_BackgroundMain), "BackgroundOnGUI", null, null);
             HarmonyMethod harmonyMethodPreFBackgroundOnGUI = new HarmonyMethod(typeof(SwapMainMenuGraphics).GetMethod("PreFBackgroundOnGUI"));
@@ -55,6 +57,7 @@ namespace TheThirdAge
         }
         public static bool PreFBackgroundOnGUI()
         {
+            if (!ModStuff.Settings.LimitTechnology) return true;
             // Shape the BG
             float floRatio = UI.screenWidth / 2048f;
             float floHeight = 1280f * floRatio;
