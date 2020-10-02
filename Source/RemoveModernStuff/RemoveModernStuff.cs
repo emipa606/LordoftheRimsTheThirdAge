@@ -35,9 +35,10 @@ namespace TheThirdAge
 
             IEnumerable<ResearchProjectDef> projects =
                 DefDatabase<ResearchProjectDef>.AllDefs.Where(rpd => rpd.techLevel > MAX_TECHLEVEL);
-
+            var extraDefsToRemove = new List<string>();
             things = new HashSet<ThingDef>(DefDatabase<ThingDef>.AllDefs.Where(td =>
                 td.techLevel > MAX_TECHLEVEL ||
+                extraDefsToRemove.Contains(td.defName) ||
                 (td.researchPrerequisites?.Any(rpd => projects.Contains(rpd)) ?? false) || new[]
                 {
                     "Gun_Revolver", "VanometricPowerCell", "PsychicEmanator", "InfiniteChemreactor", "Joywire",
@@ -45,6 +46,18 @@ namespace TheThirdAge
                 }.Contains(td.defName)));
 
             DebugString.AppendLine("RecipeDef Removal List");
+
+
+            foreach (var thing in from thing in things where thing.tradeTags != null select thing)
+            {
+                var tags = thing.tradeTags.ToArray();
+                foreach (var tag in tags)
+                {
+                    if (tag.StartsWith("CE_AutoEnableCrafting"))
+                        thing.tradeTags.Remove(tag);
+                }
+            }
+
             var recipeDefsToRemove = DefDatabase<RecipeDef>.AllDefs.Where(rd =>
                 rd.products.Any(tcc => things.Contains(tcc.thingDef)) ||
                 rd.AllRecipeUsers.All(td => things.Contains(td)) ||

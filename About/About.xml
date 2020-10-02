@@ -25,6 +25,7 @@
   <loadAfter>
     <li>brrainz.harmony</li>
     <li>jecrell.jecstools</li>
+    <li>CETeam.CombatExtended</li>
   </loadAfter>
   <description>Update of erdelf and Jecrells mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1400245220
@@ -39,6 +40,7 @@ https://github.com/emipa606/LordoftheRimsTheThirdAge
 
 - This is an unofficial port
 - This will be removed when/if Jecrell comes back
+- Added support for Combat Extended
 	
 --- Original Description ---
 Removes all items, incidents, and technology that go beyond Medieval.

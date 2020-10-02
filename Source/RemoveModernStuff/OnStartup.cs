@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using HarmonyLib;
 using RimWorld;
 using RimWorld.BaseGen;
 using UnityEngine;
@@ -15,55 +16,55 @@ namespace TheThirdAge
         static OnStartup()
         {
 
-	        HandleAncientShrines();
-	        
+            HandleAncientShrines();
+
             MoveRecipesToSmithy();
 
-	        AddCramRecipes();
-            
+            AddCramRecipes();
+
             ChangeSteelToIron();
-            
+
             ReplaceModernResources();
 
         }
 
-	    private static void AddCramRecipes()
-	    {
-		    if (TTADefOf.FueledStove is ThingDef fueldStove && fueldStove?.recipes?.Count > 0)
-		    {
-			    if (fueldStove.recipes.Any(x => x == TTADefOf.LotR_Make_Cram)) return;
-				fueldStove.recipes.Add(TTADefOf.LotR_Make_Cram);
-		    }
-	    }
+        private static void AddCramRecipes()
+        {
+            if (TTADefOf.FueledStove is ThingDef fueldStove && fueldStove?.recipes?.Count > 0)
+            {
+                if (fueldStove.recipes.Any(x => x == TTADefOf.LotR_Make_Cram)) return;
+                fueldStove.recipes.Add(TTADefOf.LotR_Make_Cram);
+            }
+        }
 
-	    private static void HandleAncientShrines()
+        private static void HandleAncientShrines()
         {
             if (!ModStuff.Settings.LimitTechnology) return;
             if (TTADefOf.ScatterShrines is GenStepDef scatterStep)
-		    {
-			    scatterStep.genStep = new GenStep_ScatterShrinesMedieval();
-		    }
-		    if (TTADefOf.Interior_AncientTemple is RuleDef templeInterior)
-		    {
+            {
+                scatterStep.genStep = new GenStep_ScatterShrinesMedieval();
+            }
+            if (TTADefOf.Interior_AncientTemple is RuleDef templeInterior)
+            {
                 var symbolResolverInteriorAncientTempleMedieval = new SymbolResolver_Interior_AncientTempleMedieval
                 {
                     minRectSize = new IntVec2(4, 3)
                 };
-                templeInterior.resolvers = new List<SymbolResolver>{ symbolResolverInteriorAncientTempleMedieval };
-		    }
-		    if (TTADefOf.AncientShrinesGroup is RuleDef shrineGroup)
-		    {
+                templeInterior.resolvers = new List<SymbolResolver> { symbolResolverInteriorAncientTempleMedieval };
+            }
+            if (TTADefOf.AncientShrinesGroup is RuleDef shrineGroup)
+            {
                 var symbolResolverAncientShrinesGroupMedieval = new SymbolResolver_AncientShrinesGroupMedieval
                 {
                     minRectSize = new IntVec2(4, 3)
                 };
-                shrineGroup.resolvers = new List<SymbolResolver>{ symbolResolverAncientShrinesGroupMedieval };
-		    }
-	    }
+                shrineGroup.resolvers = new List<SymbolResolver> { symbolResolverAncientShrinesGroupMedieval };
+            }
+        }
 
-	    public static void AddSaltedMeats()
+        public static void AddSaltedMeats()
         {
-	        HashSet<ThingDef> defsToAdd = new HashSet<ThingDef>();
+            HashSet<ThingDef> defsToAdd = new HashSet<ThingDef>();
             foreach (ThingDef td in DefDatabase<ThingDef>.AllDefs.Where(t => t.IsMeat))
             {
                 ThingDef d = new ThingDef
@@ -80,7 +81,7 @@ namespace TheThirdAge
                 d.SetStatBaseValue(StatDefOf.MaxHitPoints, td.GetStatValueAbstract(StatDefOf.MaxHitPoints) * 1.15f);
                 d.altitudeLayer = td.altitudeLayer; // AltitudeLayer.Item;
                 d.stackLimit = td.stackLimit; // 75;
-				d.comps.Add(new CompProperties_Forbiddable());
+                d.comps.Add(new CompProperties_Forbiddable());
                 CompProperties_Rottable rotProps = new CompProperties_Rottable
                 {
                     daysToRotStart = td.GetCompProperties<CompProperties_Rottable>().daysToRotStart, // 2f;
@@ -88,7 +89,7 @@ namespace TheThirdAge
                 };
                 d.comps.Add(rotProps);
                 d.tickerType = td.tickerType; // TickerType.Rare;
-				d.SetStatBaseValue(StatDefOf.Beauty, td.GetStatValueAbstract(StatDefOf.Beauty)); // -20f
+                d.SetStatBaseValue(StatDefOf.Beauty, td.GetStatValueAbstract(StatDefOf.Beauty)); // -20f
                 d.alwaysHaulable = td.alwaysHaulable; // true;
                 d.rotatable = td.rotatable; // false;
                 d.pathCost = td.pathCost; // 15;
@@ -98,58 +99,58 @@ namespace TheThirdAge
                 d.modContentPack = td.modContentPack; // +
 
                 d.category = td.category; // ThingCategory.Item;
-	            d.description = td.description;
+                d.description = td.description;
                 d.useHitPoints = td.useHitPoints; // true;
-				d.SetStatBaseValue(StatDefOf.MaxHitPoints, td.GetStatValueAbstract(StatDefOf.MaxHitPoints) * 1.15f); // 65f
-				d.SetStatBaseValue(StatDefOf.DeteriorationRate, td.GetStatValueAbstract(StatDefOf.DeteriorationRate) * 0.5f); // 3f
-				d.SetStatBaseValue(StatDefOf.Mass, td.GetStatValueAbstract(StatDefOf.Mass)); // 0.025f
-				d.SetStatBaseValue(StatDefOf.Flammability, td.GetStatValueAbstract(StatDefOf.Flammability)); // 0.5f
+                d.SetStatBaseValue(StatDefOf.MaxHitPoints, td.GetStatValueAbstract(StatDefOf.MaxHitPoints) * 1.15f); // 65f
+                d.SetStatBaseValue(StatDefOf.DeteriorationRate, td.GetStatValueAbstract(StatDefOf.DeteriorationRate) * 0.5f); // 3f
+                d.SetStatBaseValue(StatDefOf.Mass, td.GetStatValueAbstract(StatDefOf.Mass)); // 0.025f
+                d.SetStatBaseValue(StatDefOf.Flammability, td.GetStatValueAbstract(StatDefOf.Flammability)); // 0.5f
                 d.SetStatBaseValue(StatDefOf.Nutrition, td.GetStatValueAbstract(StatDefOf.Nutrition) * 1.6f);
                 //d.ingestible.nutrition = td.ingestible.nutrition + 0.03f;
                 d.SetStatBaseValue(StatDefOf.FoodPoisonChanceFixedHuman, 0.02f);
                 //d.comps.Add(new CompProperties_FoodPoisonable());
                 d.BaseMarketValue = td.BaseMarketValue;
-				if (d.thingCategories == null)
-				{
-					d.thingCategories = new List<ThingCategoryDef>();
-				}
-				DirectXmlCrossRefLoader.RegisterListWantsCrossRef<ThingCategoryDef>(d.thingCategories, "LotR_MeatRawSalted", d);
-                d.ingestible = new IngestibleProperties {parent = d};
+                if (d.thingCategories == null)
+                {
+                    d.thingCategories = new List<ThingCategoryDef>();
+                }
+                DirectXmlCrossRefLoader.RegisterListWantsCrossRef<ThingCategoryDef>(d.thingCategories, "LotR_MeatRawSalted", d);
+                d.ingestible = new IngestibleProperties { parent = d };
                 d.ingestible.foodType = td.ingestible.foodType; // FoodTypeFlags.Meat;
                 d.ingestible.preferability = td.ingestible.preferability; // FoodPreferability.RawBad;
-				DirectXmlCrossRefLoader.RegisterObjectWantsCrossRef(d.ingestible, "tasteThought", ThoughtDefOf.AteRawFood.defName);
-	            d.ingestible.ingestEffect = td.ingestible.ingestEffect;
-	            d.ingestible.ingestSound = td.ingestible.ingestSound;
-	            d.ingestible.specialThoughtDirect = td.ingestible.specialThoughtDirect;
-	            d.ingestible.specialThoughtAsIngredient = td.ingestible.specialThoughtAsIngredient;
+                DirectXmlCrossRefLoader.RegisterObjectWantsCrossRef(d.ingestible, "tasteThought", ThoughtDefOf.AteRawFood.defName);
+                d.ingestible.ingestEffect = td.ingestible.ingestEffect;
+                d.ingestible.ingestSound = td.ingestible.ingestSound;
+                d.ingestible.specialThoughtDirect = td.ingestible.specialThoughtDirect;
+                d.ingestible.specialThoughtAsIngredient = td.ingestible.specialThoughtAsIngredient;
 
-	            d.graphicData.texPath = td.graphicData.texPath;
-	            d.graphicData.color = td.graphicData.color;
-				//d.thingCategories.Add(TTADefOf.LotR_MeatRawSalted);
-	            d.defName = td.defName + "Salted";
-	            d.label = "TTA_SaltedLabel".Translate(td.label);
-	            d.ingestible.sourceDef = td.ingestible.sourceDef;
-	            defsToAdd.Add(d);
+                d.graphicData.texPath = td.graphicData.texPath;
+                d.graphicData.color = td.graphicData.color;
+                //d.thingCategories.Add(TTADefOf.LotR_MeatRawSalted);
+                d.defName = td.defName + "Salted";
+                d.label = "TTA_SaltedLabel".Translate(td.label);
+                d.ingestible.sourceDef = td.ingestible.sourceDef;
+                defsToAdd.Add(d);
             }
-	        TTADefOf.LotR_MeatRawSalted.parent = ThingCategoryDefOf.MeatRaw;
-	        while (defsToAdd?.Count > 0)
-	        {
-		        var thingDef = defsToAdd.FirstOrDefault();
-		        if (thingDef != null)
-		        {
-			        if (!DefDatabase<ThingDef>.AllDefs.Contains(thingDef))
-			        {
-				        thingDef.PostLoad();
-				        DefDatabase<ThingDef>.Add(thingDef);
-				        if (!TTADefOf.LotR_MeatRawSalted.childThingDefs.Contains(thingDef))
-					        TTADefOf.LotR_MeatRawSalted.childThingDefs.Add(thingDef);
-			        }
-			        defsToAdd.Remove(thingDef);
-		        }
-		        else break;
-	        }
-	        
-	        DirectXmlCrossRefLoader.ResolveAllWantedCrossReferences(FailMode.Silent);
+            TTADefOf.LotR_MeatRawSalted.parent = ThingCategoryDefOf.MeatRaw;
+            while (defsToAdd?.Count > 0)
+            {
+                var thingDef = defsToAdd.FirstOrDefault();
+                if (thingDef != null)
+                {
+                    if (!DefDatabase<ThingDef>.AllDefs.Contains(thingDef))
+                    {
+                        thingDef.PostLoad();
+                        DefDatabase<ThingDef>.Add(thingDef);
+                        if (!TTADefOf.LotR_MeatRawSalted.childThingDefs.Contains(thingDef))
+                            TTADefOf.LotR_MeatRawSalted.childThingDefs.Add(thingDef);
+                    }
+                    defsToAdd.Remove(thingDef);
+                }
+                else break;
+            }
+
+            DirectXmlCrossRefLoader.ResolveAllWantedCrossReferences(FailMode.Silent);
         }
 
         private static void MoveRecipesToSmithy()
@@ -174,6 +175,38 @@ namespace TheThirdAge
                 movedDefs++;
             }
             Log.Message("Moved " + movedDefs + " from Machining Table to Smithy.");
+
+            if (!ModStuff.Settings.LimitTechnology || ModLister.GetActiveModWithIdentifier("CETeam.CombatExtended".ToLower()) == null) return;
+            var ammoRecipiesToAdd = new List<string>
+            {
+                "MakeAmmo_LotRE_Arrow_Galadhrim",
+                "MakeAmmo_LotRE_Arrow_Mirkwood",
+                "MakeAmmo_LotRE_Arrow_Rivendell",
+                "MakeAmmo_LotRD_Bolt"
+            };
+            foreach (string recipieDefName in ammoRecipiesToAdd)
+            {
+                var recipieDef = DefDatabase<RecipeDef>.GetNamedSilentFail(recipieDefName);
+                if (recipieDef == null) continue;
+                recipieDef.recipeUsers.Add(ThingDef.Named("ElectricSmithy"));
+            }
+
+            var things = from thing in DefDatabase<ThingDef>.AllDefs where thing.tradeTags != null select thing;
+            foreach (var thing in things)
+            {
+                var tags = thing.tradeTags.ToArray();
+                foreach (var tag in tags)
+                {
+                    if (tag.StartsWith("CE_AutoEnableCrafting_"))
+                        thing.tradeTags.Remove(tag);
+                }
+            }
+            var enumerable = new List<Def> { DefDatabase<ResearchTabDef>.GetNamed("CE_Turrets") };
+            Traverse rm = Traverse.Create(typeof(DefDatabase<ResearchTabDef>)).Method("Remove", enumerable.First());
+            foreach (Def def in enumerable)
+            {
+                rm.GetValue(def);
+            }
         }
 
         private static void ChangeSteelToIron()
@@ -189,8 +222,8 @@ namespace TheThirdAge
                 tdd.costList.Add(newTempCost);
                 steelDefs++;
             }
-            
-            
+
+
             Log.Message("Replaced " + steelDefs + " defs with Iron.");
         }
 

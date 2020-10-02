@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="ModCheck.isModLoaded">
+        <modName>Medieval Times</modName>
+        <yourMod>Lord of the Rims CE Patch</yourMod>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/RecipeDef[defName="MakeAmmo_LotRD_Arrow"]/recipeUsers</xpath>
+        <value>
+          <li>MedTimes_BlacksmithForge</li>
+          <li>MedTimes_BlacksmithForgeTierTwo</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/RecipeDef[defName="MakeAmmo_LotRE_Arrow_Rivendell"]/recipeUsers</xpath>
+        <value>
+          <li>MedTimes_BlacksmithForge</li>
+          <li>MedTimes_BlacksmithForgeTierTwo</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/RecipeDef[defName="MakeAmmo_LotRE_Arrow_Mirkwood"]/recipeUsers</xpath>
+        <value>
+          <li>MedTimes_BlacksmithForge</li>
+          <li>MedTimes_BlacksmithForgeTierTwo</li>
+        </value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/RecipeDef[defName="MakeAmmo_LotRE_Arrow_Galadhrim"]/recipeUsers</xpath>
+        <value>
+          <li>MedTimes_BlacksmithForge</li>
+          <li>MedTimes_BlacksmithForgeTierTwo</li>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>
