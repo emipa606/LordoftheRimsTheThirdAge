@@ -20,15 +20,18 @@ public static class BackstoryHandler
     {
         public static void RemoveIncompatibleBackstories(StringBuilder DebugString)
         {
-            if (!ModStuff.Settings.LimitTechnology) return;
+            if (!ModStuff.Settings.LimitTechnology)
+            {
+                return;
+            }
 
             DebugString.AppendLine("BackstoryDef Removal List");
             //StringBuilder listOfBackstoriesToRemove = new StringBuilder();
             var tempBackstoryKeys = BackstoryDatabase.allBackstories.Keys;
-            foreach (string badId in GetIncompatibleBackstories())
+            foreach (var badId in GetIncompatibleBackstories())
             {
                 //listOfBackstoriesToRemove.AppendLine(badId);
-                foreach (string existingId in tempBackstoryKeys)
+                foreach (var existingId in tempBackstoryKeys)
                 {
                     var properId = RemoveNumbers(existingId);
                     //listOfBackstoriesToRemove.AppendLine(":: " + properId);
@@ -51,7 +54,7 @@ public static class BackstoryHandler
         public static void ListIncompatibleBackstories()
         {
 
-            StringBuilder listOfBackstoriesToRemove = new StringBuilder();
+            var listOfBackstoriesToRemove = new StringBuilder();
             foreach (var bsy in BackstoryDatabase.allBackstories)
             {
                 var bs = bsy.Value;
@@ -61,7 +64,7 @@ public static class BackstoryHandler
                     "universe", "research", "midworld", "space", "galaxy", "star system",
                     "genetic", "communications", "gun", "ceti", "tech", "machine",
                     "addiction", "starship", "pilot", "coma", "napalm", "imperial"};
-                foreach (string subString in filteredWords)
+                foreach (var subString in filteredWords)
                 {
                     if ((bsTitle + " " + bsDesc).Contains(subString))
                     {
@@ -78,7 +81,7 @@ public static class BackstoryHandler
         {
             if (Translator.TryGetTranslatedStringsForFile("Static/IncompatibleBackstories", out List<string> list))
             {
-                foreach (string item in list)
+                foreach (var item in list)
                 {
                     yield return item;
                 }
@@ -92,8 +95,8 @@ public static class BackstoryHandler
 
         public static string RemoveNumbers(string s)
         {
-            StringBuilder result = new StringBuilder();
-            for (int i = 0; i < s.Length; i++)
+            var result = new StringBuilder();
+            for (var i = 0; i < s.Length; i++)
             {
                 if (char.IsLetter(s[i]))
                 {

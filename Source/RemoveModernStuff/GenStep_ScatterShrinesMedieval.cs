@@ -21,16 +21,16 @@ namespace TheThirdAge
 
 		protected override void ScatterAt(IntVec3 loc, Map map, GenStepParams parms, int stackCount = 1)
 		{
-			int randomInRange = ShrinesCountX.RandomInRange;
-			int randomInRange2 = ShrinesCountZ.RandomInRange;
-			int randomInRange3 = ExtraHeightRange.RandomInRange;
+			var randomInRange = ShrinesCountX.RandomInRange;
+			var randomInRange2 = ShrinesCountZ.RandomInRange;
+			var randomInRange3 = ExtraHeightRange.RandomInRange;
 			IntVec2 standardAncientShrineSize = SymbolResolver_AncientShrinesGroupMedieval.StandardAncientShrineSize;
-			int num = 1;
-			int num2 = randomInRange * standardAncientShrineSize.x + (randomInRange - 1) * num;
-			int num3 = randomInRange2 * standardAncientShrineSize.z + (randomInRange2 - 1) * num;
-			int num4 = num2 + 2;
-			int num5 = num3 + 2 + randomInRange3;
-			CellRect rect = new CellRect(loc.x, loc.z, num4, num5);
+			var num = 1;
+			var num2 = (randomInRange * standardAncientShrineSize.x) + ((randomInRange - 1) * num);
+			var num3 = (randomInRange2 * standardAncientShrineSize.z) + ((randomInRange2 - 1) * num);
+			var num4 = num2 + 2;
+			var num5 = num3 + 2 + randomInRange3;
+			var rect = new CellRect(loc.x, loc.z, num4, num5);
 			rect.ClipInsideMap(map);
 			if (rect.Width != num4 || rect.Height != num5)
 			{
@@ -39,7 +39,7 @@ namespace TheThirdAge
 			foreach (IntVec3 c in rect.Cells)
 			{
 				List<Thing> list = map.thingGrid.ThingsListAt(c);
-				for (int i = 0; i < list.Count; i++)
+				for (var i = 0; i < list.Count; i++)
 				{
 					if (list[i].def == ThingDefOf.AncientCryptosleepCasket)
 					{
@@ -56,7 +56,7 @@ namespace TheThirdAge
 			resolveParams.monumentSize = new IntVec2?(new IntVec2(num2, num3));
 			SketchGen.Generate(SketchResolverDefOf.MonumentRuin, resolveParams).Spawn(map, rect.CenterCell, null, Sketch.SpawnPosType.Unchanged, Sketch.SpawnMode.Normal, false, false, null, false, false, delegate (SketchEntity entity, IntVec3 cell)
 			{
-				bool result = false;
+				var result = false;
 				foreach (IntVec3 b in entity.OccupiedRect.AdjacentCells)
 				{
 					IntVec3 c2 = cell + b;
@@ -73,13 +73,13 @@ namespace TheThirdAge
 				return result;
 			}, null);
 
-			int nextSignalTagID = Find.UniqueIDsManager.GetNextSignalTagID();
-			string signalTag = "ancientTempleApproached-" + nextSignalTagID;
-			SignalAction_Letter signalAction_Letter = (SignalAction_Letter)ThingMaker.MakeThing(ThingDefOf.SignalAction_Letter, null);
+			var nextSignalTagID = Find.UniqueIDsManager.GetNextSignalTagID();
+			var signalTag = "ancientTempleApproached-" + nextSignalTagID;
+			var signalAction_Letter = (SignalAction_Letter)ThingMaker.MakeThing(ThingDefOf.SignalAction_Letter, null);
 			signalAction_Letter.signalTag = signalTag;
 			signalAction_Letter.letter = LetterMaker.MakeLetter("LetterLabelAncientShrineWarning".Translate(), "AncientShrineWarning".Translate(), LetterDefOf.NeutralEvent, new TargetInfo(rect.CenterCell, map, false));
 			GenSpawn.Spawn(signalAction_Letter, rect.CenterCell, map);
-			RectTrigger rectTrigger = (RectTrigger)ThingMaker.MakeThing(ThingDefOf.RectTrigger, null);
+			var rectTrigger = (RectTrigger)ThingMaker.MakeThing(ThingDefOf.RectTrigger, null);
 			rectTrigger.signalTag = signalTag;
 			rectTrigger.Rect = rect.ExpandedBy(1).ClipInsideMap(map);
 			rectTrigger.destroyIfUnfogged = true;

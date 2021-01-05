@@ -12,7 +12,7 @@ namespace TheThirdAge
 
         public override string CompInspectStringExtra()
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             switch (Stage)
             {
                 case RotStage.Fresh:
@@ -25,13 +25,13 @@ namespace TheThirdAge
                     sb.AppendLine("RotStateDessicated".Translate());
                     break;
             }
-            float num = (float)this.PropsRot.TicksToRotStart - RotProgress;
+            var num = PropsRot.TicksToRotStart - RotProgress;
             if (num > 0f)
             {
-                float num2 = GenTemperature.GetTemperatureForCell(this.parent.PositionHeld, this.parent.Map);
-                List<Thing> thingList = GridsUtility.GetThingList(this.parent.PositionHeld, this.parent.Map);
+                var num2 = GenTemperature.GetTemperatureForCell(parent.PositionHeld, parent.Map);
+                List<Thing> thingList = GridsUtility.GetThingList(parent.PositionHeld, parent.Map);
                 var factor = 1f;
-                for (int i = 0; i < thingList.Count; i++)
+                for (var i = 0; i < thingList.Count; i++)
                 {
                     if (thingList[i] is Building_RottableFixer)
                     {
@@ -49,9 +49,9 @@ namespace TheThirdAge
                         break;
                     }
                 }
-                num2 = (float)Mathf.RoundToInt(num2);
-                float num3 = GenTemperature.RotRateAtTemperature(num2);
-                int ticksUntilRotAtCurrentTemp = (int)(TicksUntilRotAtCurrentTemp * factor);
+                num2 = Mathf.RoundToInt(num2);
+                var num3 = GenTemperature.RotRateAtTemperature(num2);
+                var ticksUntilRotAtCurrentTemp = (int)(TicksUntilRotAtCurrentTemp * factor);
                 if (num3 < 0.001f)
                 {
                     sb.Append("CurrentlyFrozen".Translate() + ".");
@@ -80,22 +80,22 @@ namespace TheThirdAge
         public override void CompTickRare()
         {
             
-            if (this.parent.MapHeld != null && this.parent.Map != null)
+            if (parent.MapHeld != null && parent.Map != null)
             {
-                HashSet<Thing> list = new HashSet<Thing>(this.parent.MapHeld.thingGrid.ThingsListAtFast(this.parent.PositionHeld));
+                var list = new HashSet<Thing>(parent.MapHeld.thingGrid.ThingsListAtFast(parent.PositionHeld));
                 var isMeat = this?.parent?.def.IsMeat ?? false;
                 var isSalted = this?.parent?.def?.defName?.ToLowerInvariant()?.Contains("salted") ?? false;
                 var pantryShelf = list.FirstOrDefault(x => x is Building_RottableFixer && x.def.defName == "LotR_PantryShelf");
                 var saltPot = list.FirstOrDefault(x => x is Building_RottableFixer && x.def.defName == "LotR_SaltBarrel");
                 if (isMeat && !isSalted && saltPot != null)
                 {
-                    HandleMeatThatNeedsSalting(this.parent);
+                    HandleMeatThatNeedsSalting(parent);
                     return;
                 }
                 
-                float rotProgress = this.RotProgress;
-                float num = 1f;
-                float temperatureForCell = GenTemperature.GetTemperatureForCell(this.parent.PositionHeld, this.parent.MapHeld);
+                var rotProgress = RotProgress;
+                var num = 1f;
+                var temperatureForCell = GenTemperature.GetTemperatureForCell(parent.PositionHeld, parent.MapHeld);
                 var b = list.FirstOrDefault(x => x is Building_RottableFixer);
                 if (b != null)
                 {
@@ -110,29 +110,29 @@ namespace TheThirdAge
                 }
 
                 num *= GenTemperature.RotRateAtTemperature(temperatureForCell);
-                this.RotProgress += Mathf.Round(num * 250f);
-                if (this.Stage == RotStage.Rotting && this.PropsRot.rotDestroys)
+                RotProgress += Mathf.Round(num * 250f);
+                if (Stage == RotStage.Rotting && PropsRot.rotDestroys)
                 {
-                    if (this.parent.Position.GetSlotGroup(this.parent.Map) != null)
+                    if (parent.Position.GetSlotGroup(parent.Map) != null)
                     {
                         Messages.Message("MessageRottedAwayInStorage".Translate(new object[]
                         {
-                this.parent.Label
+                parent.Label
                         }).CapitalizeFirst(), MessageTypeDefOf.SilentInput);
                         LessonAutoActivator.TeachOpportunity(ConceptDefOf.SpoilageAndFreezers, OpportunityType.GoodToKnow);
                     }
-                    this.parent.Destroy(DestroyMode.Vanish);
+                    parent.Destroy(DestroyMode.Vanish);
                     return;
                 }
-                if (Mathf.FloorToInt(rotProgress / 60000f) != Mathf.FloorToInt(this.RotProgress / 60000f))
+                if (Mathf.FloorToInt(rotProgress / 60000f) != Mathf.FloorToInt(RotProgress / 60000f))
                 {
-                    if (this.Stage == RotStage.Rotting && this.PropsRot.rotDamagePerDay > 0f)
+                    if (Stage == RotStage.Rotting && PropsRot.rotDamagePerDay > 0f)
                     {
-                        this.parent.TakeDamage(new DamageInfo(DamageDefOf.Rotting, (float)GenMath.RoundRandom(this.PropsRot.rotDamagePerDay), 0f, -1f, null, null, null, DamageInfo.SourceCategory.ThingOrUnknown));
+                        parent.TakeDamage(new DamageInfo(DamageDefOf.Rotting, GenMath.RoundRandom(PropsRot.rotDamagePerDay), 0f, -1f, null, null, null, DamageInfo.SourceCategory.ThingOrUnknown));
                     }
-                    else if (this.Stage == RotStage.Dessicated && this.PropsRot.dessicatedDamagePerDay > 0f && this.ShouldTakeDessicateDamage())
+                    else if (Stage == RotStage.Dessicated && PropsRot.dessicatedDamagePerDay > 0f && ShouldTakeDessicateDamage())
                     {
-                        this.parent.TakeDamage(new DamageInfo(DamageDefOf.Rotting, (float)GenMath.RoundRandom(this.PropsRot.dessicatedDamagePerDay), 0f, -1f, null, null, null, DamageInfo.SourceCategory.ThingOrUnknown));
+                        parent.TakeDamage(new DamageInfo(DamageDefOf.Rotting, GenMath.RoundRandom(PropsRot.dessicatedDamagePerDay), 0f, -1f, null, null, null, DamageInfo.SourceCategory.ThingOrUnknown));
                     }
                 }
             }
@@ -145,7 +145,7 @@ namespace TheThirdAge
             var curDefName = meat.def.defName;
             var curPosition = meat.PositionHeld;
             var curMap = meat.MapHeld;
-            this.parent.Destroy(DestroyMode.Vanish);
+            parent.Destroy(DestroyMode.Vanish);
             var newThing = (ThingWithComps) ThingMaker.MakeThing(ThingDef.Named(curDefName + "Salted"));
             newThing.stackCount = count;
             newThing.HitPoints = Mathf.RoundToInt(curHP / meat.GetStatValue(StatDefOf.MaxHitPoints) * newThing.MaxHitPoints); // curHP;
@@ -154,9 +154,9 @@ namespace TheThirdAge
 
         private bool ShouldTakeDessicateDamage()
         {
-            if (this.parent.ParentHolder != null)
+            if (parent.ParentHolder != null)
             {
-                if (this.parent.ParentHolder is Thing thing && thing.def.category == ThingCategory.Building && thing.def.building.preventDeteriorationInside)
+                if (parent.ParentHolder is Thing thing && thing.def.category == ThingCategory.Building && thing.def.building.preventDeteriorationInside)
                 {
                     return false;
                 }
@@ -166,7 +166,7 @@ namespace TheThirdAge
 
         private void StageChanged()
         {
-            if (this.parent is Corpse corpse)
+            if (parent is Corpse corpse)
             {
                 corpse.RotStageChanged();
             }

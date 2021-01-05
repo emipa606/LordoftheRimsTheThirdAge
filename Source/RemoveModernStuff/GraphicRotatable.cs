@@ -21,17 +21,15 @@ namespace RimWorld {
             }
         }
 
-        public Graphic First {
-            get { return subGraphics[0]; }
-        }
+        public Graphic First => subGraphics[0];
 
-        public Graphic[] SubGraphics {
-            get { return subGraphics; }
-        }
+        public Graphic[] SubGraphics => subGraphics;
 
         public Graphic GraphicAt(Rot4 rot) {
             if (autoRotate == AutoRotate.None)
+            {
                 throw new Exception("Invalid attempt to get an autorotation on _Graphic object");
+            }
 
             switch (rot.AsInt) {
                 case 0:

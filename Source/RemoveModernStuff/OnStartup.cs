@@ -32,14 +32,22 @@ namespace TheThirdAge
         {
             if (TTADefOf.FueledStove is ThingDef fueldStove && fueldStove?.recipes?.Count > 0)
             {
-                if (fueldStove.recipes.Any(x => x == TTADefOf.LotR_Make_Cram)) return;
+                if (fueldStove.recipes.Any(x => x == TTADefOf.LotR_Make_Cram))
+                {
+                    return;
+                }
+
                 fueldStove.recipes.Add(TTADefOf.LotR_Make_Cram);
             }
         }
 
         private static void HandleAncientShrines()
         {
-            if (!ModStuff.Settings.LimitTechnology) return;
+            if (!ModStuff.Settings.LimitTechnology)
+            {
+                return;
+            }
+
             if (TTADefOf.ScatterShrines is GenStepDef scatterStep)
             {
                 scatterStep.genStep = new GenStep_ScatterShrinesMedieval();
@@ -64,10 +72,10 @@ namespace TheThirdAge
 
         public static void AddSaltedMeats()
         {
-            HashSet<ThingDef> defsToAdd = new HashSet<ThingDef>();
+            var defsToAdd = new HashSet<ThingDef>();
             foreach (ThingDef td in DefDatabase<ThingDef>.AllDefs.Where(t => t.IsMeat))
             {
-                ThingDef d = new ThingDef
+                var d = new ThingDef
                 {
                     resourceReadoutPriority = td.resourceReadoutPriority, //ResourceCountPriority.Middle;
                     category = td.category, // ThingCategory.Item;
@@ -82,7 +90,7 @@ namespace TheThirdAge
                 d.altitudeLayer = td.altitudeLayer; // AltitudeLayer.Item;
                 d.stackLimit = td.stackLimit; // 75;
                 d.comps.Add(new CompProperties_Forbiddable());
-                CompProperties_Rottable rotProps = new CompProperties_Rottable
+                var rotProps = new CompProperties_Rottable
                 {
                     daysToRotStart = td.GetCompProperties<CompProperties_Rottable>().daysToRotStart, // 2f;
                     rotDestroys = td.GetCompProperties<CompProperties_Rottable>().rotDestroys // true;
@@ -143,11 +151,16 @@ namespace TheThirdAge
                         thingDef.PostLoad();
                         DefDatabase<ThingDef>.Add(thingDef);
                         if (!TTADefOf.LotR_MeatRawSalted.childThingDefs.Contains(thingDef))
+                        {
                             TTADefOf.LotR_MeatRawSalted.childThingDefs.Add(thingDef);
+                        }
                     }
                     defsToAdd.Remove(thingDef);
                 }
-                else break;
+                else
+                {
+                    break;
+                }
             }
 
             DirectXmlCrossRefLoader.ResolveAllWantedCrossReferences(FailMode.Silent);
@@ -176,7 +189,11 @@ namespace TheThirdAge
             }
             Log.Message("Moved " + movedDefs + " from Machining Table to Smithy.");
 
-            if (!ModStuff.Settings.LimitTechnology || ModLister.GetActiveModWithIdentifier("CETeam.CombatExtended".ToLower()) == null) return;
+            if (!ModStuff.Settings.LimitTechnology || ModLister.GetActiveModWithIdentifier("CETeam.CombatExtended".ToLower()) == null)
+            {
+                return;
+            }
+
             var ammoRecipiesToAdd = new List<string>
             {
                 "MakeAmmo_LotRE_Arrow_Galadhrim",
@@ -184,10 +201,14 @@ namespace TheThirdAge
                 "MakeAmmo_LotRE_Arrow_Rivendell",
                 "MakeAmmo_LotRD_Bolt"
             };
-            foreach (string recipieDefName in ammoRecipiesToAdd)
+            foreach (var recipieDefName in ammoRecipiesToAdd)
             {
                 var recipieDef = DefDatabase<RecipeDef>.GetNamedSilentFail(recipieDefName);
-                if (recipieDef == null) continue;
+                if (recipieDef == null)
+                {
+                    continue;
+                }
+
                 recipieDef.recipeUsers.Add(ThingDef.Named("ElectricSmithy"));
             }
 
@@ -198,7 +219,9 @@ namespace TheThirdAge
                 foreach (var tag in tags)
                 {
                     if (tag.StartsWith("CE_AutoEnableCrafting_"))
+                    {
                         thing.tradeTags.Remove(tag);
+                    }
                 }
             }
             var enumerable = new List<Def> { DefDatabase<ResearchTabDef>.GetNamed("CE_Turrets") };
@@ -211,7 +234,11 @@ namespace TheThirdAge
 
         private static void ChangeSteelToIron()
         {
-            if (!ModStuff.Settings.LimitTechnology) return;
+            if (!ModStuff.Settings.LimitTechnology)
+            {
+                return;
+            }
+
             steelDefs = 0;
             foreach (ThingDef tdd in DefDatabase<ThingDef>.AllDefs.Where(tt =>
                 tt?.costList?.Any(y => y?.thingDef == ThingDefOf.Steel) ?? false))
@@ -229,15 +256,31 @@ namespace TheThirdAge
 
         private static void ReplaceModernResources()
         {
-            if (!ModStuff.Settings.LimitTechnology) return;
+            if (!ModStuff.Settings.LimitTechnology)
+            {
+                return;
+            }
+
             if (ThingDefOf.Steel?.stuffProps?.commonality >= 0.9f)
+            {
                 ThingDefOf.Steel.stuffProps.commonality = 0.2f;
+            }
+
             if (ThingDefOf.Plasteel?.stuffProps?.commonality >= 0.04f)
+            {
                 ThingDefOf.Plasteel.stuffProps.commonality = 0.0f;
+            }
+
             if (ThingDefOf.Uranium?.stuffProps?.commonality >= 0.04f)
+            {
                 ThingDefOf.Uranium.stuffProps.commonality = 0.0f;
+            }
+
             if (ThingDef.Named("Synthread")?.stuffProps?.commonality >= 0.014f)
+            {
                 ThingDef.Named("Synthread").stuffProps.commonality = 0.0f;
+            }
+
             ThingDefOf.MineableSteel.building.mineableScatterCommonality = 0.0f;
             ThingDef.Named("MineablePlasteel").building.mineableScatterCommonality = 0.0f;
             ThingDef.Named("MineableUranium").building.mineableScatterCommonality = 0.0f;

@@ -17,7 +17,7 @@ namespace RimWorld
                                                         null, 0, null));
 
         public CompProperties_FireOverlayRotatable Props =>
-            (CompProperties_FireOverlayRotatable)this.props;
+            (CompProperties_FireOverlayRotatable)props;
 
         ThingWithComps thing = null;
         ThingDef def = null;
@@ -29,12 +29,14 @@ namespace RimWorld
         public override void Initialize(CompProperties props)
         {
             this.props = props;
-            thing = this.parent;
+            thing = parent;
 
             if (thing != null)
+            {
                 def = thing.def;
+            }
 
-            
+
             //LoadGraphics();
         }
 
@@ -67,7 +69,7 @@ namespace RimWorld
         {
             try
             {
-                if (this.parent == null)
+                if (parent == null)
                 {
                     return;
                 }
@@ -76,10 +78,12 @@ namespace RimWorld
                     return;
                 }
                 if (!ShouldRender(thing, def))
+                {
                     return;
+                }
 
                 Vector3 offset;
-                int y = 0;
+                var y = 0;
 
                 switch (thing.Rotation.AsInt)
                 {
@@ -100,7 +104,7 @@ namespace RimWorld
                 }
 
                 Vector3 drawPosRotated = thing.DrawPos + offset;
-                Vector3 drawSizeRotated = new Vector3(Props.fireSize.x, 1f, Props.fireSize.y);
+                var drawSizeRotated = new Vector3(Props.fireSize.x, 1f, Props.fireSize.y);
                 Quaternion quaternion = Quaternion.identity;
 
                 y = ((int)def.altitudeLayer) + (Props.aboveThing == true ? 1 : -1);
@@ -117,12 +121,15 @@ namespace RimWorld
         private void FireFlicker(Vector3 drawPosRotated, Vector3 drawSizeRotated, Quaternion quaternion)
         {
             if (scramble == 0)
+            {
                 scramble = UnityEngine.Random.Range(0, 24735);
-            int timeTicks = Find.TickManager.TicksGame;
-            int timeTicksScrambled = timeTicks + scramble;
-            int interval = timeTicksScrambled / Props.ticks;
-            int thisIndex = interval % FireGraphic.SubGraphics.Length;
-            int _scramble = Mathf.Abs(thing.thingIDNumber ^ 7419567) / 15;
+            }
+
+            var timeTicks = Find.TickManager.TicksGame;
+            var timeTicksScrambled = timeTicks + scramble;
+            var interval = timeTicksScrambled / Props.ticks;
+            var thisIndex = interval % FireGraphic.SubGraphics.Length;
+            var _scramble = Mathf.Abs(thing.thingIDNumber ^ 7419567) / 15;
 
             if (thisIndex != mem1)
             {
@@ -135,7 +142,7 @@ namespace RimWorld
                 .ToVector3() / GenRadial.MaxRadialPatternRadius;
             radial *= 0.05f;
 
-            Vector3 newPosRotated = drawPosRotated + radial * drawSizeRotated.x;
+            Vector3 newPosRotated = drawPosRotated + (radial * drawSizeRotated.x);
             Graphic graphic = FireGraphic.SubGraphics[mem2];
             Matrix4x4 matrix = default;
             matrix.SetTRS(newPosRotated, quaternion, drawSizeRotated);
@@ -144,22 +151,32 @@ namespace RimWorld
 
         public bool ShouldRender(ThingWithComps thing, ThingDef def)
         {
-            if (Props.dependency == DependencyType.None) return true;
+            if (Props.dependency == DependencyType.None)
+            {
+                return true;
+            }
 
             if (Props.dependency == DependencyType.Fuel)
             {
                 if (refuelableComp == null)
+                {
                     return false;
+                }
                 else
+                {
                     return refuelableComp.HasFuel;
+                }
             }
-            else return false;
+            else
+            {
+                return false;
+            }
         }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            this.refuelableComp = this.parent.GetComp<CompRefuelable>();
+            refuelableComp = parent.GetComp<CompRefuelable>();
         }
 
         static CompFireOverlayRotatable()

@@ -25,7 +25,7 @@ namespace RimWorld
 
         public CompProperties_FireOverlayRotatable()
         {
-            this.compClass = typeof(CompFireOverlayRotatable);
+            compClass = typeof(CompFireOverlayRotatable);
         }
     }
 }

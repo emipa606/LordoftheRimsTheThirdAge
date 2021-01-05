@@ -9,7 +9,10 @@ namespace TheThirdAge
     public class Building_RottableFixer : Building_Storage, IStoreSettingsParent
     {
         private StorageSettings curStorageSettings;
-        StorageSettings IStoreSettingsParent.GetParentStoreSettings() => curStorageSettings;
+        StorageSettings IStoreSettingsParent.GetParentStoreSettings()
+        {
+            return curStorageSettings;
+        }
 
         public override void PostMake()
         {
@@ -17,19 +20,25 @@ namespace TheThirdAge
             curStorageSettings = new StorageSettings();
             curStorageSettings.CopyFrom(def.building.fixedStorageSettings);
             foreach (var thingDef in DefDatabase<ThingDef>.AllDefs.Where(x =>
-                x.HasComp(typeof(CompRottable)) || (this.def == TTADefOf.LotR_SaltBarrel &&
+                x.HasComp(typeof(CompRottable)) || (def == TTADefOf.LotR_SaltBarrel &&
                                                     (x.thingCategories?.Contains(TTADefOf.LotR_MeatRawSalted) ??
                                                      false))))
             {
                 if (!curStorageSettings.filter.Allows(thingDef))
+                {
                     curStorageSettings.filter.SetAllow(thingDef, true);
+                }
             }
         }
 
         public override void TickRare()
         {
             base.TickRare();
-            if (!Spawned || Destroyed) return;
+            if (!Spawned || Destroyed)
+            {
+                return;
+            }
+
             MakeAllHeldThingsMedievalCompRottable();
         }
 

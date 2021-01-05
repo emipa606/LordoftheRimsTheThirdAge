@@ -23,7 +23,11 @@ namespace TheThirdAge
 
         static MainMenuTex()
         {
-            if (!ModStuff.Settings.LimitTechnology) return;
+            if (!ModStuff.Settings.LimitTechnology)
+            {
+                return;
+            }
+
             LoadTextures();
         }
 
@@ -37,7 +41,10 @@ namespace TheThirdAge
             }
             catch
             {
-                if (debug) Log.Message("Failed to Traverse BGPlanet");
+                if (debug)
+                {
+                    Log.Message("Failed to Traverse BGPlanet");
+                }
             }
         }
     }
@@ -48,21 +55,31 @@ namespace TheThirdAge
 
         static SwapMainMenuGraphics()
         {
-            if (!ModStuff.Settings.LimitTechnology) return;
+            if (!ModStuff.Settings.LimitTechnology)
+            {
+                return;
+            }
+
             var UI_BackgroundMainPatch = new Harmony("TTA.MainMenu.UI_BackgroundMainPatch");
             MethodInfo methInfBackgroundOnGUI = AccessTools.Method(typeof(UI_BackgroundMain), "BackgroundOnGUI", null, null);
-            HarmonyMethod harmonyMethodPreFBackgroundOnGUI = new HarmonyMethod(typeof(SwapMainMenuGraphics).GetMethod("PreFBackgroundOnGUI"));
+            var harmonyMethodPreFBackgroundOnGUI = new HarmonyMethod(typeof(SwapMainMenuGraphics).GetMethod("PreFBackgroundOnGUI"));
             UI_BackgroundMainPatch.Patch(methInfBackgroundOnGUI, harmonyMethodPreFBackgroundOnGUI, null, null);
-            if (debug) Log.Message("UI_BackgroundMainPatch initialized");
+            if (debug)
+            {
+                Log.Message("UI_BackgroundMainPatch initialized");
+            }
         }
         public static bool PreFBackgroundOnGUI()
         {
-            if (!ModStuff.Settings.LimitTechnology) return true;
+            if (!ModStuff.Settings.LimitTechnology)
+            {
+                return true;
+            }
             // Shape the BG
-            float floRatio = UI.screenWidth / 2048f;
-            float floHeight = 1280f * floRatio;
-            float floYPos = (UI.screenHeight - floHeight) / 2f;
-            Rect rectBG = new Rect(0f, floYPos, UI.screenWidth, floHeight);
+            var floRatio = UI.screenWidth / 2048f;
+            var floHeight = 1280f * floRatio;
+            var floYPos = (UI.screenHeight - floHeight) / 2f;
+            var rectBG = new Rect(0f, floYPos, UI.screenWidth, floHeight);
 
             // Draw the BG
             GUI.DrawTexture(rectBG, Traverse.Create(typeof(UI_BackgroundMain)).Field("BGPlanet").GetValue<Texture2D>(), ScaleMode.ScaleToFit);

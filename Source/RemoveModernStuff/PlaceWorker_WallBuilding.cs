@@ -17,9 +17,13 @@ namespace Rimworld
             Building building = loc.GetEdifice(map);
 
             if (building == null || building.def == null || building.def.graphicData == null)
+            {
                 return "Must be placed over walls.";
+            }
             else if ((building.def.graphicData.linkFlags & (LinkFlags.Wall | LinkFlags.Rock)) == 0)
+            {
                 return "Must be placed over walls.";
+            }
 
             if (rot.FacingCell != null)
             {
@@ -48,7 +52,9 @@ namespace Rimworld
 
                 Building _support = facingLoc.GetEdifice(map);
                 if (_support != null && building.def != null && building.def.graphicData != null)
-                    return (AcceptanceReport)("Adjacent facing cell must be clear.");
+                {
+                    return "Adjacent facing cell must be clear.";
+                }
             }
 
             return AcceptanceReport.WasAccepted;

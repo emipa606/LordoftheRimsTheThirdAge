@@ -8,8 +8,8 @@ namespace TheThirdAge
 	{
 		public override void Resolve(ResolveParams rp)
 		{
-			int num = (rp.rect.Width + 1) / (StandardAncientShrineSize.x + 1);
-			int num2 = (rp.rect.Height + 1) / (StandardAncientShrineSize.z + 1);
+			var num = (rp.rect.Width + 1) / (StandardAncientShrineSize.x + 1);
+			var num2 = (rp.rect.Height + 1) / (StandardAncientShrineSize.z + 1);
 			IntVec3 bottomLeft = rp.rect.BottomLeft;
 			//GeneratePods(rp, num2, num, bottomLeft);
 		}
@@ -19,7 +19,7 @@ namespace TheThirdAge
 			PodContentsType? podContentsType = rp.podContentsType;
 			if (podContentsType == null)
 			{
-				float value = Rand.Value;
+				var value = Rand.Value;
 				if (value < 0.5f)
 				{
 					podContentsType = null;
@@ -33,14 +33,14 @@ namespace TheThirdAge
 					podContentsType = new PodContentsType?(PodContentsType.AncientHostile);
 				}
 			}
-			int? ancientCryptosleepCasketGroupID = rp.ancientCryptosleepCasketGroupID;
-			int value2 = (ancientCryptosleepCasketGroupID == null)
+			var ancientCryptosleepCasketGroupID = rp.ancientCryptosleepCasketGroupID;
+			var value2 = (ancientCryptosleepCasketGroupID == null)
 				? Find.UniqueIDsManager.GetNextAncientCryptosleepCasketGroupID()
 				: ancientCryptosleepCasketGroupID.Value;
-			int num3 = 0;
-			for (int i = 0; i < num2; i++)
+			var num3 = 0;
+			for (var i = 0; i < num2; i++)
 			{
-				for (int j = 0; j < num; j++)
+				for (var j = 0; j < num; j++)
 				{
 					if (!Rand.Chance(0.25f))
 					{
@@ -48,9 +48,9 @@ namespace TheThirdAge
 						{
 							break;
 						}
-						CellRect rect = new CellRect(
-							bottomLeft.x + j * (StandardAncientShrineSize.x + 1),
-							bottomLeft.z + i * (StandardAncientShrineSize.z + 1),
+						var rect = new CellRect(
+							bottomLeft.x + (j * (StandardAncientShrineSize.x + 1)),
+							bottomLeft.z + (i * (StandardAncientShrineSize.z + 1)),
                             StandardAncientShrineSize.x,
                             StandardAncientShrineSize.z);
 						if (rect.FullyContainedWithin(rp.rect))

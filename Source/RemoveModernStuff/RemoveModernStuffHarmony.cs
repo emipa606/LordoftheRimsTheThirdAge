@@ -16,7 +16,11 @@ namespace TheThirdAge
 
         static RemoveModernStuffHarmony()
         {
-            if (!ModStuff.Settings.LimitTechnology) return;
+            if (!ModStuff.Settings.LimitTechnology)
+            {
+                return;
+            }
+
             var harmony = new Harmony(id: "rimworld.removemodernstuff");
             //Log.Message("IsTravelingInTransportPodWorldObject");
             harmony.Patch(original: AccessTools.Method(type: typeof(PawnUtility), name: "IsTravelingInTransportPodWorldObject"),
@@ -49,6 +53,10 @@ namespace TheThirdAge
             //}
             //Log.Message("ThingSetMaker");
             harmony.Patch(original: AccessTools.Method(type: typeof(ThingSetMaker), name: "Generate", parameters: new[] { typeof(ThingSetMakerParams) }), prefix: new HarmonyMethod(typeof(RemoveModernStuffHarmony), nameof(ItemCollectionGeneratorGeneratePrefix)), postfix: null);
+
+            harmony.Patch(original: AccessTools.Method(type: typeof(FactionManager), name: "FirstFactionOfDef", parameters: new[] { typeof(FactionDef) }), prefix: new HarmonyMethod(typeof(RemoveModernStuffHarmony), nameof(FactionManagerFirstFactionOfDefPrefix)), postfix: null);
+
+            harmony.Patch(original: AccessTools.Method(type: typeof(BackCompatibility), name: "FactionManagerPostLoadInit", parameters: new Type[] { } ), prefix: new HarmonyMethod(typeof(RemoveModernStuffHarmony), nameof(BackCompatibilityFactionManagerPostLoadInitPrefix)), postfix: null);
 
             IEnumerable<MethodInfo> mis = AgeInjuryUtilityNamesHandler();
             if (mis.Any())
@@ -103,35 +111,35 @@ namespace TheThirdAge
         //GenDate
         public static void Year_PostFix(long absTicks, float longitude, ref int __result)
         {
-            long num = absTicks + ((long)GenDate.TimeZoneAt(longitude) * 2500L);
-            __result = START_DATE + Mathf.FloorToInt((float)num / 3600000f);
+            var num = absTicks + (GenDate.TimeZoneAt(longitude) * 2500L);
+            __result = START_DATE + Mathf.FloorToInt(num / 3600000f);
         }
 
 
         //GenDate
         public static void DateFullStringAt_PostFix(long absTicks, Vector2 location, ref string __result)
         {
-            int num = GenDate.DayOfSeason(absTicks, location.x) + 1;
-            string value = Find.ActiveLanguageWorker.OrdinalNumber(num, Gender.None);
+            var num = GenDate.DayOfSeason(absTicks, location.x) + 1;
+            var value = Find.ActiveLanguageWorker.OrdinalNumber(num, Gender.None);
             __result = "TTA_FullDate".Translate(value, GenDate.Quadrum(absTicks, location.x).Label(), GenDate.Year(absTicks, location.x), num);
         }
 
         //GenDate
         public static void DateReadoutStringAt_PostFix(long absTicks, Vector2 location, ref string __result)
         {
-            int num = GenDate.DayOfSeason(absTicks, location.x) + 1;
-            string value = Find.ActiveLanguageWorker.OrdinalNumber(num, Gender.None);
+            var num = GenDate.DayOfSeason(absTicks, location.x) + 1;
+            var value = Find.ActiveLanguageWorker.OrdinalNumber(num, Gender.None);
             __result = "TTA_DateReadout".Translate(value, GenDate.Quadrum(absTicks, location.x).Label(), GenDate.Year(absTicks, location.x), num);
         }
 
         public static IEnumerable<MethodInfo> AgeInjuryUtilityNamesHandler()
         {
             //Log.Message("Looking for AgeInjuryUtility...");
-            return (from assembly in AppDomain.CurrentDomain.GetAssemblies()
+            return from assembly in AppDomain.CurrentDomain.GetAssemblies()
                     from type in assembly.GetTypes()
                     from method in type.GetMethods(BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.FlattenHierarchy)
                     where method.Name == "RandomPermanentInjuryDamageType"
-                    select method);
+                    select method;
         }
 
         public static void RandomPermanentInjuryDamageTypePostfix(ref DamageDef __result)
@@ -145,8 +153,24 @@ namespace TheThirdAge
 
         public static void ItemCollectionGeneratorGeneratePrefix(ref ThingSetMakerParams parms)
         {
-            if (!parms.techLevel.HasValue || parms.techLevel > RemoveModernStuff.MAX_TECHLEVEL)
+            if (ModStuff.Settings.LimitTechnology && parms.techLevel.HasValue && parms.techLevel > RemoveModernStuff.MAX_TECHLEVEL)
+            {
                 parms.techLevel = RemoveModernStuff.MAX_TECHLEVEL;
+            }
+        }
+
+        public static bool FactionManagerFirstFactionOfDefPrefix(ref FactionDef facDef)
+        {
+            if (ModStuff.Settings.LimitTechnology && facDef != null && facDef.techLevel > RemoveModernStuff.MAX_TECHLEVEL)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public static bool BackCompatibilityFactionManagerPostLoadInitPrefix()
+        {
+            return !ModStuff.Settings.LimitTechnology;
         }
 
         //No one travels in transport pods in the medieval times

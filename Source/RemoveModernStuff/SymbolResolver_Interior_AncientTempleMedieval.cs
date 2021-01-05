@@ -11,14 +11,16 @@ namespace TheThirdAge
         public override void Resolve(ResolveParams rp)
         {
             List<Thing> list = ThingSetMakerDefOf.MapGen_AncientTempleContents.root.Generate();
-            for (int i = 0; i < list.Count; i++)
+            for (var i = 0; i < list.Count; i++)
             {
                 ResolveParams resolveParams = rp;
                 resolveParams.singleThingToSpawn = list[i];
                 BaseGen.symbolStack.Push("thing", resolveParams);
             }
             if (ModLister.AllInstalledMods.FirstOrDefault(x => x.enabled && x.Name == "Lord of the Rims - Men and Beasts") != null)
+            {
                 SpawnGroups(rp);
+            }
 
             if (rp.rect.Width >= MinSizeForShrines.x && rp.rect.Height >= MinSizeForShrines.z)
             {

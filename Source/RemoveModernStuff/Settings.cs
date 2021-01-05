@@ -9,8 +9,8 @@ namespace TheThirdAge
         // Token: 0x06000063 RID: 99 RVA: 0x00004630 File Offset: 0x00002830
         public void DoWindowContents(Rect canvas)
         {
-            float gap = 8f;
-            Listing_Standard listing_Standard = new Listing_Standard
+            var gap = 8f;
+            var listing_Standard = new Listing_Standard
             {
                 ColumnWidth = canvas.width
             };

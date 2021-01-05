@@ -1,23 +1,22 @@
 ﻿using System.Text;
 using UnityEngine;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Xml;
+using HarmonyLib;
+using JetBrains.Annotations;
+using RimWorld;
+using RimWorld.BaseGen;
+using Verse;
 
 namespace TheThirdAge
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Reflection;
-    using System.Xml;
-    using HarmonyLib;
-    using JetBrains.Annotations;
-    using RimWorld;
-    using RimWorld.BaseGen;
-    using Verse;
-
     [StaticConstructorOnStartup]
     public static class RemoveModernStuff
     {
-        public const TechLevel MAX_TECHLEVEL = TechLevel.Medieval;
+        public static TechLevel MAX_TECHLEVEL = TechLevel.Medieval;
         private static int removedDefs;
         private static readonly StringBuilder DebugString = new StringBuilder();
 
@@ -26,7 +25,12 @@ namespace TheThirdAge
 
         static RemoveModernStuff()
         {
-            if (!ModStuff.Settings.LimitTechnology) return;
+            if (!ModStuff.Settings.LimitTechnology)
+            {
+                MAX_TECHLEVEL = TechLevel.Archotech;
+                return;
+            }
+
             DebugString.AppendLine("Lord of the Rings - The Third Age - Start Removal Log");
             DebugString.AppendLine("Tech Limiter Active: Max Level = " + MAX_TECHLEVEL.ToString());
             GiveApproppriateTechLevels();
@@ -54,7 +58,9 @@ namespace TheThirdAge
                 foreach (var tag in tags)
                 {
                     if (tag.StartsWith("CE_AutoEnableCrafting"))
+                    {
                         thing.tradeTags.Remove(tag);
+                    }
                 }
             }
 
@@ -94,21 +100,27 @@ namespace TheThirdAge
             FieldInfo getThingInfo =
                 typeof(ScenPart_ThingCount).GetField("thingDef", BindingFlags.NonPublic | BindingFlags.Instance);
             foreach (ScenarioDef def in DefDatabase<ScenarioDef>.AllDefs)
+            {
                 foreach (ScenPart sp in def.scenario.AllParts)
+                {
                     if (sp is ScenPart_ThingCount && things.Contains((ThingDef)getThingInfo?.GetValue(sp)))
                     {
                         def.scenario.RemovePart(sp);
                         DebugString.AppendLine("- " + sp.Label + " " + ((ThingDef)getThingInfo?.GetValue(sp)).label +
                                                " from " + def.label);
                     }
+                }
+            }
 
             foreach (ThingCategoryDef thingCategoryDef in DefDatabase<ThingCategoryDef>.AllDefs)
+            {
                 thingCategoryDef.childThingDefs.RemoveAll(things.Contains);
+            }
 
             DebugString.AppendLine("Stock Generator Part Cleanup");
             foreach (TraderKindDef tkd in DefDatabase<TraderKindDef>.AllDefs)
             {
-                for (int i = tkd.stockGenerators.Count - 1; i >= 0; i--)
+                for (var i = tkd.stockGenerators.Count - 1; i >= 0; i--)
                 {
                     StockGenerator stockGenerator = tkd.stockGenerators[i];
 
@@ -132,9 +144,14 @@ namespace TheThirdAge
                             thingList.RemoveAll(things.Contains);
 
                             if (thingList.NullOrEmpty())
+                            {
                                 tkd.stockGenerators.Remove(stockGenerator);
+                            }
                             else
+                            {
                                 thingListTraverse.SetValue(thingList);
+                            }
+
                             break;
                     }
                 }
@@ -186,8 +203,11 @@ namespace TheThirdAge
             fieldNames.Remove("defName");
             foreach (FieldInfo fi in fieldNames.Select(name => AccessTools.Field(typeof(RoadDef), name)))
             {
-                object fieldValue = fi.GetValue(originalRoad);
-                foreach (RoadDef targetRoad in targetRoads) fi.SetValue(targetRoad, fieldValue);
+                var fieldValue = fi.GetValue(originalRoad);
+                foreach (RoadDef targetRoad in targetRoads)
+                {
+                    fi.SetValue(targetRoad, fieldValue);
+                }
             }
 
             DebugString.AppendLine("Special Hediff Removal List");
@@ -220,7 +240,9 @@ namespace TheThirdAge
             MethodInfo resolveDesignatorsAgain = typeof(DesignationCategoryDef).GetMethod("ResolveDesignators",
                 BindingFlags.NonPublic | BindingFlags.Instance);
             foreach (DesignationCategoryDef dcd in DefDatabase<DesignationCategoryDef>.AllDefs)
+            {
                 resolveDesignatorsAgain?.Invoke(dcd, null);
+            }
 
             DebugString.AppendLine("PawnKindDef Removal List");
             RemoveStuffFromDatabase(typeof(DefDatabase<PawnKindDef>),
@@ -242,9 +264,11 @@ namespace TheThirdAge
             DebugString.AppendLine("- GenStep_Turrets");
             DebugString.AppendLine("- GenStep_Power");
             foreach (MapGeneratorDef mgd in DefDatabase<MapGeneratorDef>.AllDefs)
+            {
                 mgd.genSteps.RemoveAll(gs =>
                     gs.genStep is GenStep_SleepingMechanoids || gs.genStep is GenStep_Turrets ||
                     gs.genStep is GenStep_Power);
+            }
 
             DebugString.AppendLine("RuleDef Removal List");
             DebugString.AppendLine("- SymbolResolver_AncientCryptosleepCasket");
@@ -260,7 +284,9 @@ namespace TheThirdAge
                     sr is SymbolResolver_EdgeMannedMortar || sr is SymbolResolver_FirefoamPopper ||
                     sr is SymbolResolver_MannedMortar || sr is SymbolResolver_OutdoorLighting);
                 if (rd.resolvers.Count == 0)
+                {
                     rd.resolvers.Add(new SymbolResolver_AddWortToFermentingBarrels());
+                }
             }
 
             Log.Message("Removed " + removedDefs + " modern defs");
@@ -287,7 +313,11 @@ namespace TheThirdAge
         private static void RemoveStuffFromDatabase(Type databaseType, [NotNull] IEnumerable<Def> defs)
         {
             IEnumerable<Def> enumerable = defs as Def[] ?? defs.ToArray();
-            if (!enumerable.Any()) return;
+            if (!enumerable.Any())
+            {
+                return;
+            }
+
             Traverse rm = Traverse.Create(databaseType).Method("Remove", enumerable.First());
             foreach (Def def in enumerable)
             {

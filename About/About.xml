@@ -27,38 +27,42 @@
     <li>jecrell.jecstools</li>
     <li>CETeam.CombatExtended</li>
   </loadAfter>
-  <description>Update of erdelf and Jecrells mod
+  <description>[img]https://i.imgur.com/WAEzk68.png[/img]
+Update of erdelf and Jecrells mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1400245220
-
-[img]https://i.imgur.com/GYswkZ7.png[/img]
-
-Support-chat:
-https://invite.gg/mlie
-
-Non-steam version:
-https://github.com/emipa606/LordoftheRimsTheThirdAge
 
 - This is an unofficial port
 - This will be removed when/if Jecrell comes back
+- Added an option to disable the limit of technology, to replace the mod: Lord of the Rims - Unlimited
 - Added support for Combat Extended
+
+[img]https://i.imgur.com/7Gzt3Rg.png[/img]
+
+[table]
+	[tr]
+		[td][url=https://invite.gg/Mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td]
+		[td][url=https://github.com/emipa606/LordoftheRimsTheThirdAge][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
+	[/tr]
+[/table]
 	
---- Original Description ---
-Removes all items, incidents, and technology that go beyond Medieval.
-Adds and rebalances new content to make a more interesting Medieval playthrough.
+[img]https://i.imgur.com/NOW7jU1.png[/img]
+
+[h1]Removes all items, incidents, and technology that go beyond Medieval.
+Adds and rebalances new content to make a more interesting Medieval playthrough.[/h1]
 
 Adds a blacksmith forge to forge steel.
-Adds iron and mithril.
+Adds iron and mithril.  
 Rebalances iron into the primary mineable resource, rather than steel.
 Adds Medieval pantries and salt barrels for storing food in the medieval period.
 Adds two new scenarios for Lord of the Rings races.
-
+	
 To do: Add a certain ring. Fix various bugs.
+  
 
+[h1] !!! DO NOT USE TOGETHER WITH LOTR UNLIMITED !!! [/h1]
 
-!!! DO NOT USE TOGETHER WITH LOTR UNLIMITED !!!
-
-Mod Order:
-- Put The Third Age high on your mod order list
+[h1]Mod Order:[/h1]
+- Put The Third Age [b]high[/b] on your mod order list
 E.g.
 HugsLib
 JecsTools
@@ -66,7 +70,14 @@ Humanoid Alien Races 2.0
 DoorsExpanded
 Lord of the Rings - The Third Age
 
-Recommended:
+[h1]Recommended:[/h1]
 - HugsLib (Helps mods run together smoothly with The Third Age)
-</description>
+
+Join the Lord of the Rims channel to discuss the mod.
+https://discord.gg/jcMf4am
+
+[h1]Psst...
+Still there fellow RimWorlder?
+Want to buy me a coffee? Perhaps more mods for RimWorld?
+Consider donating to my Patreon, here: https://www.patreon.com/jecrell[/h1]</description>
 </ModMetaData>
