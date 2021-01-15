@@ -75,6 +75,12 @@ namespace TheThirdAge
             var defsToAdd = new HashSet<ThingDef>();
             foreach (ThingDef td in DefDatabase<ThingDef>.AllDefs.Where(t => t.IsMeat))
             {
+                //Log.Message($"Starting with meattype {td.defName}");
+                if(!td.HasComp(typeof(CompRottable)))
+                {
+                    //Log.Message($"Skipping {td.defName} as its not rottable");
+                    continue;
+                }
                 var d = new ThingDef
                 {
                     resourceReadoutPriority = td.resourceReadoutPriority, //ResourceCountPriority.Middle;
