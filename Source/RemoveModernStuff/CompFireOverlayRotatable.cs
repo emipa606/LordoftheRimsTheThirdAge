@@ -1,30 +1,35 @@
 ﻿using System;
 using UnityEngine;
 using Verse;
+using Random = UnityEngine.Random;
 
 namespace RimWorld
 {
-
     [StaticConstructorOnStartup]
     public class CompFireOverlayRotatable : ThingComp
     {
-        protected CompRefuelable refuelableComp;
         // This need to be readonly, otherwise the game will complain about the thread it's being loaded.
         private static readonly GraphicRotatable FireGraphic = new GraphicRotatable(new GraphicRequest(null,
-                                                        "Things/Special/Fire",
-                                                        ShaderDatabase.TransparentPostLight,
-                                                        Vector2.one, Color.white, Color.white,
-                                                        null, 0, null));
+            "Things/Special/Fire",
+            ShaderDatabase.TransparentPostLight,
+            Vector2.one, Color.white, Color.white,
+            null, 0, null));
 
-        public CompProperties_FireOverlayRotatable Props =>
-            (CompProperties_FireOverlayRotatable)props;
+        private ThingDef def;
+        private int mem1;
+        private int mem2;
+        private CompRefuelable refuelableComp;
 
-        ThingWithComps thing = null;
-        ThingDef def = null;
+        private int scramble;
 
-        int scramble = 0;
-        int mem1 = 0;
-        int mem2 = 0;
+        private ThingWithComps thing;
+
+        static CompFireOverlayRotatable()
+        {
+        }
+
+        private CompProperties_FireOverlayRotatable Props =>
+            (CompProperties_FireOverlayRotatable) props;
 
         public override void Initialize(CompProperties props)
         {
@@ -40,13 +45,8 @@ namespace RimWorld
             //LoadGraphics();
         }
 
-        void Awake()
-        {
 
-        }
-
-
-/*
+        /*
         public void LoadGraphics()
         {
             try
@@ -73,17 +73,18 @@ namespace RimWorld
                 {
                     return;
                 }
+
                 if (def == null)
                 {
                     return;
                 }
-                if (!ShouldRender(thing, def))
+
+                if (!ShouldRender())
                 {
                     return;
                 }
 
                 Vector3 offset;
-                var y = 0;
 
                 switch (thing.Rotation.AsInt)
                 {
@@ -103,12 +104,12 @@ namespace RimWorld
                         throw new Exception($"TTA: CompFire found thing {thing} with invalid rotation.");
                 }
 
-                Vector3 drawPosRotated = thing.DrawPos + offset;
+                var drawPosRotated = thing.DrawPos + offset;
                 var drawSizeRotated = new Vector3(Props.fireSize.x, 1f, Props.fireSize.y);
-                Quaternion quaternion = Quaternion.identity;
+                var quaternion = Quaternion.identity;
 
-                y = ((int)def.altitudeLayer) + (Props.aboveThing == true ? 1 : -1);
-                drawPosRotated.y = Altitudes.AltitudeFor((AltitudeLayer)y);
+                var y = (int) def.altitudeLayer + (Props.aboveThing ? 1 : -1);
+                drawPosRotated.y = ((AltitudeLayer) y).AltitudeFor();
 
                 FireFlicker(drawPosRotated, drawSizeRotated, quaternion);
             }
@@ -122,7 +123,7 @@ namespace RimWorld
         {
             if (scramble == 0)
             {
-                scramble = UnityEngine.Random.Range(0, 24735);
+                scramble = Random.Range(0, 24735);
             }
 
             var timeTicks = Find.TickManager.TicksGame;
@@ -133,54 +134,46 @@ namespace RimWorld
 
             if (thisIndex != mem1)
             {
-                mem2 = UnityEngine.Random.Range(0, FireGraphic.SubGraphics.Length);
+                mem2 = Random.Range(0, FireGraphic.SubGraphics.Length);
                 mem1 = thisIndex;
             }
 
-            Vector3 radial = GenRadial
+            var radial = GenRadial
                 .RadialPattern[_scramble % GenRadial.RadialPattern.Length]
                 .ToVector3() / GenRadial.MaxRadialPatternRadius;
             radial *= 0.05f;
 
-            Vector3 newPosRotated = drawPosRotated + (radial * drawSizeRotated.x);
-            Graphic graphic = FireGraphic.SubGraphics[mem2];
+            var newPosRotated = drawPosRotated + (radial * drawSizeRotated.x);
+            var graphic = FireGraphic.SubGraphics[mem2];
             Matrix4x4 matrix = default;
             matrix.SetTRS(newPosRotated, quaternion, drawSizeRotated);
             Graphics.DrawMesh(MeshPool.plane10, matrix, graphic.MatSingle, 0);
         }
 
-        public bool ShouldRender(ThingWithComps thing, ThingDef def)
+        private bool ShouldRender()
         {
             if (Props.dependency == DependencyType.None)
             {
                 return true;
             }
 
-            if (Props.dependency == DependencyType.Fuel)
-            {
-                if (refuelableComp == null)
-                {
-                    return false;
-                }
-                else
-                {
-                    return refuelableComp.HasFuel;
-                }
-            }
-            else
+            if (Props.dependency != DependencyType.Fuel)
             {
                 return false;
             }
+
+            if (refuelableComp == null)
+            {
+                return false;
+            }
+
+            return refuelableComp.HasFuel;
         }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
             refuelableComp = parent.GetComp<CompRefuelable>();
-        }
-
-        static CompFireOverlayRotatable()
-        {
         }
     }
 }

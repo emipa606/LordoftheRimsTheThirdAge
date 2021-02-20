@@ -3,7 +3,6 @@ using System.Linq;
 using HarmonyLib;
 using RimWorld;
 using RimWorld.BaseGen;
-using UnityEngine;
 using Verse;
 
 namespace TheThirdAge
@@ -13,9 +12,9 @@ namespace TheThirdAge
     {
         private static int movedDefs;
         private static int steelDefs;
+
         static OnStartup()
         {
-
             HandleAncientShrines();
 
             MoveRecipesToSmithy();
@@ -25,20 +24,21 @@ namespace TheThirdAge
             ChangeSteelToIron();
 
             ReplaceModernResources();
-
         }
 
         private static void AddCramRecipes()
         {
-            if (TTADefOf.FueledStove is ThingDef fueldStove && fueldStove?.recipes?.Count > 0)
+            if (!(TTADefOf.FueledStove is ThingDef fueldStove) || !(fueldStove.recipes?.Count > 0))
             {
-                if (fueldStove.recipes.Any(x => x == TTADefOf.LotR_Make_Cram))
-                {
-                    return;
-                }
-
-                fueldStove.recipes.Add(TTADefOf.LotR_Make_Cram);
+                return;
             }
+
+            if (fueldStove.recipes.Any(x => x == TTADefOf.LotR_Make_Cram))
+            {
+                return;
+            }
+
+            fueldStove.recipes.Add(TTADefOf.LotR_Make_Cram);
         }
 
         private static void HandleAncientShrines()
@@ -52,35 +52,40 @@ namespace TheThirdAge
             {
                 scatterStep.genStep = new GenStep_ScatterShrinesMedieval();
             }
+
             if (TTADefOf.Interior_AncientTemple is RuleDef templeInterior)
             {
                 var symbolResolverInteriorAncientTempleMedieval = new SymbolResolver_Interior_AncientTempleMedieval
                 {
                     minRectSize = new IntVec2(4, 3)
                 };
-                templeInterior.resolvers = new List<SymbolResolver> { symbolResolverInteriorAncientTempleMedieval };
+                templeInterior.resolvers = new List<SymbolResolver> {symbolResolverInteriorAncientTempleMedieval};
             }
-            if (TTADefOf.AncientShrinesGroup is RuleDef shrineGroup)
+
+            if (!(TTADefOf.AncientShrinesGroup is RuleDef shrineGroup))
             {
-                var symbolResolverAncientShrinesGroupMedieval = new SymbolResolver_AncientShrinesGroupMedieval
-                {
-                    minRectSize = new IntVec2(4, 3)
-                };
-                shrineGroup.resolvers = new List<SymbolResolver> { symbolResolverAncientShrinesGroupMedieval };
+                return;
             }
+
+            var symbolResolverAncientShrinesGroupMedieval = new SymbolResolver_AncientShrinesGroupMedieval
+            {
+                minRectSize = new IntVec2(4, 3)
+            };
+            shrineGroup.resolvers = new List<SymbolResolver> {symbolResolverAncientShrinesGroupMedieval};
         }
 
         public static void AddSaltedMeats()
         {
             var defsToAdd = new HashSet<ThingDef>();
-            foreach (ThingDef td in DefDatabase<ThingDef>.AllDefs.Where(t => t.IsMeat))
+            foreach (var td in DefDatabase<ThingDef>.AllDefs.Where(t => t.IsMeat))
             {
                 //Log.Message($"Starting with meattype {td.defName}");
-                if(!td.HasComp(typeof(CompRottable)))
+                if (!td.HasComp(typeof(CompRottable)))
                 {
                     //Log.Message($"Skipping {td.defName} as its not rottable");
                     continue;
                 }
+
                 var d = new ThingDef
                 {
                     resourceReadoutPriority = td.resourceReadoutPriority, //ResourceCountPriority.Middle;
@@ -115,8 +120,10 @@ namespace TheThirdAge
                 d.category = td.category; // ThingCategory.Item;
                 d.description = td.description;
                 d.useHitPoints = td.useHitPoints; // true;
-                d.SetStatBaseValue(StatDefOf.MaxHitPoints, td.GetStatValueAbstract(StatDefOf.MaxHitPoints) * 1.15f); // 65f
-                d.SetStatBaseValue(StatDefOf.DeteriorationRate, td.GetStatValueAbstract(StatDefOf.DeteriorationRate) * 0.5f); // 3f
+                d.SetStatBaseValue(StatDefOf.MaxHitPoints,
+                    td.GetStatValueAbstract(StatDefOf.MaxHitPoints) * 1.15f); // 65f
+                d.SetStatBaseValue(StatDefOf.DeteriorationRate,
+                    td.GetStatValueAbstract(StatDefOf.DeteriorationRate) * 0.5f); // 3f
                 d.SetStatBaseValue(StatDefOf.Mass, td.GetStatValueAbstract(StatDefOf.Mass)); // 0.025f
                 d.SetStatBaseValue(StatDefOf.Flammability, td.GetStatValueAbstract(StatDefOf.Flammability)); // 0.5f
                 d.SetStatBaseValue(StatDefOf.Nutrition, td.GetStatValueAbstract(StatDefOf.Nutrition) * 1.6f);
@@ -128,11 +135,16 @@ namespace TheThirdAge
                 {
                     d.thingCategories = new List<ThingCategoryDef>();
                 }
-                DirectXmlCrossRefLoader.RegisterListWantsCrossRef<ThingCategoryDef>(d.thingCategories, "LotR_MeatRawSalted", d);
-                d.ingestible = new IngestibleProperties { parent = d };
-                d.ingestible.foodType = td.ingestible.foodType; // FoodTypeFlags.Meat;
-                d.ingestible.preferability = td.ingestible.preferability; // FoodPreferability.RawBad;
-                DirectXmlCrossRefLoader.RegisterObjectWantsCrossRef(d.ingestible, "tasteThought", ThoughtDefOf.AteRawFood.defName);
+
+                DirectXmlCrossRefLoader.RegisterListWantsCrossRef(d.thingCategories, "LotR_MeatRawSalted", d);
+                d.ingestible = new IngestibleProperties
+                {
+                    parent = d, foodType = td.ingestible.foodType, preferability = td.ingestible.preferability
+                };
+                // FoodTypeFlags.Meat;
+                // FoodPreferability.RawBad;
+                DirectXmlCrossRefLoader.RegisterObjectWantsCrossRef(d.ingestible, "tasteThought",
+                    ThoughtDefOf.AteRawFood.defName);
                 d.ingestible.ingestEffect = td.ingestible.ingestEffect;
                 d.ingestible.ingestSound = td.ingestible.ingestSound;
                 d.ingestible.specialThoughtDirect = td.ingestible.specialThoughtDirect;
@@ -146,8 +158,9 @@ namespace TheThirdAge
                 d.ingestible.sourceDef = td.ingestible.sourceDef;
                 defsToAdd.Add(d);
             }
+
             TTADefOf.LotR_MeatRawSalted.parent = ThingCategoryDefOf.MeatRaw;
-            while (defsToAdd?.Count > 0)
+            while (defsToAdd.Count > 0)
             {
                 var thingDef = defsToAdd.FirstOrDefault();
                 if (thingDef != null)
@@ -161,6 +174,7 @@ namespace TheThirdAge
                             TTADefOf.LotR_MeatRawSalted.childThingDefs.Add(thingDef);
                         }
                     }
+
                     defsToAdd.Remove(thingDef);
                 }
                 else
@@ -175,7 +189,7 @@ namespace TheThirdAge
         private static void MoveRecipesToSmithy()
         {
             movedDefs = 0;
-            foreach (ThingDef td in DefDatabase<ThingDef>.AllDefs.Where(t =>
+            foreach (var td in DefDatabase<ThingDef>.AllDefs.Where(t =>
                 (t?.recipeMaker?.recipeUsers?.Contains(ThingDef.Named("FueledSmithy")) ?? false) ||
                 (t?.recipeMaker?.recipeUsers?.Contains(ThingDef.Named("TableMachining")) ?? false)))
             {
@@ -184,7 +198,8 @@ namespace TheThirdAge
                 td.recipeMaker.recipeUsers.Add(ThingDef.Named("LotR_TableSmithy"));
                 movedDefs++;
             }
-            foreach (RecipeDef rd in DefDatabase<RecipeDef>.AllDefs.Where(d =>
+
+            foreach (var rd in DefDatabase<RecipeDef>.AllDefs.Where(d =>
                 (d.recipeUsers?.Contains(ThingDef.Named("TableMachining")) ?? false) ||
                 (d.recipeUsers?.Contains(ThingDef.Named("FueledSmithy")) ?? false)))
             {
@@ -193,9 +208,11 @@ namespace TheThirdAge
                 rd.recipeUsers.Add(ThingDef.Named("LotR_TableSmithy"));
                 movedDefs++;
             }
+
             Log.Message("Moved " + movedDefs + " from Machining Table to Smithy.");
 
-            if (!ModStuff.Settings.LimitTechnology || ModLister.GetActiveModWithIdentifier("CETeam.CombatExtended".ToLower()) == null)
+            if (!ModStuff.Settings.LimitTechnology ||
+                ModLister.GetActiveModWithIdentifier("CETeam.CombatExtended".ToLower()) == null)
             {
                 return;
             }
@@ -210,12 +227,8 @@ namespace TheThirdAge
             foreach (var recipieDefName in ammoRecipiesToAdd)
             {
                 var recipieDef = DefDatabase<RecipeDef>.GetNamedSilentFail(recipieDefName);
-                if (recipieDef == null)
-                {
-                    continue;
-                }
 
-                recipieDef.recipeUsers.Add(ThingDef.Named("ElectricSmithy"));
+                recipieDef?.recipeUsers.Add(ThingDef.Named("ElectricSmithy"));
             }
 
             var things = from thing in DefDatabase<ThingDef>.AllDefs where thing.tradeTags != null select thing;
@@ -230,9 +243,10 @@ namespace TheThirdAge
                     }
                 }
             }
-            var enumerable = new List<Def> { DefDatabase<ResearchTabDef>.GetNamed("CE_Turrets") };
-            Traverse rm = Traverse.Create(typeof(DefDatabase<ResearchTabDef>)).Method("Remove", enumerable.First());
-            foreach (Def def in enumerable)
+
+            var enumerable = new List<Def> {DefDatabase<ResearchTabDef>.GetNamed("CE_Turrets")};
+            var rm = Traverse.Create(typeof(DefDatabase<ResearchTabDef>)).Method("Remove", enumerable.First());
+            foreach (var def in enumerable)
             {
                 rm.GetValue(def);
             }
@@ -246,13 +260,17 @@ namespace TheThirdAge
             }
 
             steelDefs = 0;
-            foreach (ThingDef tdd in DefDatabase<ThingDef>.AllDefs.Where(tt =>
+            foreach (var tdd in DefDatabase<ThingDef>.AllDefs.Where(tt =>
                 tt?.costList?.Any(y => y?.thingDef == ThingDefOf.Steel) ?? false))
             {
                 var tempCost = tdd.costList.FirstOrDefault(z => z.thingDef == ThingDefOf.Steel);
-                var newTempCost = new ThingDefCountClass(ThingDef.Named("LotR_Iron"), tempCost.count);
-                tdd.costList.Remove(tempCost);
-                tdd.costList.Add(newTempCost);
+                if (tempCost != null)
+                {
+                    var newTempCost = new ThingDefCountClass(ThingDef.Named("LotR_Iron"), tempCost.count);
+                    tdd.costList.Remove(tempCost);
+                    tdd.costList.Add(newTempCost);
+                }
+
                 steelDefs++;
             }
 
@@ -291,12 +309,14 @@ namespace TheThirdAge
             ThingDef.Named("MineablePlasteel").building.mineableScatterCommonality = 0.0f;
             ThingDef.Named("MineableUranium").building.mineableScatterCommonality = 0.0f;
             ThingDef.Named("MineableComponentsIndustrial").building.mineableScatterCommonality = 0.0f;
-            if (FactionDefOf.PlayerColony?.apparelStuffFilter?.Allows(ThingDef.Named("Synthread")) ?? false)
+            if (!(FactionDefOf.PlayerColony?.apparelStuffFilter?.Allows(ThingDef.Named("Synthread")) ?? false))
             {
-                FactionDefOf.PlayerColony.apparelStuffFilter = new ThingFilter();
-                FactionDefOf.PlayerColony.apparelStuffFilter.SetDisallowAll();
-                FactionDefOf.PlayerColony.apparelStuffFilter.SetAllow(ThingDefOf.Cloth, true);
+                return;
             }
+
+            FactionDefOf.PlayerColony.apparelStuffFilter = new ThingFilter();
+            FactionDefOf.PlayerColony.apparelStuffFilter.SetDisallowAll();
+            FactionDefOf.PlayerColony.apparelStuffFilter.SetAllow(ThingDefOf.Cloth, true);
         }
     }
 }

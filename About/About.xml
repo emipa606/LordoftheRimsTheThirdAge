@@ -59,7 +59,7 @@ Adds two new scenarios for Lord of the Rings races.
 To do: Add a certain ring. Fix various bugs.
   
 
-[h1] !!! DO NOT USE TOGETHER WITH LOTR UNLIMITED !!! [/h1]
+[strike][h1] !!! DO NOT USE TOGETHER WITH LOTR UNLIMITED !!! [/h1][/strike]
 
 [h1]Mod Order:[/h1]
 - Put The Third Age [b]high[/b] on your mod order list
@@ -86,6 +86,6 @@ https://discord.gg/jcMf4am
 [*] Do not report errors by making a discussion-thread, I get no notification of that.
 [*] If you have the solution for a problem, please post it to the GitHub repository.
 [/list]
+
 </description>
 </ModMetaData>
-

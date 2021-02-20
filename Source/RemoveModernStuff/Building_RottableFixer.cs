@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Linq;
 using RimWorld;
 using Verse;
 
@@ -9,6 +7,7 @@ namespace TheThirdAge
     public class Building_RottableFixer : Building_Storage, IStoreSettingsParent
     {
         private StorageSettings curStorageSettings;
+
         StorageSettings IStoreSettingsParent.GetParentStoreSettings()
         {
             return curStorageSettings;
@@ -20,9 +19,9 @@ namespace TheThirdAge
             curStorageSettings = new StorageSettings();
             curStorageSettings.CopyFrom(def.building.fixedStorageSettings);
             foreach (var thingDef in DefDatabase<ThingDef>.AllDefs.Where(x =>
-                x.HasComp(typeof(CompRottable)) || (def == TTADefOf.LotR_SaltBarrel &&
-                                                    (x.thingCategories?.Contains(TTADefOf.LotR_MeatRawSalted) ??
-                                                     false))))
+                x.HasComp(typeof(CompRottable)) || def == TTADefOf.LotR_SaltBarrel &&
+                (x.thingCategories?.Contains(TTADefOf.LotR_MeatRawSalted) ??
+                 false)))
             {
                 if (!curStorageSettings.filter.Allows(thingDef))
                 {
@@ -48,31 +47,25 @@ namespace TheThirdAge
             {
                 foreach (var thing in pos.GetThingList(Map))
                 {
-                    if (thing is ThingWithComps thingWithComps)
+                    if (!(thing is ThingWithComps thingWithComps))
                     {
-                        var rottable = thing.TryGetComp<CompRottable>();
-                        if (rottable != null && !(rottable is CompMedievalRottable))
-                        {
-                            var newRot = new CompMedievalRottable();
-                            thingWithComps.AllComps.Remove(rottable);
-                            thingWithComps.AllComps.Add(newRot);
-                            newRot.props = rottable.props;
-                            newRot.parent = thingWithComps;
-                            newRot.RotProgress = rottable.RotProgress;
-                        }
+                        continue;
                     }
+
+                    var rottable = thing.TryGetComp<CompRottable>();
+                    if (rottable == null || rottable is CompMedievalRottable)
+                    {
+                        continue;
+                    }
+
+                    var newRot = new CompMedievalRottable();
+                    thingWithComps.AllComps.Remove(rottable);
+                    thingWithComps.AllComps.Add(newRot);
+                    newRot.props = rottable.props;
+                    newRot.parent = thingWithComps;
+                    newRot.RotProgress = rottable.RotProgress;
                 }
             }
-
-        }
-
-        public override void ExposeData()
-        {
-            base.ExposeData();
-//            Scribe_Deep.Look<StorageSettings>(ref this.curStorageSettings, "curStorageSettings", new object[]
-//            {
-//                this
-//            });
         }
     }
 }
