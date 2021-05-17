@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Xml;
 using HarmonyLib;
 using JetBrains.Annotations;
 using RimWorld;
@@ -30,6 +29,7 @@ namespace TheThirdAge
                 MaxTechlevel = TechLevel.Archotech;
                 return;
             }
+
 
             DebugString.AppendLine("Lord of the Rings - The Third Age - Start Removal Log");
             DebugString.AppendLine("Tech Limiter Active: Max Level = " + MaxTechlevel);
@@ -254,6 +254,14 @@ namespace TheThirdAge
             DebugString.AppendLine("FactionDef Removal List");
             RemoveStuffFromDatabase(typeof(DefDatabase<FactionDef>),
                 DefDatabase<FactionDef>.AllDefs.Where(fd => !fd.isPlayer && fd.techLevel > MaxTechlevel));
+            if (ModLister.RoyaltyInstalled)
+            {
+                var incident = DefDatabase<IncidentDef>.GetNamedSilentFail("CaravanArrivalTributeCollector");
+                if (incident != null)
+                {
+                    RemoveStuffFromDatabase(typeof(DefDatabase<IncidentDef>), new List<Def> {incident});
+                }
+            }
 
             DebugString.AppendLine("BackstoryDef Removal List");
             BackstoryHandler.RemoveIncompatibleBackstories(DebugString);
@@ -324,24 +332,6 @@ namespace TheThirdAge
                 DebugString.AppendLine("- " + def.label);
                 rm.GetValue(def);
             }
-        }
-    }
-
-    [UsedImplicitly]
-    public class PatchOperationRemoveModernStuff : PatchOperation
-    {
-        /*
-        private static readonly PatchOperationRemove removeOperation = new PatchOperationRemove();
-        private static readonly Traverse setXpathTraverse = Traverse.Create(root: removeOperation).Field(name: "xpath");
-        private static readonly string xpath = $"//techLevel[.='{string.Join(separator: "' or .='", value: Enum.GetValues(enumType: typeof(TechLevel)).Cast<TechLevel>().Where(predicate: tl => tl > RemoveModernStuff.MAX_TECHLEVEL).Select(selector: tl => tl.ToString()).ToArray())}']/..";
-        */
-        protected override bool ApplyWorker(XmlDocument xml)
-        {
-            /*
-            setXpathTraverse.SetValue(value: xpath);
-            removeOperation.Apply(xml: xml);
-            */
-            return true;
         }
     }
 }

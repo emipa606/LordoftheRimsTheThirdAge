@@ -3,13 +3,6 @@ using Verse;
 
 namespace RimWorld
 {
-    public enum AutoRotate
-    {
-        None,
-        Single,
-        Multi
-    }
-
     public class GraphicRotatable : Graphic_Collection
     {
         private readonly AutoRotate autoRotate;

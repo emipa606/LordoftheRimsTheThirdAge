@@ -59,7 +59,8 @@ namespace TheThirdAge
             harmony.Patch(AccessTools.Method(typeof(FactionManager), "FirstFactionOfDef", new[] {typeof(FactionDef)}),
                 new HarmonyMethod(typeof(RemoveModernStuffHarmony), nameof(FactionManagerFirstFactionOfDefPrefix)));
 
-            harmony.Patch(AccessTools.Method(typeof(BackCompatibility), "FactionManagerPostLoadInit", new Type[] { }),
+            harmony.Patch(
+                AccessTools.Method(typeof(BackCompatibility), "FactionManagerPostLoadInit", Array.Empty<Type>()),
                 new HarmonyMethod(typeof(RemoveModernStuffHarmony),
                     nameof(BackCompatibilityFactionManagerPostLoadInitPrefix)));
 
@@ -197,9 +198,6 @@ namespace TheThirdAge
 
             __result = false;
             return false;
-            // ReSharper disable once HeuristicUnreachableCode
-#pragma warning disable 162
-#pragma warning restore 162
         }
 
         // No solid bios, to avoid conflicts.
