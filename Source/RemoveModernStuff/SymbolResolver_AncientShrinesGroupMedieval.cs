@@ -28,51 +28,53 @@ namespace TheThirdAge
             if (podContentsType == null)
             {
                 var value = Rand.Value;
-                if (value < 0.5f)
+                switch (value)
                 {
-                    podContentsType = null;
-                }
-                else if (value < 0.7f)
-                {
-                    podContentsType = PodContentsType.Slave;
-                }
-                else
-                {
-                    podContentsType = PodContentsType.AncientHostile;
+                    case < 0.5f:
+                        break;
+                    case < 0.7f:
+                        podContentsType = PodContentsType.Slave;
+                        break;
+                    default:
+                        podContentsType = PodContentsType.AncientHostile;
+                        break;
                 }
             }
 
             var ancientCryptosleepCasketGroupID = rp.ancientCryptosleepCasketGroupID;
-            var value2 = ancientCryptosleepCasketGroupID == null
-                ? Find.UniqueIDsManager.GetNextAncientCryptosleepCasketGroupID()
-                : ancientCryptosleepCasketGroupID.Value;
+            var value2 = ancientCryptosleepCasketGroupID ??
+                         Find.UniqueIDsManager.GetNextAncientCryptosleepCasketGroupID();
             var num3 = 0;
             for (var i = 0; i < num2; i++)
             {
                 for (var j = 0; j < num; j++)
                 {
-                    if (!Rand.Chance(0.25f))
+                    if (Rand.Chance(0.25f))
                     {
-                        if (num3 >= 6)
-                        {
-                            break;
-                        }
-
-                        var rect = new CellRect(
-                            bottomLeft.x + (j * (StandardAncientShrineSize.x + 1)),
-                            bottomLeft.z + (i * (StandardAncientShrineSize.z + 1)),
-                            StandardAncientShrineSize.x,
-                            StandardAncientShrineSize.z);
-                        if (rect.FullyContainedWithin(rp.rect))
-                        {
-                            var resolveParams = rp;
-                            resolveParams.rect = rect;
-                            resolveParams.ancientCryptosleepCasketGroupID = value2;
-                            resolveParams.podContentsType = podContentsType;
-                            BaseGen.symbolStack.Push("ancientShrine", resolveParams);
-                            num3++;
-                        }
+                        continue;
                     }
+
+                    if (num3 >= 6)
+                    {
+                        break;
+                    }
+
+                    var rect = new CellRect(
+                        bottomLeft.x + (j * (StandardAncientShrineSize.x + 1)),
+                        bottomLeft.z + (i * (StandardAncientShrineSize.z + 1)),
+                        StandardAncientShrineSize.x,
+                        StandardAncientShrineSize.z);
+                    if (!rect.FullyContainedWithin(rp.rect))
+                    {
+                        continue;
+                    }
+
+                    var resolveParams = rp;
+                    resolveParams.rect = rect;
+                    resolveParams.ancientCryptosleepCasketGroupID = value2;
+                    resolveParams.podContentsType = podContentsType;
+                    BaseGen.symbolStack.Push("ancientShrine", resolveParams);
+                    num3++;
                 }
             }
         }

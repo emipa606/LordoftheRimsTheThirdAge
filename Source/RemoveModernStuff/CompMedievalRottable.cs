@@ -36,19 +36,18 @@ namespace TheThirdAge
             var factor = 1f;
             foreach (var thing in thingList)
             {
-                if (!(thing is Building_RottableFixer))
+                if (!(thing is Building_RottableFixer fixer))
                 {
                     continue;
                 }
 
-                var b = thing as Building_RottableFixer;
                 var isMeat = parent?.def.IsMeat ?? false;
-                if (!isMeat && b.def.defName == "LotR_PantryShelf")
+                if (!isMeat && fixer.def.defName == "LotR_PantryShelf")
                 {
                     factor = 3f;
                 }
 
-                if (b.def.defName == "LotR_SaltBarrel")
+                if (fixer.def.defName == "LotR_SaltBarrel")
                 {
                     factor = 15f;
                 }
@@ -68,17 +67,14 @@ namespace TheThirdAge
             {
                 if (num3 < 0.999f)
                 {
-                    sb.Append("CurrentlyRefrigerated".Translate(new object[]
-                    {
-                        ticksUntilRotAtCurrentTemp.ToStringTicksToPeriodVague()
-                    }) + ".");
+                    sb.Append(
+                        "CurrentlyRefrigerated".Translate(ticksUntilRotAtCurrentTemp.ToStringTicksToPeriodVague()) +
+                        ".");
                 }
                 else
                 {
-                    sb.Append("NotRefrigerated".Translate(new object[]
-                    {
-                        ticksUntilRotAtCurrentTemp.ToStringTicksToPeriodVague()
-                    }) + ".");
+                    sb.Append(
+                        "NotRefrigerated".Translate(ticksUntilRotAtCurrentTemp.ToStringTicksToPeriodVague()) + ".");
                 }
             }
 
@@ -126,10 +122,8 @@ namespace TheThirdAge
             {
                 if (parent.Position.GetSlotGroup(parent.Map) != null)
                 {
-                    Messages.Message("MessageRottedAwayInStorage".Translate(new object[]
-                    {
-                        parent.Label
-                    }).CapitalizeFirst(), MessageTypeDefOf.SilentInput);
+                    Messages.Message("MessageRottedAwayInStorage".Translate(parent.Label).CapitalizeFirst(),
+                        MessageTypeDefOf.SilentInput);
                     LessonAutoActivator.TeachOpportunity(ConceptDefOf.SpoilageAndFreezers,
                         OpportunityType.GoodToKnow);
                 }

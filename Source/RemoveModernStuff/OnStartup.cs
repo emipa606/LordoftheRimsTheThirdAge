@@ -28,7 +28,7 @@ namespace TheThirdAge
 
         private static void AddCramRecipes()
         {
-            if (!(TTADefOf.FueledStove is ThingDef fueldStove) || !(fueldStove.recipes?.Count > 0))
+            if (!(TTADefOf.FueledStove is { } fueldStove) || !(fueldStove.recipes?.Count > 0))
             {
                 return;
             }
@@ -48,12 +48,12 @@ namespace TheThirdAge
                 return;
             }
 
-            if (TTADefOf.ScatterShrines is GenStepDef scatterStep)
+            if (TTADefOf.ScatterShrines is { } scatterStep)
             {
                 scatterStep.genStep = new GenStep_ScatterShrinesMedieval();
             }
 
-            if (TTADefOf.Interior_AncientTemple is RuleDef templeInterior)
+            if (TTADefOf.Interior_AncientTemple is { } templeInterior)
             {
                 var symbolResolverInteriorAncientTempleMedieval = new SymbolResolver_Interior_AncientTempleMedieval
                 {
@@ -62,7 +62,7 @@ namespace TheThirdAge
                 templeInterior.resolvers = new List<SymbolResolver> {symbolResolverInteriorAncientTempleMedieval};
             }
 
-            if (!(TTADefOf.AncientShrinesGroup is RuleDef shrineGroup))
+            if (!(TTADefOf.AncientShrinesGroup is { } shrineGroup))
             {
                 return;
             }

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Text;
-using HarmonyLib;
 using RimWorld;
 using Verse;
 
@@ -47,9 +46,10 @@ namespace TheThirdAge
             }
 
             //Log.Message(listOfBackstoriesToRemove.ToString());
-            var shuffle = (Dictionary<Pair<BackstorySlot, BackstoryCategoryFilter>, List<Backstory>>) AccessTools
-                .Field(typeof(BackstoryDatabase), "shuffleableBackstoryList").GetValue(null);
-            shuffle.Clear();
+            //var cacheKeyType = AccessTools.TypeByName("CacheKey");
+            //Log.Message(cacheKeyType.ToString());
+            //dynamic shuffle = AccessTools.Field(typeof(BackstoryDatabase), "shuffleableBackstoryList").GetValue(null);
+            //shuffle.Clear();
         }
 
         public static void ListIncompatibleBackstories()

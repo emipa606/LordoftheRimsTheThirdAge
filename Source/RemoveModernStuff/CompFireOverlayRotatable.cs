@@ -13,7 +13,7 @@ namespace RimWorld
             "Things/Special/Fire",
             ShaderDatabase.TransparentPostLight,
             Vector2.one, Color.white, Color.white,
-            null, 0, null));
+            null, 0, null, null));
 
         private ThingDef def;
         private int mem1;
