@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/FleckDef[defName="Owl_Vapor"]</xpath>
+    <success>Always</success>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="LotR_WallSconce"]/comps</xpath>
+          <value>
+            <li Class="Flecker.CompProperties_Smoker">
+              <fleckDef>Owl_Vapor</fleckDef>
+              <particleSize>0.4</particleSize>
+              <particleOffsetNorth>(0,0,0.3)</particleOffsetNorth>
+              <particleOffsetSouth>(0,0,0.6)</particleOffsetSouth>
+              <particleOffsetWest>(0.4,0,0.2)</particleOffsetWest>
+              <particleOffsetEast>(-0.5,0,0.2)</particleOffsetEast>
+              <indoorAlt>Owl_SmokeIndoors</indoorAlt>
+            </li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

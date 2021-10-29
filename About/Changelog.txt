@@ -1,5 +1,8 @@
 # Changelog for LordoftheRimsTheThirdAge
 
+1.0.9.0 - Added support for Simple FX: Smoke
+
+
 1.0.8.0 - Updated for 1.3, might be some issues with the backstories that I couldnt figure out
 
 

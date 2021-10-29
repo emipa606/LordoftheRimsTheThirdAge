@@ -1,6 +1,6 @@
 # LordoftheRimsTheThirdAge
 
-![Image](https://i.imgur.com/WAEzk68.png)
+![Image](https://i.imgur.com/buuPQel.png)
 
 Update of erdelf and Jecrells mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1400245220
@@ -10,19 +10,10 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1400245220
 - Added an option to disable the limit of technology, to replace the mod: Lord of the Rims - Unlimited
 - Added support for Combat Extended
 
-![Image](https://i.imgur.com/7Gzt3Rg.png)
+![Image](https://i.imgur.com/pufA0kM.png)
 
-
-[table]
-	[tr]
-		[td]https://invite.gg/Mlie]![Image](https://i.imgur.com/zdzzBrc.png)
-[/td]
-		[td]https://github.com/emipa606/LordoftheRimsTheThirdAge]![Image](https://i.imgur.com/kTkpTOE.png)
-[/td]
-	[/tr]
-[/table]
 	
-![Image](https://i.imgur.com/NOW7jU1.png)
+![Image](https://i.imgur.com/Z4GOv8H.png)
 
 
 # Removes all items, incidents, and technology that go beyond Medieval.
@@ -59,7 +50,7 @@ Join the Lord of the Rims channel to discuss the mod.
 [strike]https://discord.gg/jcMf4am[/strike] *not for support*
 
 
-![Image](https://i.imgur.com/Rs6T6cr.png)
+![Image](https://i.imgur.com/PwoNOj4.png)
 
 
 
@@ -69,7 +60,6 @@ Join the Lord of the Rims channel to discuss the mod.
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
-
 
 
 
