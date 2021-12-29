@@ -106,6 +106,7 @@
     <smeltProducts>
       <LotR_Iron>20</LotR_Iron>
     </smeltProducts>
+    <smeltable>true</smeltable>
   </ThingDef>
   <ThingDef ParentName="LotR_RockBase">
     <defName>LotR_MineableIron</defName>

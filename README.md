@@ -9,6 +9,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1400245220
 - This will be removed when/if Jecrell comes back
 - Added an option to disable the limit of technology, to replace the mod: Lord of the Rims - Unlimited
 - Added support for Combat Extended
+- Added support for https://steamcommunity.com/sharedfiles/filedetails/?id=2574489704]Simple FX: Smoke
 
 ![Image](https://i.imgur.com/pufA0kM.png)
 
