@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <HugsLib.UpdateFeatureDef Abstract="true" Name="UpdateFeatureBase">
+  <HugsLib.UpdateFeatureDef Abstract="true" Name="Mlie_UpdateFeatureBase">
     <modNameReadable>LordoftheRimsTheThirdAge</modNameReadable>
     <linkUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2242416385</linkUrl>
   </HugsLib.UpdateFeatureDef>
-  <HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+  <HugsLib.UpdateFeatureDef ParentName="Mlie_UpdateFeatureBase">
     <defName>LordoftheRimsTheThirdAge_1_0_2_0</defName>
     <assemblyVersion>1.0.2.0</assemblyVersion>
     <content>Added in this update is an option to disable the limiting of technology.
