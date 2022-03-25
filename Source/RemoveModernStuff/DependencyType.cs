@@ -1,8 +1,7 @@
-﻿namespace RimWorld
+﻿namespace RimWorld;
+
+public enum DependencyType
 {
-    public enum DependencyType
-    {
-        None,
-        Fuel
-    }
+    None,
+    Fuel
 }

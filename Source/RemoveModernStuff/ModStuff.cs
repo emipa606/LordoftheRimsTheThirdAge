@@ -3,33 +3,32 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 
-namespace TheThirdAge
+namespace TheThirdAge;
+
+public class ModStuff : Mod
 {
-    public class ModStuff : Mod
+    public static Settings Settings;
+
+    public ModStuff(ModContentPack content) : base(content)
     {
-        public static Settings Settings;
+        Settings = GetSettings<Settings>();
+        var harmony = new Harmony("rimworld.lotr.thirdage");
+        harmony.Patch(AccessTools.Method(typeof(DefGenerator), "GenerateImpliedDefs_PreResolve"), null,
+            new HarmonyMethod(typeof(ModStuff), nameof(GenerateImpliedDefs_PreResolve)));
+    }
 
-        public ModStuff(ModContentPack content) : base(content)
-        {
-            Settings = GetSettings<Settings>();
-            var harmony = new Harmony("rimworld.lotr.thirdage");
-            harmony.Patch(AccessTools.Method(typeof(DefGenerator), "GenerateImpliedDefs_PreResolve"), null,
-                new HarmonyMethod(typeof(ModStuff), nameof(GenerateImpliedDefs_PreResolve)));
-        }
+    public static void GenerateImpliedDefs_PreResolve()
+    {
+        OnStartup.AddSaltedMeats();
+    }
 
-        public static void GenerateImpliedDefs_PreResolve()
-        {
-            OnStartup.AddSaltedMeats();
-        }
+    public override string SettingsCategory()
+    {
+        return "Lord of the Rims - The Third Age";
+    }
 
-        public override string SettingsCategory()
-        {
-            return "Lord of the Rims - The Third Age";
-        }
-
-        public override void DoSettingsWindowContents(Rect canvas)
-        {
-            Settings.DoWindowContents(canvas);
-        }
+    public override void DoSettingsWindowContents(Rect canvas)
+    {
+        Settings.DoWindowContents(canvas);
     }
 }

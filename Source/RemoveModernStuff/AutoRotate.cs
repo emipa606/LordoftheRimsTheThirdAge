@@ -1,9 +1,8 @@
-﻿namespace RimWorld
+﻿namespace RimWorld;
+
+public enum AutoRotate
 {
-    public enum AutoRotate
-    {
-        None,
-        Single,
-        Multi
-    }
+    None,
+    Single,
+    Multi
 }

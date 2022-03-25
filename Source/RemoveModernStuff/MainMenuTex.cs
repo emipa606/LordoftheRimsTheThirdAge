@@ -2,43 +2,42 @@
 using UnityEngine;
 using Verse;
 
-namespace TheThirdAge
+namespace TheThirdAge;
+
+/// <summary>
+///     Original code by Xen https://github.com/XenEmpireAdmin
+///     Adjustments by Jecrell https://github.com/Jecrell
+/// </summary>
+[StaticConstructorOnStartup]
+public static class MainMenuTex
 {
-    /// <summary>
-    ///     Original code by Xen https://github.com/XenEmpireAdmin
-    ///     Adjustments by Jecrell https://github.com/Jecrell
-    /// </summary>
-    [StaticConstructorOnStartup]
-    public static class MainMenuTex
+    private static readonly bool debug = false;
+
+    public static Texture2D BGMain;
+
+    static MainMenuTex()
     {
-        private static readonly bool debug = false;
-
-        public static Texture2D BGMain;
-
-        static MainMenuTex()
+        if (!ModStuff.Settings.LimitTechnology)
         {
-            if (!ModStuff.Settings.LimitTechnology)
-            {
-                return;
-            }
-
-            LoadTextures();
+            return;
         }
 
-        private static void LoadTextures()
-        {
-            BGMain = ContentFinder<Texture2D>.Get("UI/HeroArt/TTABGPlanet");
+        LoadTextures();
+    }
 
-            try
+    private static void LoadTextures()
+    {
+        BGMain = ContentFinder<Texture2D>.Get("UI/HeroArt/TTABGPlanet");
+
+        try
+        {
+            Traverse.CreateWithType("UI_BackgroundMain").Field("BGPlanet").SetValue(BGMain);
+        }
+        catch
+        {
+            if (debug)
             {
-                Traverse.CreateWithType("UI_BackgroundMain").Field("BGPlanet").SetValue(BGMain);
-            }
-            catch
-            {
-                if (debug)
-                {
-                    Log.Message("Failed to Traverse BGPlanet");
-                }
+                Log.Message("Failed to Traverse BGPlanet");
             }
         }
     }

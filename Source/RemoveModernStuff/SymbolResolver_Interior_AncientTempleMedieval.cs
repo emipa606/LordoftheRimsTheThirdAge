@@ -3,46 +3,46 @@ using RimWorld;
 using RimWorld.BaseGen;
 using Verse;
 
-namespace TheThirdAge
+namespace TheThirdAge;
+
+public class SymbolResolver_Interior_AncientTempleMedieval : SymbolResolver
 {
-    public class SymbolResolver_Interior_AncientTempleMedieval : SymbolResolver
+    private const float MechanoidsChance = 0.5f;
+
+    private const float HivesChance = 0.45f;
+
+    private static readonly IntRange MechanoidCountRange = new IntRange(1, 5);
+
+    private static readonly IntRange HivesCountRange = new IntRange(1, 2);
+
+    private static readonly IntVec2 MinSizeForShrines = new IntVec2(4, 3);
+
+    public override void Resolve(ResolveParams rp)
     {
-        private const float MechanoidsChance = 0.5f;
-
-        private const float HivesChance = 0.45f;
-
-        private static readonly IntRange MechanoidCountRange = new IntRange(1, 5);
-
-        private static readonly IntRange HivesCountRange = new IntRange(1, 2);
-
-        private static readonly IntVec2 MinSizeForShrines = new IntVec2(4, 3);
-
-        public override void Resolve(ResolveParams rp)
+        var list = ThingSetMakerDefOf.MapGen_AncientTempleContents.root.Generate();
+        foreach (var resolveParamsSingleThingToSpawn in list)
         {
-            var list = ThingSetMakerDefOf.MapGen_AncientTempleContents.root.Generate();
-            foreach (var resolveParamsSingleThingToSpawn in list)
-            {
-                var resolveParams = rp;
-                resolveParams.singleThingToSpawn = resolveParamsSingleThingToSpawn;
-                BaseGen.symbolStack.Push("thing", resolveParams);
-            }
-
-            if (ModLister.AllInstalledMods.FirstOrDefault(x =>
-                x.enabled && x.Name == "Lord of the Rims - Men and Beasts") != null)
-            {
-                SpawnGroups(rp);
-            }
-
-            if (rp.rect.Width >= MinSizeForShrines.x && rp.rect.Height >= MinSizeForShrines.z)
-            {
-                BaseGen.symbolStack.Push("ancientShrinesGroup", rp);
-            }
+            var resolveParams = rp;
+            resolveParams.singleThingToSpawn = resolveParamsSingleThingToSpawn;
+            BaseGen.symbolStack.Push("thing", resolveParams);
         }
 
-        private static void SpawnGroups(ResolveParams rp)
+        if (ModLister.AllInstalledMods.FirstOrDefault(x =>
+                x.enabled && x.Name == "Lord of the Rims - Men and Beasts") != null)
         {
-            if (!Find.Storyteller.difficulty.peacefulTemples)
-            {
+            SpawnGroups(rp);
+        }
+
+        if (rp.rect.Width >= MinSizeForShrines.x && rp.rect.Height >= MinSizeForShrines.z)
+        {
+            BaseGen.symbolStack.Push("ancientShrinesGroup", rp);
+        }
+    }
+
+    private static void SpawnGroups(ResolveParams rp)
+    {
+        if (!Find.Storyteller.difficulty.peacefulTemples)
+        {
 //                if (Rand.Chance(0.5f))
 //                {
 //                    ResolveParams resolveParams2 = rp;
@@ -61,7 +61,6 @@ namespace TheThirdAge
 //                        : hivesCount.Value);
 //                    BaseGen.symbolStack.Push("hives", resolveParams3);
 //                }
-            }
         }
     }
 }
