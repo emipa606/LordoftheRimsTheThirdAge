@@ -1,0 +1,1919 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Orphan</defName>
+    <title>Desolation orphan</title>
+    <titleShort>Orphan</titleShort>
+    <baseDesc>[PAWN_nameDef] was a young child when a dragon desolated their home. They were the only one to escape the burning wreckage. During the following years, [PAWN_pronoun] was tasked with rebuilding incinerated buildings, caring for charred survivors, and fishing to provide for the town.</baseDesc>
+    <slot>Childhood</slot>
+    <workDisables />
+    <requiredWorkTags />
+    <forcedTraits>
+      <FastLearner>0</FastLearner>
+    </forcedTraits>
+    <disallowedTraits>
+      <Pyromaniac>0</Pyromaniac>
+      <Industriousness>-1</Industriousness>
+    </disallowedTraits>
+    <skillGains>
+      <li>
+        <key>Animals</key>
+        <value>1</value>
+      </li>
+      <li>
+        <key>Construction</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Medicine</key>
+        <value>2</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Scholar</defName>
+    <title>Scholar</title>
+    <titleShort>Scholar</titleShort>
+    <baseDesc>[PAWN_nameDef] considers [PAWN_objective]self a scholar. The scholar is generally a peaceful member of society. [PAWN_pronoun] learned the art of calligraphy, gathered information and is skilled in the knowledge of arcane lore. The history of the Rim is recorded in their papers as [PAWN_possessive] research progresses.</baseDesc>
+    <bodyTypeMale>Thin</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>Intellectual</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <FastLearner>0</FastLearner>
+    </forcedTraits>
+    <disallowedTraits>
+      <Cannibal>0</Cannibal>
+      <Brawler>0</Brawler>
+      <Ascetic>0</Ascetic>
+      <DrugDesire>1</DrugDesire>
+      <Nerves>-2</Nerves>
+      <Pyromaniac>0</Pyromaniac>
+    </disallowedTraits>
+    <skillGains>
+      <li>
+        <key>Artistic</key>
+        <value>1</value>
+      </li>
+      <li>
+        <key>Crafting</key>
+        <value>1</value>
+      </li>
+      <li>
+        <key>Melee</key>
+        <value>-2</value>
+      </li>
+      <li>
+        <key>Intellectual</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Shooting</key>
+        <value>-1</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>1</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_CHunter</defName>
+    <title>Cruel hunter</title>
+    <titleShort>Hunter</titleShort>
+    <baseDesc>Some say that the ground bones of an elf can cure impotence. Some say that furniture made of Ents never needs to be polished. [PAWN_nameDef] profits from those who don't know the validity of these rumors (he may have spread a few himself), and has earned the skills necessary to capture the more resilient races of Middle Earth: dead or alive.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <Psychopath>0</Psychopath>
+      <Tough>0</Tough>
+    </forcedTraits>
+    <disallowedTraits>
+      <Kind>0</Kind>
+    </disallowedTraits>
+    <skillGains>
+      <li>
+        <key>Artistic</key>
+        <value>-1</value>
+      </li>
+      <li>
+        <key>Medicine</key>
+        <value>1</value>
+      </li>
+      <li>
+        <key>Melee</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Shooting</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>2</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_EForest</defName>
+    <title>Enemy of the forest</title>
+    <titleShort>Forrestenemy</titleShort>
+    <baseDesc>[PAWN_nameDef] was sent to fell trees for [PAWN_possessive] town's palisade to keep out the evils of the world. Little did [PAWN_pronoun] know, the forest didn't want visitors anymore than [PAWN_pronoun] did. [PAWN_nameDef] saw fellow villagers devastated by newly awoken Ents and was forced deeper into the forest to escape. [PAWN_pronoun] left the woods with a hatred of trees and the ravenous creatures that inhabit them.</baseDesc>
+    <bodyTypeMale>Thin</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables>
+      <li>PlantWork</li>
+    </workDisables>
+    <requiredWorkTags />
+    <forcedTraits>
+      <Pyromaniac>0</Pyromaniac>
+      <Industriousness>1</Industriousness>
+    </forcedTraits>
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Animals</key>
+        <value>-2</value>
+      </li>
+      <li>
+        <key>Medicine</key>
+        <value>3</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_DHunter</defName>
+    <title>Dragon hunter</title>
+    <titleShort>Hunter</titleShort>
+    <baseDesc>[PAWN_nameDef] looks to viciously purge the lands of dragons and their ilk.  [PAWN_pronoun]  prefers traps and longbows over melee weapons and [PAWN_pronoun]  is not a stranger to cunning traps.  [PAWN_possessive] destructive tendencies are a hindrance to finer skills.</baseDesc>
+    <bodyTypeMale>Hulk</bodyTypeMale>
+    <bodyTypeFemale>Hulk</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <Nimble>0</Nimble>
+    </forcedTraits>
+    <disallowedTraits>
+      <Brawler>0</Brawler>
+      <Nudist>0</Nudist>
+      <Nerves>-1</Nerves>
+      <Wimp>0</Wimp>
+    </disallowedTraits>
+    <skillGains>
+      <li>
+        <key>Animals</key>
+        <value>-1</value>
+      </li>
+      <li>
+        <key>Artistic</key>
+        <value>-1</value>
+      </li>
+      <li>
+        <key>Construction</key>
+        <value>1</value>
+      </li>
+      <li>
+        <key>Cooking</key>
+        <value>-1</value>
+      </li>
+      <li>
+        <key>Crafting</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Plants</key>
+        <value>-1</value>
+      </li>
+      <li>
+        <key>Medicine</key>
+        <value>-2</value>
+      </li>
+      <li>
+        <key>Shooting</key>
+        <value>4</value>
+      </li>
+      <li>
+        <key>Intellectual</key>
+        <value>1</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>-1</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_NGuard</defName>
+    <title>Night guard</title>
+    <titleShort>Guard</titleShort>
+    <baseDesc>[PAWN_nameDef] defended against the dangers of the night, so that the inhabitants of their village could sleep soundly at night. Due to a good share of boring nights, [PAWN_pronoun] was well-known among [PAWN_possessive] fellow guards for [PAWN_possessive] ability to hit sleeping birds using only [PAWN_possessive] silhouette.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <NightOwl>0</NightOwl>
+    </forcedTraits>
+    <disallowedTraits>
+      <Pyromaniac>0</Pyromaniac>
+    </disallowedTraits>
+    <skillGains>
+      <li>
+        <key>Melee</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Shooting</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>1</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_CPrejudiced</defName>
+    <title>Prejudiced</title>
+    <titleShort>Prejudiced</titleShort>
+    <baseDesc>[PAWN_nameDef] was raised in a family devoid of compassion for [PAWN_objective], and especially no compassion for other races. [PAWN_pronoun] took [PAWN_objective] anger out on other children and anyone remotely different.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Childhood</slot>
+    <workDisables />
+    <requiredWorkTags />
+    <forcedTraits />
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Melee</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Intellectual</key>
+        <value>-1</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>-4</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_EAdmirer</defName>
+    <title>Elf admirer</title>
+    <titleShort>Admirer</titleShort>
+    <baseDesc>[PAWN_nameDef] has come to adore the elven race. [PAWN_pronoun] models [PAWN_objective]self after them by treating animals with care and taking excellent care of [PAWN_possessive] garden,</baseDesc>
+    <bodyTypeMale>Thin</bodyTypeMale>
+    <bodyTypeFemale>Thin</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags />
+    <forcedTraits />
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Animals</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Artistic</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Plants</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Melee</key>
+        <value>-1</value>
+      </li>
+      <li>
+        <key>Shooting</key>
+        <value>-1</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Noble</defName>
+    <title>Noble</title>
+    <titleShort>Noble</titleShort>
+    <baseDesc>[PAWN_nameDef] was raised to be part of the elite of society. [PAWN_pronoun] can't stand anything not fitting the proper social settings. [PAWN_pronoun] also finds it difficult, if not impossible, to handle menial tasks that should be left for the help.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables>
+      <li>Mining</li>
+      <li>PlantWork</li>
+      <li>ManualDumb</li>
+    </workDisables>
+    <requiredWorkTags />
+    <forcedTraits />
+    <disallowedTraits>
+      <Nudist>0</Nudist>
+    </disallowedTraits>
+    <skillGains>
+      <li>
+        <key>Intellectual</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Medicine</key>
+        <value>2</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Prude</defName>
+    <title>Prude</title>
+    <titleShort>Prude</titleShort>
+    <titleFemale>Prude</titleFemale>
+    <baseDesc>[PAWN_nameDef] spends most of their day chit-chatting away with others about who is doing what wrong. [PAWN_pronoun] detests all things [PAWN_pronoun] deems improper and is very easily offended.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags />
+    <forcedTraits>
+      <Jealous>0</Jealous>
+      <DrugDesire>-1</DrugDesire>
+    </forcedTraits>
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Social</key>
+        <value>4</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Tailor</defName>
+    <title>Tailor sharpshooter</title>
+    <titleShort>Tailor</titleShort>
+    <baseDesc>[PAWN_nameDef] specialized in tailoring clothes for [PAWN_possessive] people. [PAWN_pronoun] was especially good at this, and was widely known for [PAWN_possessive] ability. [PAWN_pronoun] preferred to secure textiles by hunting for them with [PAWN_possessive] trusty bow and arrow.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>Violent</li>
+      <li>Crafting</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <Industriousness>1</Industriousness>
+    </forcedTraits>
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Shooting</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Crafting</key>
+        <value>3</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Farmer</defName>
+    <title>Farmer</title>
+    <titleShort>Farmer</titleShort>
+    <baseDesc>[PAWN_nameDef] was a simple farmer. [PAWN_pronoun] specialized in all things agricultural, and preferred the smell of fresh soil, the crow of the rooster, and the sight of peaceful blue skies. Unfortunately, such a lifestyle limited [PAWN_possessive] education.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables>
+      <li>Intellectual</li>
+    </workDisables>
+    <requiredWorkTags>
+      <li>PlantWork</li>
+      <li>Hauling</li>
+    </requiredWorkTags>
+    <forcedTraits />
+    <disallowedTraits>
+      <TooSmart>0</TooSmart>
+    </disallowedTraits>
+    <skillGains>
+      <li>
+        <key>Animals</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Cooking</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Plants</key>
+        <value>3</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Alchemist</defName>
+    <title>Malformed alchemist</title>
+    <titleShort>Alchemist</titleShort>
+    <baseDesc>[PAWN_nameDef] practiced alchemy for a living. One day, [PAWN_possessive] experiments were purposefully switched by a jealous competitor to bring about a rather cruel accident that ruined [PAWN_possessive] appearance.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>Intellectual</li>
+      <li>Cooking</li>
+      <li>Caring</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <Beauty>-1</Beauty>
+    </forcedTraits>
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Cooking</key>
+        <value>4</value>
+      </li>
+      <li>
+        <key>Medicine</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Intellectual</key>
+        <value>2</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_CAlchemist</defName>
+    <title>Corrupt alchemist</title>
+    <titleShort>Alchemist</titleShort>
+    <baseDesc>[PAWN_nameDef] was a brilliant alchemist, if not one of the greatest among the free peoples of Middle-Earth. [PAWN_possessive] will helped heal many, until [PAWN_pronoun] came into conflict with dark forces. Those forces took [PAWN_objective] in the dark of night, and forced [PAWN_objective] to take an evil concoction that has corrupted [PAWN_objective] to [PAWN_possessive] core.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>Intellectual</li>
+      <li>Violent</li>
+      <li>Crafting</li>
+      <li>Cooking</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <Psychopath>0</Psychopath>
+    </forcedTraits>
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Cooking</key>
+        <value>4</value>
+      </li>
+      <li>
+        <key>Intellectual</key>
+        <value>5</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Baker</defName>
+    <title>Baker</title>
+    <titleShort>Baker</titleShort>
+    <baseDesc>[PAWN_nameDef] specialized in baking pastries and sweets. For this, [PAWN_pronoun] gained culinary excellency and is generally well liked among the townsfolk. [PAWN_pronoun] soft hands, however, make [PAWN_objective] not the best companion for combat situations.</baseDesc>
+    <bodyTypeMale>Fat</bodyTypeMale>
+    <bodyTypeFemale>Fat</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags />
+    <forcedTraits>
+      <Kind>0</Kind>
+    </forcedTraits>
+    <disallowedTraits>
+      <Bloodlust>0</Bloodlust>
+    </disallowedTraits>
+    <skillGains>
+      <li>
+        <key>Cooking</key>
+        <value>4</value>
+      </li>
+      <li>
+        <key>Crafting</key>
+        <value>-1</value>
+      </li>
+      <li>
+        <key>Plants</key>
+        <value>1</value>
+      </li>
+      <li>
+        <key>Melee</key>
+        <value>-2</value>
+      </li>
+      <li>
+        <key>Shooting</key>
+        <value>-1</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Brewer</defName>
+    <title>Brewer</title>
+    <titleShort>Brewer</titleShort>
+    <baseDesc>[PAWN_nameDef] has a special appreciation for a cold drink. [PAWN_pronoun] devoted [PAWN_possessive] life to the creation of such beverages, and has a particular liking for dwarves.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>Cooking</li>
+      <li>Crafting</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <DrugDesire>1</DrugDesire>
+    </forcedTraits>
+    <disallowedTraits>
+      <Abrasive>0</Abrasive>
+    </disallowedTraits>
+    <skillGains>
+      <li>
+        <key>Cooking</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Crafting</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>3</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_PitChild</defName>
+    <title>Pit child</title>
+    <titleShort>Pit child</titleShort>
+    <baseDesc>[PAWN_nameDef] threw fists for sport and cash as a child in a pit fighting arena. From this [PAWN_pronoun] learned the value of coin, how to throw a punch, and how to tend to [PAWN_possessive] own wounds.</baseDesc>
+    <slot>Childhood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <Brawler>0</Brawler>
+    </forcedTraits>
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Medicine</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Melee</key>
+        <value>4</value>
+      </li>
+      <li>
+        <key>Intellectual</key>
+        <value>-3</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Hunter</defName>
+    <title>Hunter</title>
+    <titleShort>Hunter</titleShort>
+    <baseDesc>[PAWN_nameDef] hunted wildlife for a living. The thrill of the hunt filled [PAWN_objective] with great joy, but even moreso, the rewards of patience gratified [PAWN_objective]. [PAWN_pronoun] learned valuable skills, such as tracking, foraging, sharpshooting, and making use of the remains of the hunt.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <ShootingAccuracy>1</ShootingAccuracy>
+    </forcedTraits>
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Cooking</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Melee</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Shooting</key>
+        <value>4</value>
+      </li>
+      <li>
+        <key>Plants</key>
+        <value>1</value>
+      </li>
+      <li>
+        <key>Medicine</key>
+        <value>2</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_ASurvivor</defName>
+    <title>Warg survivor</title>
+    <titleShort>Survivor</titleShort>
+    <baseDesc>[PAWN_nameDef] barely survived an attack by a large wild warg as a child. This trauma never left [PAWN_objective], and neither did the scars.</baseDesc>
+    <slot>Childhood</slot>
+    <workDisables />
+    <requiredWorkTags />
+    <forcedTraits>
+      <Beauty>-1</Beauty>
+    </forcedTraits>
+    <disallowedTraits>
+      <NaturalMood>1</NaturalMood>
+    </disallowedTraits>
+    <skillGains>
+      <li>
+        <key>Animals</key>
+        <value>-5</value>
+      </li>
+      <li>
+        <key>Artistic</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Construction</key>
+        <value>1</value>
+      </li>
+      <li>
+        <key>Plants</key>
+        <value>-2</value>
+      </li>
+      <li>
+        <key>Melee</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Shooting</key>
+        <value>2</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Runt</defName>
+    <title>Runt</title>
+    <titleShort>Runt</titleShort>
+    <baseDesc>[PAWN_nameDef]'s twin sibling was born tall and strong. [PAWN_nameDef] wasn't as lucky. [PAWN_pronoun] found solace in building sculptures and playing with toys.</baseDesc>
+    <slot>Childhood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>ManualSkilled</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <Wimp>0</Wimp>
+    </forcedTraits>
+    <disallowedTraits>
+      <Beauty>0</Beauty>
+    </disallowedTraits>
+    <skillGains>
+      <li>
+        <key>Artistic</key>
+        <value>4</value>
+      </li>
+      <li>
+        <key>Construction</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Crafting</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>-4</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_PublicMenace</defName>
+    <title>Public menace</title>
+    <titleShort>Menace</titleShort>
+    <baseDesc>[PAWN_nameDef] was a member of a gang of trouble makers. [PAWN_possessive] actions, not only gave [PAWN_objective] a reason to run from lawmakers from time to time, but also gave [PAWN_objective] a repertoire of useful skills.</baseDesc>
+    <slot>Childhood</slot>
+    <workDisables />
+    <requiredWorkTags />
+    <forcedTraits />
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Melee</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Intellectual</key>
+        <value>1</value>
+      </li>
+      <li>
+        <key>Shooting</key>
+        <value>1</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>1</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Diplomat</defName>
+    <title>Diplomat</title>
+    <titleShort>Diplomat</titleShort>
+    <baseDesc>[PAWN_nameDef] specialized in keeping good relations with other settlements for the good of all. After many years, [PAWN_pronoun] became a master at negotiation.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>Social</li>
+    </requiredWorkTags>
+    <forcedTraits />
+    <disallowedTraits>
+      <Abrasive>0</Abrasive>
+      <CreepyBreathing>0</CreepyBreathing>
+      <AnnoyingVoice>0</AnnoyingVoice>
+    </disallowedTraits>
+    <skillGains>
+      <li>
+        <key>Melee</key>
+        <value>-1</value>
+      </li>
+      <li>
+        <key>Mining</key>
+        <value>-1</value>
+      </li>
+      <li>
+        <key>Intellectual</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Shooting</key>
+        <value>-1</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>4</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Carpenter</defName>
+    <title>Carpenter</title>
+    <titleShort>Carpenter</titleShort>
+    <baseDesc>What is a brewer without a carpenter? Can anyone truly count themselves without a table to set their glass upon? [PAWN_nameDef] mastered the art of carpentry to fix local problems. [PAWN_pronoun] helps settlers meet their needs, prevents painful feelings of depression from lack of solid wood, and provides the heartiest of tables for placing pints upon.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>ManualSkilled</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <FastLearner>0</FastLearner>
+    </forcedTraits>
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Crafting</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Construction</key>
+        <value>4</value>
+      </li>
+      <li>
+        <key>Mining</key>
+        <value>3</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_GWarHero</defName>
+    <title>Warrior of Gondor</title>
+    <titleShort>Warrior</titleShort>
+    <baseDesc>[PAWN_nameDef] fought against evil for Gondor, [PAWN_pronoun] saved many of [PAWN_possessive] comrades and was recognized as a war hero by the steward.</baseDesc>
+    <bodyTypeMale>Hulk</bodyTypeMale>
+    <bodyTypeFemale>Hulk</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <forcedTraits />
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Medicine</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Melee</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>2</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_RangerNorth</defName>
+    <title>Ranger of the North</title>
+    <titleShort>Ranger</titleShort>
+    <baseDesc>[PAWN_nameDef] spent much of [PAWN_possessive] adult life wandering the lands in the north.  [PAWN_pronoun] protected these lands with [PAWN_possessive] life, but [PAWN_possessive] secretive nature made others consider [PAWN_objective] dangerous and distrustful.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <QuickSleeper>0</QuickSleeper>
+    </forcedTraits>
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Animals</key>
+        <value>1</value>
+      </li>
+      <li>
+        <key>Construction</key>
+        <value>-2</value>
+      </li>
+      <li>
+        <key>Cooking</key>
+        <value>1</value>
+      </li>
+      <li>
+        <key>Medicine</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Melee</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Shooting</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>-2</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Innkeeper</defName>
+    <title>Innkeeper</title>
+    <titleShort>Innkeeper</titleShort>
+    <baseDesc>[PAWN_nameDef] owned the local village inn.  [PAWN_pronoun] spent [PAWN_possessive] days pouring drinks and listening to the tales of [PAWN_possessive] patrons.  On occasion, [PAWN_pronoun] would cook for [PAWN_possessive] patrons when [PAWN_possessive] cook was not working.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>Social</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <GreatMemory>0</GreatMemory>
+    </forcedTraits>
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Cooking</key>
+        <value>1</value>
+      </li>
+      <li>
+        <key>Melee</key>
+        <value>1</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>4</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_StableBoy</defName>
+    <title>Stable boy</title>
+    <titleShort>Stable</titleShort>
+    <titleFemale>Stable girl</titleFemale>
+    <baseDesc>[PAWN_nameDef] spent [PAWN_possessive] days tending to horses and mules. [PAWN_pronoun] would make sure they were fed, brushed, and generally content.</baseDesc>
+    <slot>Childhood</slot>
+    <workDisables />
+    <requiredWorkTags />
+    <forcedTraits />
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Animals</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>-1</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_NightWatch</defName>
+    <title>Night watch</title>
+    <titleShort>Watcher</titleShort>
+    <baseDesc>[PAWN_nameDef] spent [PAWN_possessive] nights keeping watch from the highest tower in the town. [PAWN_possessive]  job was often tedious, but was also very important. If trouble was spotted, it was [PAWN_possessive] job to notify the town of danger using [PAWN_possessive] horn kept always at [PAWN_possessive] side.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <NightOwl>0</NightOwl>
+    </forcedTraits>
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Artistic</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Intellectual</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Shooting</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>-1</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Charlatan</defName>
+    <title>Charlatan</title>
+    <titleShort>Charlatan</titleShort>
+    <baseDesc>[PAWN_nameDef] travelled from village to village selling forgeries and conning villagers. [PAWN_pronoun] rarely stayed anywhere long and skipped town at the first sign of trouble.</baseDesc>
+    <bodyTypeMale>Thin</bodyTypeMale>
+    <bodyTypeFemale>Thin</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables>
+      <li>ManualDumb</li>
+    </workDisables>
+    <requiredWorkTags>
+      <li>Social</li>
+      <li>Crafting</li>
+    </requiredWorkTags>
+    <forcedTraits />
+    <disallowedTraits>
+      <Kind>0</Kind>
+    </disallowedTraits>
+    <skillGains>
+      <li>
+        <key>Artistic</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Crafting</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>4</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_GVeteran</defName>
+    <title>Veteran of Gondor</title>
+    <titleShort>Veteran</titleShort>
+    <baseDesc>[PAWN_nameDef] served in the Gondorian military for many years until [PAWN_pronoun] retired.</baseDesc>
+    <bodyTypeMale>Hulk</bodyTypeMale>
+    <bodyTypeFemale>Hulk</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags />
+    <forcedTraits />
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Melee</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Shooting</key>
+        <value>2</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_RangerIthilien</defName>
+    <title>Ithilien deserter</title>
+    <titleShort>Deserter</titleShort>
+    <baseDesc>At a young age [PAWN_nameDef] became a ranger as [PAWN_pronoun] was related to the peoples of Ithilien  and was chosen therefore to become a ranger. After spending many years attacking and killing the enemy's of Gondor, [PAWN_pronoun] decided to journey off on [PAWN_possessive] own and seek a better life.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags />
+    <forcedTraits />
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Animals</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Shooting</key>
+        <value>3</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_MerchantLake</defName>
+    <title>Lake-Town merchant</title>
+    <titleShort>Merchant</titleShort>
+    <baseDesc>[PAWN_nameDef] managed to join a large Merchant Guild in Esgaroth. There [PAWN_pronoun] lived [PAWN_possessive] life as a merchant selling [PAWN_possessive] goods to both dwarves and elves alike.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables>
+      <li>Crafting</li>
+    </workDisables>
+    <requiredWorkTags>
+      <li>Social</li>
+    </requiredWorkTags>
+    <forcedTraits />
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Intellectual</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>3</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Blacksmith</defName>
+    <title>Blacksmith</title>
+    <titleShort>Blacksmith</titleShort>
+    <baseDesc>[PAWN_pronoun] picked up a hammer, lit a fire and advertised [PAWN_objective]self as a smith. Lack of experience meant nothing. Through hard work, honest treatment of customers, and a friendly manner helped him bring [PAWN_possessive] family out of poverty.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>Mining</li>
+      <li>Crafting</li>
+      <li>Firefighting</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <Industriousness>1</Industriousness>
+    </forcedTraits>
+    <disallowedTraits>
+      <Industriousness>-1</Industriousness>
+    </disallowedTraits>
+    <skillGains>
+      <li>
+        <key>Artistic</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Construction</key>
+        <value>4</value>
+      </li>
+      <li>
+        <key>Crafting</key>
+        <value>4</value>
+      </li>
+      <li>
+        <key>Mining</key>
+        <value>2</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Duelist</defName>
+    <title>Duelist</title>
+    <titleShort>Duelist</titleShort>
+    <baseDesc>[PAWN_nameDef] was born into a long line of blacksmiths, and, not satisfied with making weapons, [PAWN_pronoun] decided that [PAWN_pronoun] would rather wield a sword than make them. So [PAWN_pronoun] ran away from home in order to pursue [PAWN_possessive] dreams, and become well known for their skills wielding a blade. [PAWN_pronoun] honed their skills by challenging strangers to duels in the streets.</baseDesc>
+    <slot>Childhood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <FastLearner>0</FastLearner>
+    </forcedTraits>
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Crafting</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Melee</key>
+        <value>3</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Swordsman</defName>
+    <title>Swordsman</title>
+    <titleShort>Swordsman</titleShort>
+    <titleFemale>Sword maiden</titleFemale>
+    <baseDesc>[PAWN_nameDef] gave [PAWN_possessive] life to the way of the sword. This is no mere technique, but an art to be followed. [PAWN_pronoun] strives to perfect [PAWN_possessive] skill in combat with the blade above all else.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <forcedTraits />
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Melee</key>
+        <value>4</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>-2</value>
+      </li>
+      <li>
+        <key>Intellectual</key>
+        <value>-2</value>
+      </li>
+      <li>
+        <key>Artistic</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Shooting</key>
+        <value>-2</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Sellsword</defName>
+    <title>Sellsword</title>
+    <titleShort>Sellsword</titleShort>
+    <baseDesc>[PAWN_nameDef] took on odd jobs to protect locations, fleece merchants, and kill targets without mercy for purses filled with solid coins. Coin mattered above all else, after all.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables>
+      <li>Caring</li>
+    </workDisables>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <Greedy>0</Greedy>
+      <Psychopath>0</Psychopath>
+    </forcedTraits>
+    <disallowedTraits>
+      <Kind>0</Kind>
+    </disallowedTraits>
+    <skillGains>
+      <li>
+        <key>Melee</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Cooking</key>
+        <value>-2</value>
+      </li>
+      <li>
+        <key>Intellectual</key>
+        <value>-2</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Tracker</defName>
+    <title>Tracker</title>
+    <titleShort>Tracker</titleShort>
+    <baseDesc>[PAWN_nameDef] spent their youth among trees and animals. [PAWN_possessive] role was to trace the steps of wild animals to report back to others, so they could hunt them to feed the local village.</baseDesc>
+    <slot>Childhood</slot>
+    <workDisables />
+    <requiredWorkTags />
+    <forcedTraits />
+    <disallowedTraits>
+      <SpeedOffset>-1</SpeedOffset>
+    </disallowedTraits>
+    <skillGains>
+      <li>
+        <key>Animals</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Plants</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Medicine</key>
+        <value>1</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_TownChild</defName>
+    <title>Town boy</title>
+    <titleShort>Town boy</titleShort>
+    <titleFemale>Town girl</titleFemale>
+    <baseDesc>[PAWN_nameDef] grew up in a one of the human towns. [PAWN_pronoun] learned to read and write, helped out at the local shops, and spent most of [PAWN_possessive] childhood inside well-defended walls.</baseDesc>
+    <slot>Childhood</slot>
+    <workDisables />
+    <requiredWorkTags />
+    <forcedTraits />
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Intellectual</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Melee</key>
+        <value>-1</value>
+      </li>
+      <li>
+        <key>Shooting</key>
+        <value>-1</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Shipwright</defName>
+    <title>Shipwright</title>
+    <titleShort>Shipwright</titleShort>
+    <baseDesc>[PAWN_nameDef] started off with just rope and logs, but eventually, [PAWN_pronoun] learned highly sought after techniques from the local boatmaking masters. Before long, [PAWN_pronoun] was leading the local boating community with the best boats around.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables>
+      <li>Violent</li>
+    </workDisables>
+    <requiredWorkTags />
+    <forcedTraits />
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Construction</key>
+        <value>4</value>
+      </li>
+      <li>
+        <key>Artistic</key>
+        <value>2</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Healer</defName>
+    <title>Healer</title>
+    <titleShort>Healer</titleShort>
+    <baseDesc>[PAWN_nameDef] works as the local healer for the village. Injuries can be mended with the right herbs applied with the right pressures and the proper leeching. [PAWN_possessive] clinic's motto exclaims the more blood out, the better you'll feel. Guaranteed!</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags />
+    <forcedTraits />
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Medicine</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Plants</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Cooking</key>
+        <value>1</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Hermit</defName>
+    <title>Hermit</title>
+    <titleShort>Hermit</titleShort>
+    <baseDesc>[PAWN_nameDef] swore off living in towns after seeing the sickening opulance of nobility. Finding [PAWN_possessive]  place in the woods, [PAWN_pronoun] became self-sufficient.</baseDesc>
+    <bodyTypeMale>Thin</bodyTypeMale>
+    <bodyTypeFemale>Thin</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>ManualDumb</li>
+      <li>ManualSkilled</li>
+      <li>Violent</li>
+      <li>Firefighting</li>
+      <li>Hauling</li>
+      <li>PlantWork</li>
+    </requiredWorkTags>
+    <forcedTraits>
+      <Ascetic>0</Ascetic>
+    </forcedTraits>
+    <disallowedTraits>
+      <Immunity>-1</Immunity>
+    </disallowedTraits>
+    <skillGains>
+      <li>
+        <key>Construction</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Cooking</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Crafting</key>
+        <value>1</value>
+      </li>
+      <li>
+        <key>Shooting</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>-5</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Storyteller</defName>
+    <title>Storyteller</title>
+    <titleShort>Storyteller</titleShort>
+    <baseDesc>[PAWN_nameDef] was a storyteller. [PAWN_pronoun] chose to spend [PAWN_possessive] nights beside the fire, telling of far off lands and heroes time forgot. During the days, [PAWN_pronoun] also took to writing both histories and the tales that needed to be told.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags />
+    <forcedTraits />
+    <disallowedTraits>
+      <AnnoyingVoice>0</AnnoyingVoice>
+      <CreepyBreathing>0</CreepyBreathing>
+    </disallowedTraits>
+    <skillGains>
+      <li>
+        <key>Intellectual</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Crafting</key>
+        <value>1</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_SicklyChild</defName>
+    <title>Sickly child</title>
+    <titleShort>Sickly</titleShort>
+    <baseDesc>[PAWN_nameDef] suffered a serious illness throughout [PAWN_possessive] childhood. [PAWN_possessive] strongly supportive and caring family did their best to take care of [PAWN_objective], and eventually [PAWN_pronoun] recovered. While the damage was irreversible, [PAWN_pronoun] never gave up hope.</baseDesc>
+    <slot>Childhood</slot>
+    <workDisables />
+    <requiredWorkTags />
+    <forcedTraits>
+      <NaturalMood>1</NaturalMood>
+    </forcedTraits>
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Construction</key>
+        <value>-2</value>
+      </li>
+      <li>
+        <key>Mining</key>
+        <value>-2</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>4</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Escapee</defName>
+    <title>Escaped criminal</title>
+    <titleShort>Criminal</titleShort>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <baseDesc>[PAWN_nameDef] denies involvement in the crimes that brought about [PAWN_possessive] imprisonment in the dungeons. [PAWN_pronoun] escaped by tunnelling beneath the fort using a soup spoon.</baseDesc>
+    <slot>Adulthood</slot>
+    <workDisables>
+      <li>Caring</li>
+    </workDisables>
+    <requiredWorkTags />
+    <forcedTraits />
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Mining</key>
+        <value>4</value>
+      </li>
+      <li>
+        <key>Crafting</key>
+        <value>2</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_AHealer</defName>
+    <title>Assistant healer</title>
+    <titleShort>Healer</titleShort>
+    <baseDesc>[PAWN_nameDef] was brought up during a great desolation. [PAWN_pronoun] grew up helping [PAWN_possessive] parents heal the sick and treat the horrific burns suffered from the dragon attack. [PAWN_pronoun] was left with a lifelong fear of fire.</baseDesc>
+    <slot>Childhood</slot>
+    <workDisables>
+      <li>Firefighting</li>
+    </workDisables>
+    <requiredWorkTags />
+    <forcedTraits />
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Medicine</key>
+        <value>5</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_DungeonChild</defName>
+    <title>Dungeon-born</title>
+    <titleShort>Dungeon-born</titleShort>
+    <baseDesc>[PAWN_nameDef] was a slave captured in a conflict long forgotten and raised in a dungeon. [PAWN_pronoun] had always been nothing; [PAWN_pronoun] was nothing; [PAWN_pronoun] would be nothing. At least that's what [PAWN_pronoun] let his guards believe, [PAWN_possessive] time would come. Escape was inevitable.</baseDesc>
+    <slot>Childhood</slot>
+    <workDisables />
+    <requiredWorkTags />
+    <forcedTraits>
+      <Undergrounder>0</Undergrounder>
+    </forcedTraits>
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Mining</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>-4</value>
+      </li>
+      <li>
+        <key>Plants</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Intellectual</key>
+        <value>-2</value>
+      </li>
+      <li>
+        <key>Construction</key>
+        <value>2</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Shepherd</defName>
+    <title>Shepherd</title>
+    <titleShort>Shepherd</titleShort>
+    <baseDesc>[PAWN_nameDef] had turned out incapable of most work [PAWN_possessive] family needed. When [PAWN_pronoun] came of age, [PAWN_possessive] parents bought [PAWN_objective] a small piece of land and a sheep and said good riddence. Initially discouraged, [PAWN_pronoun] found comfort in his new sheep friend. Through the years, [PAWN_pronoun] became one of the owners of one of the biggest flocks of sheep in all of the land.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>Animals</li>
+    </requiredWorkTags>
+    <forcedTraits />
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Animals</key>
+        <value>4</value>
+      </li>
+      <li>
+        <key>Construction</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Mining</key>
+        <value>-2</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_ShepherdChild</defName>
+    <title>Shepherd boy</title>
+    <titleShort>Shepherd</titleShort>
+    <titleFemale>Shepherd girl</titleFemale>
+    <baseDesc>[PAWN_nameDef] proved to be more helpful than any dog on the shepherd's ranch. [PAWN_pronoun] kept the herd together and learned how to take care of the animals to have glistening coats ready for shaving.</baseDesc>
+    <slot>Childhood</slot>
+    <workDisables />
+    <requiredWorkTags />
+    <forcedTraits />
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Animals</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>-1</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_FlyOnTheWall</defName>
+    <title>Fly on the wall</title>
+    <titleShort>Nobody</titleShort>
+    <baseDesc>Some would say the walls have eyes and ears. [PAWN_nameDef] was those eyes and ears. [PAWN_pronoun] worked throughout their childhood for extra bits of coin in exchange for information gleened from alleyways and sidestreets where business was being conducted away from those that might pry.</baseDesc>
+    <slot>Childhood</slot>
+    <workDisables />
+    <requiredWorkTags />
+    <forcedTraits />
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Intellectual</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>2</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_FarmChild</defName>
+    <title>Farm boy</title>
+    <titleShort>Farmhand</titleShort>
+    <titleFemale>Farm girl</titleFemale>
+    <baseDesc>[PAWN_nameDef] spent their childhood taking care of chickens and minding after the weeds by the crops. [PAWN_pronoun] learned to take care of all sorts of plants and animals over their childhood.</baseDesc>
+    <slot>Childhood</slot>
+    <workDisables />
+    <requiredWorkTags />
+    <forcedTraits />
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Plants</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Animals</key>
+        <value>3</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_StrongChild</defName>
+    <title>Strong lad</title>
+    <titleShort>Strong</titleShort>
+    <titleFemale>Strong lass</titleFemale>
+    <baseDesc>[PAWN_nameDef] was always there to help. [PAWN_pronoun] could pick up most any object and hoist it over [PAWN_possessive] shoulder. Friends and family alike came to trust, not only putting objects on [PAWN_possessive] shoulders, but also their trust.</baseDesc>
+    <slot>Childhood</slot>
+    <workDisables />
+    <requiredWorkTags />
+    <forcedTraits>
+      <Kind>0</Kind>
+    </forcedTraits>
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Melee</key>
+        <value>2</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>1</value>
+      </li>
+      <li>
+        <key>Intellectual</key>
+        <value>-1</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Apprentice</defName>
+    <title>Apprentice</title>
+    <titleShort>Apprentice</titleShort>
+    <baseDesc>[PAWN_nameDef] was an apprentice. [PAWN_pronoun] worked for the local craftsman to learn how to make [PAWN_possessive] own wonderful things to bring out to the world.</baseDesc>
+    <slot>Childhood</slot>
+    <workDisables />
+    <requiredWorkTags />
+    <forcedTraits />
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Crafting</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Construction</key>
+        <value>2</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Writer</defName>
+    <title>Writer</title>
+    <titleShort>Writer</titleShort>
+    <baseDesc>[PAWN_nameDef] isn't much for the ways of war, however, without [PAWN_objective], no war would actually exist. As a writer, [PAWN_pronoun] took it upon [PAWN_objective]self to share stories with [PAWN_possessive] community and others through the copying and authoring of books.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>Intellectual</li>
+    </requiredWorkTags>
+    <forcedTraits />
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Intellectual</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Crafting</key>
+        <value>2</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Cook</defName>
+    <title>Cook</title>
+    <titleShort>Cook</titleShort>
+    <baseDesc>[PAWN_nameDef] knows what steams your beans. [PAWN_pronoun] knows the three essential ways of preparing po-ta-toes. [PAWN_pronoun] can also manage all manner of eggs like an artist. No settlement is complete without [PAWN_objective].</baseDesc>
+    <bodyTypeMale>Fat</bodyTypeMale>
+    <bodyTypeFemale>Fat</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <workDisables />
+    <requiredWorkTags>
+      <li>Cooking</li>
+      <li>Hauling</li>
+    </requiredWorkTags>
+    <forcedTraits />
+    <disallowedTraits />
+    <skillGains>
+      <li>
+        <key>Cooking</key>
+        <value>5</value>
+      </li>
+      <li>
+        <key>Melee</key>
+        <value>-3</value>
+      </li>
+      <li>
+        <key>Construction</key>
+        <value>-2</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_Archer</defName>
+    <title>Archer</title>
+    <titleShort>Archer</titleShort>
+    <baseDesc>[PAWN_nameDef] was an archer. [PAWN_pronoun] learned to hit targets at a distance with a trusty arrow when taking up defense of the town's walls and helping the local hunters bring extra meat before the coming of the dangerous winter frosts.</baseDesc>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <slot>Adulthood</slot>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <skillGains>
+      <li>
+        <key>Shooting</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Crafting</key>
+        <value>1</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+  <JecsTools.BackstoryDef>
+    <defName>LotRTTA_TownGuard</defName>
+    <title>Town guard</title>
+    <titleShort>Guard</titleShort>
+    <baseDesc>[PAWN_nameDef] took up arms to keep the town safe from outside threats. Shifts were long, boring, and devoid of intellectual persuits. [PAWN_pronoun] practiced fencing in [PAWN_possessive] free time to better defend [PAWN_possessive] post.</baseDesc>
+    <slot>Childhood</slot>
+    <workDisables>
+      <li>Intellectual</li>
+    </workDisables>
+    <skillGains>
+      <li>
+        <key>Melee</key>
+        <value>3</value>
+      </li>
+      <li>
+        <key>Social</key>
+        <value>1</value>
+      </li>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+    </spawnCategories>
+  </JecsTools.BackstoryDef>
+</Defs>

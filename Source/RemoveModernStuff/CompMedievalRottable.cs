@@ -36,7 +36,7 @@ public class CompMedievalRottable : CompRottable
         var factor = 1f;
         foreach (var thing in thingList)
         {
-            if (!(thing is Building_RottableFixer fixer))
+            if (thing is not Building_RottableFixer fixer)
             {
                 continue;
             }
@@ -59,23 +59,20 @@ public class CompMedievalRottable : CompRottable
         num2 = Mathf.RoundToInt(num2);
         var num3 = GenTemperature.RotRateAtTemperature(num2);
         var ticksUntilRotAtCurrentTemp = (int)(TicksUntilRotAtCurrentTemp * factor);
-        if (num3 < 0.001f)
+        switch (num3)
         {
-            sb.Append("CurrentlyFrozen".Translate() + ".");
-        }
-        else
-        {
-            if (num3 < 0.999f)
-            {
+            case < 0.001f:
+                sb.Append("CurrentlyFrozen".Translate() + ".");
+                break;
+            case < 0.999f:
                 sb.Append(
                     "CurrentlyRefrigerated".Translate(ticksUntilRotAtCurrentTemp.ToStringTicksToPeriodVague()) +
                     ".");
-            }
-            else
-            {
+                break;
+            default:
                 sb.Append(
                     "NotRefrigerated".Translate(ticksUntilRotAtCurrentTemp.ToStringTicksToPeriodVague()) + ".");
-            }
+                break;
         }
 
         return sb.ToString().TrimEndNewlines();
@@ -141,16 +138,17 @@ public class CompMedievalRottable : CompRottable
             return;
         }
 
-        if (Stage == RotStage.Rotting && PropsRot.rotDamagePerDay > 0f)
+        switch (Stage)
         {
-            parent?.TakeDamage(new DamageInfo(DamageDefOf.Rotting,
-                GenMath.RoundRandom(PropsRot.rotDamagePerDay)));
-        }
-        else if (Stage == RotStage.Dessicated && PropsRot.dessicatedDamagePerDay > 0f &&
-                 ShouldTakeDessicateDamage())
-        {
-            parent.TakeDamage(new DamageInfo(DamageDefOf.Rotting,
-                GenMath.RoundRandom(PropsRot.dessicatedDamagePerDay)));
+            case RotStage.Rotting when PropsRot.rotDamagePerDay > 0f:
+                parent?.TakeDamage(new DamageInfo(DamageDefOf.Rotting,
+                    GenMath.RoundRandom(PropsRot.rotDamagePerDay)));
+                break;
+            case RotStage.Dessicated when PropsRot.dessicatedDamagePerDay > 0f &&
+                                          ShouldTakeDessicateDamage():
+                parent?.TakeDamage(new DamageInfo(DamageDefOf.Rotting,
+                    GenMath.RoundRandom(PropsRot.dessicatedDamagePerDay)));
+                break;
         }
     }
 
@@ -162,7 +160,7 @@ public class CompMedievalRottable : CompRottable
         var curPosition = meat.PositionHeld;
         var curMap = meat.MapHeld;
         parent.Destroy();
-        var newThing = (ThingWithComps)ThingMaker.MakeThing(ThingDef.Named(curDefName + "Salted"));
+        var newThing = (ThingWithComps)ThingMaker.MakeThing(ThingDef.Named($"{curDefName}Salted"));
         newThing.stackCount = count;
         newThing.HitPoints =
             Mathf.RoundToInt(curHP / meat.GetStatValue(StatDefOf.MaxHitPoints) * newThing.MaxHitPoints); // curHP;
@@ -171,17 +169,15 @@ public class CompMedievalRottable : CompRottable
 
     private bool ShouldTakeDessicateDamage()
     {
-        if (parent.ParentHolder == null)
+        switch (parent.ParentHolder)
         {
-            return true;
+            case null:
+                return true;
+            case Thing thing when thing.def.category == ThingCategory.Building &&
+                                  thing.def.building.preventDeteriorationInside:
+                return false;
+            default:
+                return true;
         }
-
-        if (parent.ParentHolder is Thing thing && thing.def.category == ThingCategory.Building &&
-            thing.def.building.preventDeteriorationInside)
-        {
-            return false;
-        }
-
-        return true;
     }
 }

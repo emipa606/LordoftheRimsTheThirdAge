@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using RimWorld;
 using Verse;
@@ -21,66 +22,44 @@ public static class BackstoryHandler
             return;
         }
 
-        DebugString.AppendLine("BackstoryDef Removal List");
+        //DebugString.AppendLine("BackstoryDef Removal List");
         //StringBuilder listOfBackstoriesToRemove = new StringBuilder();
-        var tempBackstoryKeys = BackstoryDatabase.allBackstories.Keys;
-        foreach (var badId in GetIncompatibleBackstories())
-        {
-            //listOfBackstoriesToRemove.AppendLine(badId);
-            foreach (var existingId in tempBackstoryKeys)
-            {
-                var properId = RemoveNumbers(existingId);
-                //listOfBackstoriesToRemove.AppendLine(":: " + properId);
-                if (properId != RemoveNumbers(badId))
-                {
-                    continue;
-                }
+        var incompatibleStories = GetIncompatibleBackstories();
+        var backstoriesToRemove =
+            DefDatabase<BackstoryDef>.AllDefs.Where(def => incompatibleStories.Contains(def.defName));
 
-                BackstoryDatabase.allBackstories.Remove(existingId);
-                //listOfBackstoriesToRemove.AppendLine("::::::::::::: ");
-                //listOfBackstoriesToRemove.AppendLine(":: REMOVED :: ");
-                //listOfBackstoriesToRemove.AppendLine(existingId);
-                //listOfBackstoriesToRemove.AppendLine("::::::::::::: ");
-                break;
-            }
-        }
-
-        //Log.Message(listOfBackstoriesToRemove.ToString());
-        //var cacheKeyType = AccessTools.TypeByName("CacheKey");
-        //Log.Message(cacheKeyType.ToString());
-        //dynamic shuffle = AccessTools.Field(typeof(BackstoryDatabase), "shuffleableBackstoryList").GetValue(null);
-        //shuffle.Clear();
+        RemoveModernStuff.RemoveStuffFromDatabase(typeof(DefDatabase<BackstoryDef>), backstoriesToRemove);
     }
 
-    public static void ListIncompatibleBackstories()
-    {
-        var listOfBackstoriesToRemove = new StringBuilder();
-        foreach (var bsy in BackstoryDatabase.allBackstories)
-        {
-            var bs = bsy.Value;
-            var bsTitle = bs.title.ToLowerInvariant();
-            var bsDesc = bs.baseDesc.ToLowerInvariant();
-            string[] filteredWords =
-            {
-                "world", "planet", "vat", "robot", "organ",
-                "universe", "research", "midworld", "space", "galaxy", "star system",
-                "genetic", "communications", "gun", "ceti", "tech", "machine",
-                "addiction", "starship", "pilot", "coma", "napalm", "imperial"
-            };
-            foreach (var subString in filteredWords)
-            {
-                if (!(bsTitle + " " + bsDesc).Contains(subString))
-                {
-                    continue;
-                }
+    //public static void ListIncompatibleBackstories()
+    //{
+    //    var listOfBackstoriesToRemove = new StringBuilder();
+    //    foreach (var bsy in BackstoryDatabase.allBackstories)
+    //    {
+    //        var bs = bsy.Value;
+    //        var bsTitle = bs.title.ToLowerInvariant();
+    //        var bsDesc = bs.baseDesc.ToLowerInvariant();
+    //        string[] filteredWords =
+    //        {
+    //            "world", "planet", "vat", "robot", "organ",
+    //            "universe", "research", "midworld", "space", "galaxy", "star system",
+    //            "genetic", "communications", "gun", "ceti", "tech", "machine",
+    //            "addiction", "starship", "pilot", "coma", "napalm", "imperial"
+    //        };
+    //        foreach (var subString in filteredWords)
+    //        {
+    //            if (!(bsTitle + " " + bsDesc).Contains(subString))
+    //            {
+    //                continue;
+    //            }
 
-                listOfBackstoriesToRemove.AppendLine(bsy.Key);
-                break;
-            }
-        }
+    //            listOfBackstoriesToRemove.AppendLine(bsy.Key);
+    //            break;
+    //        }
+    //    }
 
-        Log.Message(listOfBackstoriesToRemove.ToString());
-    }
+    //    Log.Message(listOfBackstoriesToRemove.ToString());
+    //}
 
 
     private static IEnumerable<string> GetIncompatibleBackstories()

@@ -47,13 +47,13 @@ public class Building_RottableFixer : Building_Storage, IStoreSettingsParent
         {
             foreach (var thing in pos.GetThingList(Map))
             {
-                if (!(thing is ThingWithComps thingWithComps))
+                if (thing is not ThingWithComps thingWithComps)
                 {
                     continue;
                 }
 
                 var rottable = thing.TryGetComp<CompRottable>();
-                if (rottable == null || rottable is CompMedievalRottable)
+                if (rottable is null or CompMedievalRottable)
                 {
                     continue;
                 }

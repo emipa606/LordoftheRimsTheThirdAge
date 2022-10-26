@@ -87,7 +87,7 @@ public class GenStep_ScatterShrinesMedieval : GenStep_ScatterRuinsSimple
             });
 
         var nextSignalTagID = Find.UniqueIDsManager.GetNextSignalTagID();
-        var signalTag = "ancientTempleApproached-" + nextSignalTagID;
+        var signalTag = $"ancientTempleApproached-{nextSignalTagID}";
         var signalAction_Letter = (SignalAction_Letter)ThingMaker.MakeThing(ThingDefOf.SignalAction_Letter);
         signalAction_Letter.signalTag = signalTag;
         signalAction_Letter.letter = LetterMaker.MakeLetter("LetterLabelAncientShrineWarning".Translate(),

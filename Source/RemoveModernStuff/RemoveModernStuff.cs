@@ -32,7 +32,7 @@ public static class RemoveModernStuff
 
 
         DebugString.AppendLine("Lord of the Rings - The Third Age - Start Removal Log");
-        DebugString.AppendLine("Tech Limiter Active: Max Level = " + MaxTechlevel);
+        DebugString.AppendLine($"Tech Limiter Active: Max Level = {MaxTechlevel}");
         GiveApproppriateTechLevels();
 
         removedDefs = 0;
@@ -67,26 +67,13 @@ public static class RemoveModernStuff
             rd.AllRecipeUsers.All(td => things.Contains(td)) ||
             projects.Contains(rd.researchPrerequisite)).Cast<Def>().ToList();
         recipeDefsToRemove?.RemoveAll(x =>
-            x.defName == "ExtractMetalFromSlag" ||
-            x.defName == "SmeltWeapon" ||
-            x.defName == "DestroyWeapon" ||
-            x.defName == "OfferingOfPlants_Meagre" ||
-            x.defName == "OfferingOfPlants_Decent" ||
-            x.defName == "OfferingOfPlants_Sizable" ||
-            x.defName == "OfferingOfPlants_Worthy" ||
-            x.defName == "OfferingOfPlants_Impressive" ||
-            x.defName == "OfferingOfMeat_Meagre" ||
-            x.defName == "OfferingOfMeat_Decent" ||
-            x.defName == "OfferingOfMeat_Sizable" ||
-            x.defName == "OfferingOfMeat_Worthy" ||
-            x.defName == "OfferingOfMeat_Impressive" ||
-            x.defName == "OfferingOfMeals_Meagre" ||
-            x.defName == "OfferingOfMeals_Decent" ||
-            x.defName == "OfferingOfMeals_Sizable" ||
-            x.defName == "OfferingOfMeals_Worthy" ||
-            x.defName == "OfferingOfMeals_Impressive" ||
-            x.defName == "ROMV_ExtractBloodVial" ||
-            x.defName == "ROMV_ExtractBloodPack"
+            x.defName is "ExtractMetalFromSlag" or "SmeltWeapon" or "DestroyWeapon" or "OfferingOfPlants_Meagre"
+                or "OfferingOfPlants_Decent" or "OfferingOfPlants_Sizable" or "OfferingOfPlants_Worthy"
+                or "OfferingOfPlants_Impressive" or "OfferingOfMeat_Meagre" or "OfferingOfMeat_Decent"
+                or "OfferingOfMeat_Sizable" or "OfferingOfMeat_Worthy" or "OfferingOfMeat_Impressive"
+                or "OfferingOfMeals_Meagre" or "OfferingOfMeals_Decent" or "OfferingOfMeals_Sizable"
+                or "OfferingOfMeals_Worthy"
+                or "OfferingOfMeals_Impressive" or "ROMV_ExtractBloodVial" or "ROMV_ExtractBloodPack"
         );
         RemoveStuffFromDatabase(typeof(DefDatabase<RecipeDef>), recipeDefsToRemove);
 
@@ -101,14 +88,13 @@ public static class RemoveModernStuff
         {
             foreach (var sp in def.scenario.AllParts)
             {
-                if (!(sp is ScenPart_ThingCount) || !things.Contains((ThingDef)getThingInfo?.GetValue(sp)))
+                if (sp is not ScenPart_ThingCount || !things.Contains((ThingDef)getThingInfo?.GetValue(sp)))
                 {
                     continue;
                 }
 
                 def.scenario.RemovePart(sp);
-                DebugString.AppendLine("- " + sp.Label + " " + ((ThingDef)getThingInfo?.GetValue(sp)).label +
-                                       " from " + def.label);
+                DebugString.AppendLine($"- {sp.Label} {((ThingDef)getThingInfo?.GetValue(sp)).label} from {def.label}");
             }
         }
 
@@ -131,16 +117,14 @@ public static class RemoveModernStuff
                         var def = Traverse.Create(sd).Field("thingDef")
                             .GetValue<ThingDef>();
                         tkd.stockGenerators.Remove(stockGenerator);
-                        DebugString.AppendLine("- " + def.label + " from " + tkd.label +
-                                               "'s StockGenerator_SingleDef");
+                        DebugString.AppendLine($"- {def.label} from {tkd.label}'s StockGenerator_SingleDef");
                         break;
                     case StockGenerator_MultiDef md:
                         var thingListTraverse = Traverse.Create(md).Field("thingDefs");
                         var thingList = thingListTraverse.GetValue<List<ThingDef>>();
                         var removeList = thingList.FindAll(things.Contains);
                         removeList?.ForEach(x =>
-                            DebugString.AppendLine("- " + x.label + " from " + tkd.label +
-                                                   "'s StockGenerator_MultiDef"));
+                            DebugString.AppendLine($"- {x.label} from {tkd.label}'s StockGenerator_MultiDef"));
                         thingList.RemoveAll(things.Contains);
 
                         if (thingList.NullOrEmpty())
@@ -273,8 +257,7 @@ public static class RemoveModernStuff
         foreach (var mgd in DefDatabase<MapGeneratorDef>.AllDefs)
         {
             mgd.genSteps.RemoveAll(gs =>
-                gs.genStep is GenStep_SleepingMechanoids || gs.genStep is GenStep_Turrets ||
-                gs.genStep is GenStep_Power);
+                gs.genStep is GenStep_SleepingMechanoids or GenStep_Turrets or GenStep_Power);
         }
 
         DebugString.AppendLine("RuleDef Removal List");
@@ -287,16 +270,16 @@ public static class RemoveModernStuff
         foreach (var rd in DefDatabase<RuleDef>.AllDefs)
         {
             rd.resolvers.RemoveAll(sr =>
-                sr is SymbolResolver_AncientCryptosleepCasket || sr is SymbolResolver_ChargeBatteries ||
-                sr is SymbolResolver_EdgeMannedMortar || sr is SymbolResolver_FirefoamPopper ||
-                sr is SymbolResolver_MannedMortar || sr is SymbolResolver_OutdoorLighting);
+                sr is SymbolResolver_AncientCryptosleepCasket or SymbolResolver_ChargeBatteries
+                    or SymbolResolver_EdgeMannedMortar or SymbolResolver_FirefoamPopper
+                    or SymbolResolver_MannedMortar or SymbolResolver_OutdoorLighting);
             if (rd.resolvers.Count == 0)
             {
                 rd.resolvers.Add(new SymbolResolver_AddWortToFermentingBarrels());
             }
         }
 
-        Log.Message("Removed " + removedDefs + " modern defs");
+        Log.Message($"Removed {removedDefs} modern defs");
 
         PawnWeaponGenerator.Reset();
         PawnApparelGenerator.Reset();
@@ -317,7 +300,7 @@ public static class RemoveModernStuff
         ThingDef.Named("FueledSmithy").techLevel = TechLevel.Industrial;
     }
 
-    private static void RemoveStuffFromDatabase(Type databaseType, [NotNull] IEnumerable<Def> defs)
+    public static void RemoveStuffFromDatabase(Type databaseType, [NotNull] IEnumerable<Def> defs)
     {
         IEnumerable<Def> enumerable = defs as Def[] ?? defs.ToArray();
         if (!enumerable.Any())
@@ -329,7 +312,7 @@ public static class RemoveModernStuff
         foreach (var def in enumerable)
         {
             removedDefs++;
-            DebugString.AppendLine("- " + def.label);
+            DebugString.AppendLine($"- {def.label}");
             rm.GetValue(def);
         }
     }

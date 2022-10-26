@@ -28,7 +28,7 @@ public static class OnStartup
 
     private static void AddCramRecipes()
     {
-        if (!(TTADefOf.FueledStove is { } fueldStove) || !(fueldStove.recipes?.Count > 0))
+        if (TTADefOf.FueledStove is not { recipes.Count: > 0 } fueldStove)
         {
             return;
         }
@@ -62,7 +62,7 @@ public static class OnStartup
             templeInterior.resolvers = new List<SymbolResolver> { symbolResolverInteriorAncientTempleMedieval };
         }
 
-        if (!(TTADefOf.AncientShrinesGroup is { } shrineGroup))
+        if (TTADefOf.AncientShrinesGroup is not { } shrineGroup)
         {
             return;
         }
@@ -91,11 +91,13 @@ public static class OnStartup
                 resourceReadoutPriority = td.resourceReadoutPriority, //ResourceCountPriority.Middle;
                 category = td.category, // ThingCategory.Item;
                 thingClass = td.thingClass, // typeof(ThingWithComps);
-                graphicData = new GraphicData()
+                graphicData = new GraphicData
+                {
+                    graphicClass = td.graphicData.graphicClass // typeof(Graphic_Single);
+                },
+                useHitPoints = td.useHitPoints, // true;
+                selectable = td.selectable // true;
             };
-            d.graphicData.graphicClass = td.graphicData.graphicClass; // typeof(Graphic_Single);
-            d.useHitPoints = td.useHitPoints; // true;
-            d.selectable = td.selectable; // true;
             //d.SetStatBaseValue(StatDefOf.MaxHitPoints, 115f);
             d.SetStatBaseValue(StatDefOf.MaxHitPoints, td.GetStatValueAbstract(StatDefOf.MaxHitPoints) * 1.15f);
             d.altitudeLayer = td.altitudeLayer; // AltitudeLayer.Item;
@@ -153,7 +155,7 @@ public static class OnStartup
             d.graphicData.texPath = td.graphicData.texPath;
             d.graphicData.color = td.graphicData.color;
             //d.thingCategories.Add(TTADefOf.LotR_MeatRawSalted);
-            d.defName = td.defName + "Salted";
+            d.defName = $"{td.defName}Salted";
             d.label = "TTA_SaltedLabel".Translate(td.label);
             d.ingestible.sourceDef = td.ingestible.sourceDef;
             defsToAdd.Add(d);
@@ -209,7 +211,7 @@ public static class OnStartup
             movedDefs++;
         }
 
-        Log.Message("Moved " + movedDefs + " from Machining Table to Smithy.");
+        Log.Message($"Moved {movedDefs} from Machining Table to Smithy.");
 
         if (!ModStuff.Settings.LimitTechnology ||
             ModLister.GetActiveModWithIdentifier("CETeam.CombatExtended".ToLower()) == null)
@@ -275,7 +277,7 @@ public static class OnStartup
         }
 
 
-        Log.Message("Replaced " + steelDefs + " defs with Iron.");
+        Log.Message($"Replaced {steelDefs} defs with Iron.");
     }
 
     private static void ReplaceModernResources()
