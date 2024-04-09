@@ -90,8 +90,9 @@ public class GenStep_ScatterShrinesMedieval : GenStep_ScatterRuinsSimple
         var signalTag = $"ancientTempleApproached-{nextSignalTagID}";
         var signalAction_Letter = (SignalAction_Letter)ThingMaker.MakeThing(ThingDefOf.SignalAction_Letter);
         signalAction_Letter.signalTag = signalTag;
-        signalAction_Letter.letter = LetterMaker.MakeLetter("LetterLabelAncientShrineWarning".Translate(),
-            "AncientShrineWarning".Translate(), LetterDefOf.NeutralEvent, new TargetInfo(rect.CenterCell, map));
+        signalAction_Letter.letterDef = LetterDefOf.NeutralEvent;
+        signalAction_Letter.letterLabelKey = "LetterLabelAncientShrineWarning";
+        signalAction_Letter.letterMessageKey = "AncientShrineWarning";
         GenSpawn.Spawn(signalAction_Letter, rect.CenterCell, map);
         var rectTrigger = (RectTrigger)ThingMaker.MakeThing(ThingDefOf.RectTrigger);
         rectTrigger.signalTag = signalTag;

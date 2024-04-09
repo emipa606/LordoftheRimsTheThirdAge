@@ -8,7 +8,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1400245220
 - This is an unofficial port
 - This will be removed when/if Jecrell comes back
 - Added an option to disable the limit of technology, to replace the mod: Lord of the Rims - Unlimited
-- Added support for Combat Extended
+- [strike]Added support for Combat Extended[/strike] No longer updated
 - Added support for https://steamcommunity.com/sharedfiles/filedetails/?id=2574489704]Simple FX: Smoke
 
 ![Image](https://i.imgur.com/pufA0kM.png)
@@ -57,11 +57,13 @@ Join the Lord of the Rims channel to discuss the mod.
 
 -  See if the the error persists if you just have this mod and its requirements active.
 -  If not, try adding your other mods until it happens again.
--  Post your error-log using https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib and command Ctrl+F12
+-  Post your error-log using https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib or the standalone https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Uploader and command Ctrl+F12
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
+-  Use https://github.com/RimSort/RimSort/releases/latest]RimSort to sort your mods
 
 
 
+https://steamcommunity.com/sharedfiles/filedetails/changelog/2242416385]![Image](https://img.shields.io/github/v/release/emipa606/LordoftheRimsTheThirdAge?label=latest%20version&style=plastic&color=9f1111&labelColor=black)
 

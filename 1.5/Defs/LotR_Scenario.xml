@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FactionDef ParentName="PlayerFactionBase">
+    <defName>LotRPlayerColony</defName>
+    <label>Medieval Village</label>
+    <description>Your own community.</description>
+    <isPlayer>true</isPlayer>
+    <basicMemberKind>LotR_MedievalVillager</basicMemberKind>
+    <pawnSingular>villager</pawnSingular>
+    <pawnsPlural>villagers</pawnsPlural>
+    <techLevel>Medieval</techLevel>
+    <backstoryCategories>
+      <li>Outlander</li>
+    </backstoryCategories>
+    <factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+    <playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+    <factionNameMaker>NamerFactionOutlander</factionNameMaker>
+    <!-- Previous
+      <factionNameMakerPlayer>NamerSettlementPlayerColonyRandomized</factionNameMakerPlayer>
+     -->
+    <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    <!-- Previous
+      <settlementNameMaker>NamerSettlementPlayerColony</settlementNameMaker>
+     -->
+    <startingResearchTags>
+      <li>ClassicStart</li>
+    </startingResearchTags>
+    <allowedCultures>
+      <li>Corunan</li>
+    </allowedCultures>
+    <apparelStuffFilter>
+      <thingDefs>
+        <li>Cloth</li>
+      </thingDefs>
+    </apparelStuffFilter>
+  </FactionDef>
+  <ScenarioDef>
+    <defName>LotR_SimpleColony</defName>
+    <label>Lord of the Rims - Third Age Settlers</label>
+    <description>Many years ago, when this ancient planet was not quite so ancient, long before man recorded his history, there was the time of Middle-Earth. Some free peoples have come together to make a community of their own.</description>
+    <scenario>
+      <summary>Three characters -- a remix of the classic RimWorld experience.</summary>
+      <playerFaction>
+        <def>PlayerFaction</def>
+        <factionDef>LotRPlayerColony</factionDef>
+      </playerFaction>
+      <parts>
+        <!-- Config pages -->
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+          <def>ConfigPage_ConfigureStartingPawns</def>
+          <pawnCount>3</pawnCount>
+          <pawnChoiceCount>8</pawnChoiceCount>
+        </li>
+        <!-- Player starting stuff spawn method-->
+        <li Class="ScenPart_PlayerPawnsArriveMethod">
+          <def>PlayerPawnsArriveMethod</def>
+          <method>Standing</method>
+          <visible>false</visible>
+        </li>
+        <!-- Player starting things -->
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LotR_Iron</thingDef>
+          <count>800</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LotR_Cram</thingDef>
+          <count>240</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineHerbal</thingDef>
+          <count>30</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MeleeWeapon_Knife</thingDef>
+          <stuff>LotR_Mithril</stuff>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Bow_Short</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingAnimal">
+          <def>StartingAnimal</def>
+          <count>1</count>
+          <bondToRandomPlayerPawnChance>1.0</bondToRandomPlayerPawnChance>
+        </li>
+        <!-- Scatter some things near player start -->
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>LotR_Iron</thingDef>
+          <count>450</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>WoodLog</thingDef>
+          <count>300</count>
+        </li>
+        <!-- Scatter some things anywhere -->
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>LotR_Iron</thingDef>
+          <count>720</count>
+        </li>
+        <!-- Game start dialog -->
+        <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <text>Many years ago, when this ancient planet was not quite so ancient, long before man recorded his history, there was the time of Middle-Earth. Some free peoples have come together to make a community of their own. Their success, failure, hopes, and dreams may yet come to pass.</text>
+          <closeSound>GameStartSting</closeSound>
+        </li>
+      </parts>
+    </scenario>
+  </ScenarioDef>
+  <ScenarioDef>
+    <defName>LotR_SimpleFellowship</defName>
+    <label>Lord of the Rims - Third Age Fellowship</label>
+    <description>Many years ago, when this ancient planet was not quite so ancient, long before man recorded his history, there was the time of Middle-Earth. Nine individuals have come together with great resolve and purpose. What they do with their time that is given to them is up to you.</description>
+    <scenario>
+      <summary>Nine character start.</summary>
+      <playerFaction>
+        <def>PlayerFaction</def>
+        <factionDef>LotRPlayerColony</factionDef>
+      </playerFaction>
+      <parts>
+        <!-- Config pages -->
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+          <def>ConfigPage_ConfigureStartingPawns</def>
+          <pawnCount>9</pawnCount>
+          <pawnChoiceCount>9</pawnChoiceCount>
+        </li>
+        <!-- Player starting stuff spawn method-->
+        <li Class="ScenPart_PlayerPawnsArriveMethod">
+          <def>PlayerPawnsArriveMethod</def>
+          <method>Standing</method>
+          <visible>false</visible>
+        </li>
+        <!-- Player starting things -->
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LotR_Iron</thingDef>
+          <count>800</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>LotR_Cram</thingDef>
+          <count>720</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineHerbal</thingDef>
+          <count>30</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MeleeWeapon_Knife</thingDef>
+          <stuff>LotR_Mithril</stuff>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Bow_Short</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingAnimal">
+          <def>StartingAnimal</def>
+          <count>4</count>
+          <bondToRandomPlayerPawnChance>1.0</bondToRandomPlayerPawnChance>
+        </li>
+        <!-- Scatter some things near player start -->
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>LotR_Iron</thingDef>
+          <count>450</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>WoodLog</thingDef>
+          <count>300</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>LotR_Iron</thingDef>
+          <count>720</count>
+        </li>
+        <!-- Game start dialog -->
+        <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <text>Many years ago, when this ancient planet was not quite so ancient, long before man recorded his history, there was the time of Middle-Earth. Nine individuals have come together with great resolve and purpose. Their success, failure, hopes, and dreams may yet come to pass.</text>
+          <closeSound>GameStartSting</closeSound>
+        </li>
+      </parts>
+    </scenario>
+  </ScenarioDef>
+</Defs>

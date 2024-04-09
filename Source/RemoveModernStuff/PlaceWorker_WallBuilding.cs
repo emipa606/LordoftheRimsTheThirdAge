@@ -42,8 +42,8 @@ public class PlaceWorker_WallBuilding : PlaceWorker
                 ++facingLoc.x;
                 break;
             default:
-                throw new Exception("LotRD: PlaceWorker_BuildingWall " +
-                                    "found an invalid rotation for placed thing at {loc}.");
+                throw new Exception(
+                    "LotRD: PlaceWorker_BuildingWall found an invalid rotation for placed thing at {loc}.");
         }
 
         var _support = facingLoc.GetEdifice(map);

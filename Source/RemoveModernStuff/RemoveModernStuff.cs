@@ -181,7 +181,7 @@ public static class RemoveModernStuff
         RemoveStuffFromDatabase(typeof(DefDatabase<IncidentDef>), incidents);
 
         DebugString.AppendLine("Replaced Ancient Asphalt Road / Ancient Asphalt Highway with Stone Road");
-        RoadDef[] targetRoads = { RoadDefOf.AncientAsphaltRoad, RoadDefOf.AncientAsphaltHighway };
+        RoadDef[] targetRoads = [RoadDefOf.AncientAsphaltRoad, RoadDefOf.AncientAsphaltHighway];
         var originalRoad = DefDatabase<RoadDef>.GetNamed("StoneRoad");
 
         var fieldNames = AccessTools.GetFieldNames(typeof(RoadDef));
@@ -196,7 +196,7 @@ public static class RemoveModernStuff
         }
 
         DebugString.AppendLine("Special Hediff Removal List");
-        RemoveStuffFromDatabase(typeof(DefDatabase<HediffDef>), hediffs = new[] { HediffDefOf.Gunshot });
+        RemoveStuffFromDatabase(typeof(DefDatabase<HediffDef>), hediffs = new[] { HediffDef.Named("Gunshot") });
 
         DebugString.AppendLine("RaidStrategyDef Removal List");
         RemoveStuffFromDatabase(typeof(DefDatabase<RaidStrategyDef>),
@@ -205,7 +205,7 @@ public static class RemoveModernStuff
 
         //            ItemCollectionGeneratorUtility.allGeneratableItems.RemoveAll(match: things.Contains);
         //
-        //            foreach (Type type in typeof(ItemCollectionGenerator_Standard).AllSubclassesNonAbstract())
+        //            foreach (Type in typeof(ItemCollectionGenerator_Standard).AllSubclassesNonAbstract())
         //                type.GetMethod(name: "Reset")?.Invoke(obj: null, parameters: null);
 
         DebugString.AppendLine("ThingDef Removal List");

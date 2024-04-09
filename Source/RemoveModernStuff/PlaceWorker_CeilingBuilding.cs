@@ -28,11 +28,8 @@ public class PlaceWorker_CeilingBuilding : PlaceWorker
             return "Can't be placed over doors.";
         }
 
-        if ((building.def.graphicData.linkFlags & (LinkFlags.Wall | LinkFlags.Rock)) != 0)
-        {
-            return "Can't be placed over walls.";
-        }
-
-        return AcceptanceReport.WasAccepted;
+        return (building.def.graphicData.linkFlags & (LinkFlags.Wall | LinkFlags.Rock)) != 0
+            ? "Can't be placed over walls."
+            : AcceptanceReport.WasAccepted;
     }
 }

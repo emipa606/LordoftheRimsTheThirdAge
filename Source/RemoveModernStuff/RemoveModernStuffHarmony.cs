@@ -48,19 +48,19 @@ public static class RemoveModernStuffHarmony
             null, new HarmonyMethod(typeof(RemoveModernStuffHarmony),
                 nameof(RandomPermanentInjuryDamageTypePostfix)));
 
-        //foreach (Type type in typeof(ThingSetMaker).AllSubclassesNonAbstract())
+        //foreach (Type in typeof(ThingSetMaker).AllSubclassesNonAbstract())
         //{
         //    harmony.Patch(original: AccessTools.Method(type: type, name: "Generate", parameters: new[] { typeof(ThingSetMakerParams) }), prefix: new HarmonyMethod(typeof(RemoveModernStuffHarmony), nameof(ItemCollectionGeneratorGeneratePrefix)), postfix: null);
         //}
         //Log.Message("ThingSetMaker");
-        harmony.Patch(AccessTools.Method(typeof(ThingSetMaker), "Generate", new[] { typeof(ThingSetMakerParams) }),
+        harmony.Patch(AccessTools.Method(typeof(ThingSetMaker), "Generate", [typeof(ThingSetMakerParams)]),
             new HarmonyMethod(typeof(RemoveModernStuffHarmony), nameof(ItemCollectionGeneratorGeneratePrefix)));
 
-        harmony.Patch(AccessTools.Method(typeof(FactionManager), "FirstFactionOfDef", new[] { typeof(FactionDef) }),
+        harmony.Patch(AccessTools.Method(typeof(FactionManager), "FirstFactionOfDef", [typeof(FactionDef)]),
             new HarmonyMethod(typeof(RemoveModernStuffHarmony), nameof(FactionManagerFirstFactionOfDefPrefix)));
 
         harmony.Patch(
-            AccessTools.Method(typeof(BackCompatibility), "FactionManagerPostLoadInit", Array.Empty<Type>()),
+            AccessTools.Method(typeof(BackCompatibility), "FactionManagerPostLoadInit", []),
             new HarmonyMethod(typeof(RemoveModernStuffHarmony),
                 nameof(BackCompatibilityFactionManagerPostLoadInitPrefix)));
 
@@ -80,7 +80,7 @@ public static class RemoveModernStuffHarmony
         //Log.Message("GeneratePawn");
         harmony.Patch(
             AccessTools.Method(typeof(PawnGenerator), nameof(PawnGenerator.GeneratePawn),
-                new[] { typeof(PawnGenerationRequest) }), null,
+                [typeof(PawnGenerationRequest)]), null,
             new HarmonyMethod(typeof(RemoveModernStuffHarmony), nameof(PostGenerateCleanup)));
         //Log.Message("AddToTradeables");
         harmony.Patch(AccessTools.Method(typeof(TradeDeal), "AddToTradeables"),
@@ -172,13 +172,8 @@ public static class RemoveModernStuffHarmony
 
     public static bool FactionManagerFirstFactionOfDefPrefix(ref FactionDef facDef)
     {
-        if (ModStuff.Settings.LimitTechnology && facDef != null &&
-            facDef.techLevel > RemoveModernStuff.MaxTechlevel)
-        {
-            return false;
-        }
-
-        return true;
+        return !ModStuff.Settings.LimitTechnology || facDef == null ||
+               facDef.techLevel <= RemoveModernStuff.MaxTechlevel;
     }
 
     public static bool BackCompatibilityFactionManagerPostLoadInitPrefix()

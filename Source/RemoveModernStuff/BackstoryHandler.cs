@@ -35,7 +35,7 @@ public static class BackstoryHandler
     //{
     //    var listOfBackstoriesToRemove = new StringBuilder();
     //    foreach (var bsy in BackstoryDatabase.allBackstories)
-    //    {
+    //    
     //        var bs = bsy.Value;
     //        var bsTitle = bs.title.ToLowerInvariant();
     //        var bsDesc = bs.baseDesc.ToLowerInvariant();

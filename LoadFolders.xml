@@ -30,4 +30,10 @@
     <li IfModActive="CETeam.CombatExtended">CE/1.4</li>
     <li IfModActive="vindar.medievaltimes">MedievalTimes</li>
   </v1.4>
+  <v1.5>
+    <li>/</li>
+    <li>1.5</li>
+    <li IfModActive="CETeam.CombatExtended">CE/1.5</li>
+    <li IfModActive="vindar.medievaltimes">MedievalTimes</li>
+  </v1.5>
 </loadFolders>

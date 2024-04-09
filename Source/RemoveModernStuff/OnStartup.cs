@@ -2,7 +2,6 @@
 using System.Linq;
 using HarmonyLib;
 using RimWorld;
-using RimWorld.BaseGen;
 using Verse;
 
 namespace TheThirdAge;
@@ -59,7 +58,7 @@ public static class OnStartup
             {
                 minRectSize = new IntVec2(4, 3)
             };
-            templeInterior.resolvers = new List<SymbolResolver> { symbolResolverInteriorAncientTempleMedieval };
+            templeInterior.resolvers = [symbolResolverInteriorAncientTempleMedieval];
         }
 
         if (TTADefOf.AncientShrinesGroup is not { } shrineGroup)
@@ -71,7 +70,7 @@ public static class OnStartup
         {
             minRectSize = new IntVec2(4, 3)
         };
-        shrineGroup.resolvers = new List<SymbolResolver> { symbolResolverAncientShrinesGroupMedieval };
+        shrineGroup.resolvers = [symbolResolverAncientShrinesGroupMedieval];
     }
 
     public static void AddSaltedMeats()
@@ -135,7 +134,7 @@ public static class OnStartup
             d.BaseMarketValue = td.BaseMarketValue;
             if (d.thingCategories == null)
             {
-                d.thingCategories = new List<ThingCategoryDef>();
+                d.thingCategories = [];
             }
 
             DirectXmlCrossRefLoader.RegisterListWantsCrossRef(d.thingCategories, "LotR_MeatRawSalted", d);

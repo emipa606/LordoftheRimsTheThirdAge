@@ -51,11 +51,11 @@ public class CompFireOverlayRotatable : ThingComp
     {
         try
         {
-            GraphicRequest gr = new GraphicRequest(null, 
-                "Things/Special/Fire", 
-                ShaderDatabase.TransparentPostLight, 
-                Vector2.one, 
-                Color.white, 
+            GraphicRequest gr = new GraphicRequest(null,
+                "Things/Special/Fire",
+                ShaderDatabase.TransparentPostLight,
+                Vector2.one,
+                Color.white,
                 Color.white, null, 0, null);
             FireGraphic = new GraphicRotatable(gr);
         }
@@ -162,12 +162,7 @@ public class CompFireOverlayRotatable : ThingComp
             return false;
         }
 
-        if (refuelableComp == null)
-        {
-            return false;
-        }
-
-        return refuelableComp.HasFuel;
+        return refuelableComp is { HasFuel: true };
     }
 
     public override void PostSpawnSetup(bool respawningAfterLoad)

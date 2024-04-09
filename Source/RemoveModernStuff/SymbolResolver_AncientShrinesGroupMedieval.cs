@@ -16,10 +16,6 @@ public class SymbolResolver_AncientShrinesGroupMedieval : SymbolResolver
 
     public override void Resolve(ResolveParams rp)
     {
-        var num = (rp.rect.Width + 1) / (StandardAncientShrineSize.x + 1);
-        var num2 = (rp.rect.Height + 1) / (StandardAncientShrineSize.z + 1);
-        var bottomLeft = rp.rect.BottomLeft;
-        //GeneratePods(rp, num2, num, bottomLeft);
     }
 
     private static void GeneratePods(ResolveParams rp, int num2, int num, IntVec3 bottomLeft)
@@ -49,19 +45,19 @@ public class SymbolResolver_AncientShrinesGroupMedieval : SymbolResolver
         {
             for (var j = 0; j < num; j++)
             {
-                if (Rand.Chance(0.25f))
+                if (Rand.Chance(SkipShrineChance))
                 {
                     continue;
                 }
 
-                if (num3 >= 6)
+                if (num3 >= MaxNumCaskets)
                 {
                     break;
                 }
 
                 var rect = new CellRect(
-                    bottomLeft.x + (j * (StandardAncientShrineSize.x + 1)),
-                    bottomLeft.z + (i * (StandardAncientShrineSize.z + 1)),
+                    bottomLeft.x + (j * (StandardAncientShrineSize.x + MarginCells)),
+                    bottomLeft.z + (i * (StandardAncientShrineSize.z + MarginCells)),
                     StandardAncientShrineSize.x,
                     StandardAncientShrineSize.z);
                 if (!rect.FullyContainedWithin(rp.rect))
