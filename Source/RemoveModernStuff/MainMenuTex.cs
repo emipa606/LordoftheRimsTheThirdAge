@@ -13,7 +13,7 @@ public static class MainMenuTex
 {
     private static readonly bool debug = false;
 
-    public static Texture2D BGMain;
+    private static Texture2D BGMain;
 
     static MainMenuTex()
     {

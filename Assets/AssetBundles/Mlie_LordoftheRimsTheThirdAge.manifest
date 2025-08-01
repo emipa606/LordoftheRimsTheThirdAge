@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+CRC: 922736818
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: dd033676fe548f654b923761f99c3f55
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: dd033676fe548f654b923761f99c3f55
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Data/Mlie.LordoftheRimsTheThirdAge/Textures/Things/Building/Misc/edmundWulfgarth_WallSconces_north.png
+- Assets/Data/Mlie.LordoftheRimsTheThirdAge/Textures/Things/Building/Production/aPurpleAppleForge_south_m.png
+- Assets/Data/Mlie.LordoftheRimsTheThirdAge/Textures/Things/Building/Misc/edmundWulfgarth_WallSconces_back.png
+- Assets/Data/Mlie.LordoftheRimsTheThirdAge/Textures/Things/Building/Production/aPurpleAppleForge_east.png
+- Assets/Data/Mlie.LordoftheRimsTheThirdAge/Textures/Things/Building/Production/aPurpleAppleForge_east_m.png
+- Assets/Data/Mlie.LordoftheRimsTheThirdAge/Textures/Things/Building/Production/aPurpleAppleForge_north.png
+- Assets/Data/Mlie.LordoftheRimsTheThirdAge/Textures/Things/Item/Resource/edmundWulfgarthMithril.png
+- Assets/Data/Mlie.LordoftheRimsTheThirdAge/Textures/Things/Building/Misc/edmundWulfgarth_WallSconces_side.png
+- Assets/Data/Mlie.LordoftheRimsTheThirdAge/Textures/Things/Building/Production/aPurpleAppleForge_south.png
+- Assets/Data/Mlie.LordoftheRimsTheThirdAge/Textures/Things/Item/Resource/jecrellCram/jecrellCram_a.png
+- Assets/Data/Mlie.LordoftheRimsTheThirdAge/Textures/Things/Building/Misc/edmundWulfgarth_WallSconces_east.png
+- Assets/Data/Mlie.LordoftheRimsTheThirdAge/Textures/Things/Item/Resource/jecrellCram/jecrellCram_b.png
+- Assets/Data/Mlie.LordoftheRimsTheThirdAge/Textures/Things/Building/Production/aPurpleAppleForge_north_m.png
+- Assets/Data/Mlie.LordoftheRimsTheThirdAge/Textures/UI/HeroArt/TTABGPlanet.png
+- Assets/Data/Mlie.LordoftheRimsTheThirdAge/Textures/Things/Item/Resource/edmundWulfgarthIron/edmundWulfgarthIron_b.png
+- Assets/Data/Mlie.LordoftheRimsTheThirdAge/Textures/Things/Item/Resource/edmundWulfgarthIron/edmundWulfgarthIron_a.png
+- Assets/Data/Mlie.LordoftheRimsTheThirdAge/Textures/Things/Building/Misc/edmundWulfgarth_WallSconces_south.png
+Dependencies: []

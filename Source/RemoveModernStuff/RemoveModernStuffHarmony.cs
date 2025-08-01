@@ -23,24 +23,24 @@ public static class RemoveModernStuffHarmony
 
         var harmony = new Harmony("rimworld.removemodernstuff");
         //Log.Message("IsTravelingInTransportPodWorldObject");
-        harmony.Patch(AccessTools.Method(typeof(PawnUtility), "IsTravelingInTransportPodWorldObject"),
+        harmony.Patch(AccessTools.Method(typeof(PawnUtility), nameof(PawnUtility.IsTravelingInTransportPodWorldObject)),
             new HarmonyMethod(typeof(RemoveModernStuffHarmony), nameof(IsTravelingInTransportPodWorldObject)));
 
 
         //Changes the starting date of RimWorld.
         //Log.Message("StartingYear");
-        harmony.Patch(AccessTools.Property(typeof(TickManager), "StartingYear").GetGetMethod(), null,
+        harmony.Patch(AccessTools.Property(typeof(TickManager), nameof(TickManager.StartingYear)).GetGetMethod(), null,
             new HarmonyMethod(typeof(RemoveModernStuffHarmony), nameof(StartingYear_PostFix)));
         //Log.Message("Year");
-        harmony.Patch(AccessTools.Method(typeof(GenDate), "Year"), null,
+        harmony.Patch(AccessTools.Method(typeof(GenDate), nameof(GenDate.Year)), null,
             new HarmonyMethod(typeof(RemoveModernStuffHarmony), nameof(Year_PostFix)));
 
         //Replaces date string to include 'The Third Age'
         //Log.Message("DateFullStringAt");
-        harmony.Patch(AccessTools.Method(typeof(GenDate), "DateFullStringAt"), null,
+        harmony.Patch(AccessTools.Method(typeof(GenDate), nameof(GenDate.DateFullStringAt)), null,
             new HarmonyMethod(typeof(RemoveModernStuffHarmony), nameof(DateFullStringAt_PostFix)));
         //Log.Message("DateReadoutStringAt");
-        harmony.Patch(AccessTools.Method(typeof(GenDate), "DateReadoutStringAt"), null,
+        harmony.Patch(AccessTools.Method(typeof(GenDate), nameof(GenDate.DateReadoutStringAt)), null,
             new HarmonyMethod(typeof(RemoveModernStuffHarmony), nameof(DateReadoutStringAt_PostFix)));
 
         //Log.Message("RandomViolenceDamageType");
@@ -53,14 +53,16 @@ public static class RemoveModernStuffHarmony
         //    harmony.Patch(original: AccessTools.Method(type: type, name: "Generate", parameters: new[] { typeof(ThingSetMakerParams) }), prefix: new HarmonyMethod(typeof(RemoveModernStuffHarmony), nameof(ItemCollectionGeneratorGeneratePrefix)), postfix: null);
         //}
         //Log.Message("ThingSetMaker");
-        harmony.Patch(AccessTools.Method(typeof(ThingSetMaker), "Generate", [typeof(ThingSetMakerParams)]),
+        harmony.Patch(
+            AccessTools.Method(typeof(ThingSetMaker), nameof(ThingSetMaker.Generate), [typeof(ThingSetMakerParams)]),
             new HarmonyMethod(typeof(RemoveModernStuffHarmony), nameof(ItemCollectionGeneratorGeneratePrefix)));
 
-        harmony.Patch(AccessTools.Method(typeof(FactionManager), "FirstFactionOfDef", [typeof(FactionDef)]),
+        harmony.Patch(
+            AccessTools.Method(typeof(FactionManager), nameof(FactionManager.FirstFactionOfDef), [typeof(FactionDef)]),
             new HarmonyMethod(typeof(RemoveModernStuffHarmony), nameof(FactionManagerFirstFactionOfDefPrefix)));
 
         harmony.Patch(
-            AccessTools.Method(typeof(BackCompatibility), "FactionManagerPostLoadInit", []),
+            AccessTools.Method(typeof(BackCompatibility), nameof(BackCompatibility.FactionManagerPostLoadInit), []),
             new HarmonyMethod(typeof(RemoveModernStuffHarmony),
                 nameof(BackCompatibilityFactionManagerPostLoadInitPrefix)));
 
@@ -183,7 +185,7 @@ public static class RemoveModernStuffHarmony
 
     //No one travels in transport pods in the medieval times
     // ReSharper disable once RedundantAssignment
-    public static bool IsTravelingInTransportPodWorldObject(Pawn pawn, ref bool __result)
+    public static bool IsTravelingInTransportPodWorldObject(ref bool __result)
     {
         // ReSharper disable once ConditionIsAlwaysTrueOrFalse
         if (RemoveModernStuff.MaxTechlevel > TechLevel.Industrial)
@@ -196,9 +198,7 @@ public static class RemoveModernStuffHarmony
     }
 
     // No solid bios, to avoid conflicts.
-    public static bool TryGiveSolidBioTo_PreFix(Pawn pawn, string requiredLastName,
-        List<string> backstoryCategories,
-        ref bool __result)
+    public static bool TryGiveSolidBioTo_PreFix(ref bool __result)
     {
         __result = false;
         return false;

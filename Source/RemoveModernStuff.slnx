@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/.github/">
+    <File Path="../.github/copilot-instructions.md" />
+  </Folder>
+  <Configurations>
+    <BuildType Name="Release" />
+  </Configurations>
+  <Project Path="CEPatch/CEPatch.csproj" />
+  <Project Path="RemoveModernStuff/RemoveModernStuff.csproj" />
+</Solution>

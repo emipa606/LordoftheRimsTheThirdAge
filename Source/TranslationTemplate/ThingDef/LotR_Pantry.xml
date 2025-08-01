@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: pantry shelf -->
+  <LotR_PantryShelf.label>pantry shelf</LotR_PantryShelf.label>
+  <!-- EN: Non-meatlike food stored in this will rot at a much slower rate. -->
+  <LotR_PantryShelf.description>Non-meatlike food stored in this will rot at a much slower rate.</LotR_PantryShelf.description>
+  <!-- EN: salted pot -->
+  <LotR_SaltBarrel.label>salted pot</LotR_SaltBarrel.label>
+  <!-- EN: Food stored in this will rot at a much slower rate. -->
+  <LotR_SaltBarrel.description>Food stored in this will rot at a much slower rate.</LotR_SaltBarrel.description>
+</LanguageData>

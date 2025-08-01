@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: wall sconce -->
+  <LotR_WallSconce.label>wall sconce</LotR_WallSconce.label>
+  <!-- EN: A wooden torch attached to the wall for lighting an area. People need light to move and work at full speed. Can be automatically refueled with wood. Produces a small amount of heat. -->
+  <LotR_WallSconce.description>A wooden torch attached to the wall for lighting an area. People need light to move and work at full speed. Can be automatically refueled with wood. Produces a small amount of heat.</LotR_WallSconce.description>
+</LanguageData>

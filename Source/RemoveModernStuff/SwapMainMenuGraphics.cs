@@ -18,9 +18,10 @@ internal static class SwapMainMenuGraphics
         }
 
         var UI_BackgroundMainPatch = new Harmony("TTA.MainMenu.UI_BackgroundMainPatch");
-        var methInfBackgroundOnGUI = AccessTools.Method(typeof(UI_BackgroundMain), "BackgroundOnGUI");
+        var methInfBackgroundOnGUI =
+            AccessTools.Method(typeof(UI_BackgroundMain), nameof(UI_BackgroundMain.BackgroundOnGUI));
         var harmonyMethodPreFBackgroundOnGUI =
-            new HarmonyMethod(typeof(SwapMainMenuGraphics).GetMethod("PreFBackgroundOnGUI"));
+            new HarmonyMethod(typeof(SwapMainMenuGraphics).GetMethod(nameof(PreFBackgroundOnGUI)));
         UI_BackgroundMainPatch.Patch(methInfBackgroundOnGUI, harmonyMethodPreFBackgroundOnGUI);
         if (debug)
         {

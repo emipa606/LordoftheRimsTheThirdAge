@@ -57,11 +57,11 @@ public class GenStep_ScatterShrinesMedieval : GenStep_ScatterRuinsSimple
             return;
         }
 
-        var resolveParams = default(ResolveParams);
+        var resolveParams = default(SketchResolveParams);
         resolveParams.sketch = new Sketch();
         resolveParams.monumentSize = new IntVec2(num2, num3);
         SketchGen.Generate(SketchResolverDefOf.MonumentRuin, resolveParams).Spawn(map, rect.CenterCell, null,
-            Sketch.SpawnPosType.Unchanged, Sketch.SpawnMode.Normal, false, false, null, false, false,
+            Sketch.SpawnPosType.Unchanged, Sketch.SpawnMode.Normal, false, false, false, null, false, false,
             delegate(SketchEntity entity, IntVec3 cell)
             {
                 var result = false;

@@ -196,7 +196,7 @@ public static class RemoveModernStuff
         }
 
         DebugString.AppendLine("Special Hediff Removal List");
-        RemoveStuffFromDatabase(typeof(DefDatabase<HediffDef>), hediffs = new[] { HediffDef.Named("Gunshot") });
+        RemoveStuffFromDatabase(typeof(DefDatabase<HediffDef>), hediffs = [HediffDef.Named("Gunshot")]);
 
         DebugString.AppendLine("RaidStrategyDef Removal List");
         RemoveStuffFromDatabase(typeof(DefDatabase<RaidStrategyDef>),
@@ -232,8 +232,8 @@ public static class RemoveModernStuff
         RemoveStuffFromDatabase(typeof(DefDatabase<PawnKindDef>),
             DefDatabase<PawnKindDef>.AllDefs
                 .Where(pkd =>
-                    (!pkd.defaultFactionType?.isPlayer ?? false) &&
-                    (pkd.race.techLevel > MaxTechlevel || pkd.defaultFactionType?.techLevel > MaxTechlevel)));
+                    (!pkd.defaultFactionDef?.isPlayer ?? false) &&
+                    (pkd.race.techLevel > MaxTechlevel || pkd.defaultFactionDef?.techLevel > MaxTechlevel)));
 
         DebugString.AppendLine("FactionDef Removal List");
         RemoveStuffFromDatabase(typeof(DefDatabase<FactionDef>),

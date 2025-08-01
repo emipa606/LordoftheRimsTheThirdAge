@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: prepare cram -->
+  <LotR_Make_Cram.label>prepare cram</LotR_Make_Cram.label>
+  <!-- EN: Prepares cram, an indefinitely fresh biscuit formed from a combination of raw meat and raw plant ingredients. Much of the ingredients are wasted. -->
+  <LotR_Make_Cram.description>Prepares cram, an indefinitely fresh biscuit formed from a combination of raw meat and raw plant ingredients. Much of the ingredients are wasted.</LotR_Make_Cram.description>
+  <!-- EN: Preparing cram. -->
+  <LotR_Make_Cram.jobString>Preparing cram.</LotR_Make_Cram.jobString>
+</LanguageData>

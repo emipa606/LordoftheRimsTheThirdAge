@@ -81,7 +81,7 @@ public static class OnStartup
             //Log.Message($"Starting with meattype {td.defName}");
             if (!td.HasComp(typeof(CompRottable)))
             {
-                //Log.Message($"Skipping {td.defName} as its not rottable");
+                //Log.Message($"Skipping {td.defName} as it's not rottable");
                 continue;
             }
 
@@ -132,10 +132,7 @@ public static class OnStartup
             d.SetStatBaseValue(StatDefOf.FoodPoisonChanceFixedHuman, 0.02f);
             //d.comps.Add(new CompProperties_FoodPoisonable());
             d.BaseMarketValue = td.BaseMarketValue;
-            if (d.thingCategories == null)
-            {
-                d.thingCategories = [];
-            }
+            d.thingCategories ??= [];
 
             DirectXmlCrossRefLoader.RegisterListWantsCrossRef(d.thingCategories, "LotR_MeatRawSalted", d);
             d.ingestible = new IngestibleProperties
@@ -213,7 +210,7 @@ public static class OnStartup
         Log.Message($"Moved {movedDefs} from Machining Table to Smithy.");
 
         if (!ModStuff.Settings.LimitTechnology ||
-            ModLister.GetActiveModWithIdentifier("CETeam.CombatExtended".ToLower()) == null)
+            ModLister.GetActiveModWithIdentifier("CETeam.CombatExtended".ToLower(), true) == null)
         {
             return;
         }

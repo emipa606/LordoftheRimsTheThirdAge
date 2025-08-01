@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: [PAWN_nameDef] was brought up during a great desolation. [PAWN_pronoun] grew up helping [PAWN_possessive] parents heal the sick and treat the horrific burns suffered from the dragon attack. [PAWN_pronoun] was left with a lifelong fear of fire. -->
+  <LotRTTA_AHealer.description>[PAWN_nameDef] was brought up during a great desolation. [PAWN_pronoun] grew up helping [PAWN_possessive] parents heal the sick and treat the horrific burns suffered from the dragon attack. [PAWN_pronoun] was left with a lifelong fear of fire.</LotRTTA_AHealer.description>
+  <!-- EN: Assistant healer -->
+  <LotRTTA_AHealer.title>Assistant healer</LotRTTA_AHealer.title>
+  <!-- EN: Healer -->
+  <LotRTTA_AHealer.titleShort>Healer</LotRTTA_AHealer.titleShort>
+  <!-- EN: [PAWN_nameDef] practiced alchemy for a living. One day, [PAWN_possessive] experiments were purposefully switched by a jealous competitor to bring about a rather cruel accident that ruined [PAWN_possessive] appearance. -->
+  <LotRTTA_Alchemist.description>[PAWN_nameDef] practiced alchemy for a living. One day, [PAWN_possessive] experiments were purposefully switched by a jealous competitor to bring about a rather cruel accident that ruined [PAWN_possessive] appearance.</LotRTTA_Alchemist.description>
+  <!-- EN: Malformed alchemist -->
+  <LotRTTA_Alchemist.title>Malformed alchemist</LotRTTA_Alchemist.title>
+  <!-- EN: Alchemist -->
+  <LotRTTA_Alchemist.titleShort>Alchemist</LotRTTA_Alchemist.titleShort>
+  <!-- EN: [PAWN_nameDef] was an apprentice. [PAWN_pronoun] worked for the local craftsman to learn how to make [PAWN_possessive] own wonderful things to bring out to the world. -->
+  <LotRTTA_Apprentice.description>[PAWN_nameDef] was an apprentice. [PAWN_pronoun] worked for the local craftsman to learn how to make [PAWN_possessive] own wonderful things to bring out to the world.</LotRTTA_Apprentice.description>
+  <!-- EN: Apprentice -->
+  <LotRTTA_Apprentice.title>Apprentice</LotRTTA_Apprentice.title>
+  <!-- EN: Apprentice -->
+  <LotRTTA_Apprentice.titleShort>Apprentice</LotRTTA_Apprentice.titleShort>
+  <!-- EN: [PAWN_nameDef] was an archer. [PAWN_pronoun] learned to hit targets at a distance with a trusty arrow when taking up defense of the town's walls and helping the local hunters bring extra meat before the coming of the dangerous winter frosts. -->
+  <LotRTTA_Archer.description>[PAWN_nameDef] was an archer. [PAWN_pronoun] learned to hit targets at a distance with a trusty arrow when taking up defense of the town's walls and helping the local hunters bring extra meat before the coming of the dangerous winter frosts.</LotRTTA_Archer.description>
+  <!-- EN: Archer -->
+  <LotRTTA_Archer.title>Archer</LotRTTA_Archer.title>
+  <!-- EN: Archer -->
+  <LotRTTA_Archer.titleShort>Archer</LotRTTA_Archer.titleShort>
+  <!-- EN: [PAWN_nameDef] barely survived an attack by a large wild warg as a child. This trauma never left [PAWN_objective], and neither did the scars. -->
+  <LotRTTA_ASurvivor.description>[PAWN_nameDef] barely survived an attack by a large wild warg as a child. This trauma never left [PAWN_objective], and neither did the scars.</LotRTTA_ASurvivor.description>
+  <!-- EN: Warg survivor -->
+  <LotRTTA_ASurvivor.title>Warg survivor</LotRTTA_ASurvivor.title>
+  <!-- EN: Survivor -->
+  <LotRTTA_ASurvivor.titleShort>Survivor</LotRTTA_ASurvivor.titleShort>
+  <!-- EN: [PAWN_nameDef] specialized in baking pastries and sweets. For this, [PAWN_pronoun] gained culinary excellency and is generally well liked among the townsfolk. [PAWN_pronoun] soft hands, however, make [PAWN_objective] not the best companion for combat situations. -->
+  <LotRTTA_Baker.description>[PAWN_nameDef] specialized in baking pastries and sweets. For this, [PAWN_pronoun] gained culinary excellency and is generally well liked among the townsfolk. [PAWN_pronoun] soft hands, however, make [PAWN_objective] not the best companion for combat situations.</LotRTTA_Baker.description>
+  <!-- EN: Baker -->
+  <LotRTTA_Baker.title>Baker</LotRTTA_Baker.title>
+  <!-- EN: Baker -->
+  <LotRTTA_Baker.titleShort>Baker</LotRTTA_Baker.titleShort>
+  <!-- EN: [PAWN_pronoun] picked up a hammer, lit a fire and advertised [PAWN_objective]self as a smith. Lack of experience meant nothing. Through hard work, honest treatment of customers, and a friendly manner helped him bring [PAWN_possessive] family out of poverty. -->
+  <LotRTTA_Blacksmith.description>[PAWN_pronoun] picked up a hammer, lit a fire and advertised [PAWN_objective]self as a smith. Lack of experience meant nothing. Through hard work, honest treatment of customers, and a friendly manner helped him bring [PAWN_possessive] family out of poverty.</LotRTTA_Blacksmith.description>
+  <!-- EN: Blacksmith -->
+  <LotRTTA_Blacksmith.title>Blacksmith</LotRTTA_Blacksmith.title>
+  <!-- EN: Blacksmith -->
+  <LotRTTA_Blacksmith.titleShort>Blacksmith</LotRTTA_Blacksmith.titleShort>
+  <!-- EN: [PAWN_nameDef] has a special appreciation for a cold drink. [PAWN_pronoun] devoted [PAWN_possessive] life to the creation of such beverages, and has a particular liking for dwarves. -->
+  <LotRTTA_Brewer.description>[PAWN_nameDef] has a special appreciation for a cold drink. [PAWN_pronoun] devoted [PAWN_possessive] life to the creation of such beverages, and has a particular liking for dwarves.</LotRTTA_Brewer.description>
+  <!-- EN: Brewer -->
+  <LotRTTA_Brewer.title>Brewer</LotRTTA_Brewer.title>
+  <!-- EN: Brewer -->
+  <LotRTTA_Brewer.titleShort>Brewer</LotRTTA_Brewer.titleShort>
+  <!-- EN: [PAWN_nameDef] was a brilliant alchemist, if not one of the greatest among the free peoples of Middle-Earth. [PAWN_possessive] will helped heal many, until [PAWN_pronoun] came into conflict with dark forces. Those forces took [PAWN_objective] in the dark of night, and forced [PAWN_objective] to take an evil concoction that has corrupted [PAWN_objective] to [PAWN_possessive] core. -->
+  <LotRTTA_CAlchemist.description>[PAWN_nameDef] was a brilliant alchemist, if not one of the greatest among the free peoples of Middle-Earth. [PAWN_possessive] will helped heal many, until [PAWN_pronoun] came into conflict with dark forces. Those forces took [PAWN_objective] in the dark of night, and forced [PAWN_objective] to take an evil concoction that has corrupted [PAWN_objective] to [PAWN_possessive] core.</LotRTTA_CAlchemist.description>
+  <!-- EN: Corrupt alchemist -->
+  <LotRTTA_CAlchemist.title>Corrupt alchemist</LotRTTA_CAlchemist.title>
+  <!-- EN: Alchemist -->
+  <LotRTTA_CAlchemist.titleShort>Alchemist</LotRTTA_CAlchemist.titleShort>
+  <!-- EN: What is a brewer without a carpenter? Can anyone truly count themselves without a table to set their glass upon? [PAWN_nameDef] mastered the art of carpentry to fix local problems. [PAWN_pronoun] helps settlers meet their needs, prevents painful feelings of depression from lack of solid wood, and provides the heartiest of tables for placing pints upon. -->
+  <LotRTTA_Carpenter.description>What is a brewer without a carpenter? Can anyone truly count themselves without a table to set their glass upon? [PAWN_nameDef] mastered the art of carpentry to fix local problems. [PAWN_pronoun] helps settlers meet their needs, prevents painful feelings of depression from lack of solid wood, and provides the heartiest of tables for placing pints upon.</LotRTTA_Carpenter.description>
+  <!-- EN: Carpenter -->
+  <LotRTTA_Carpenter.title>Carpenter</LotRTTA_Carpenter.title>
+  <!-- EN: Carpenter -->
+  <LotRTTA_Carpenter.titleShort>Carpenter</LotRTTA_Carpenter.titleShort>
+  <!-- EN: [PAWN_nameDef] travelled from village to village selling forgeries and conning villagers. [PAWN_pronoun] rarely stayed anywhere long and skipped town at the first sign of trouble. -->
+  <LotRTTA_Charlatan.description>[PAWN_nameDef] travelled from village to village selling forgeries and conning villagers. [PAWN_pronoun] rarely stayed anywhere long and skipped town at the first sign of trouble.</LotRTTA_Charlatan.description>
+  <!-- EN: Charlatan -->
+  <LotRTTA_Charlatan.title>Charlatan</LotRTTA_Charlatan.title>
+  <!-- EN: Charlatan -->
+  <LotRTTA_Charlatan.titleShort>Charlatan</LotRTTA_Charlatan.titleShort>
+  <!-- EN: Some say that the ground bones of an elf can cure impotence. Some say that furniture made of Ents never needs to be polished. [PAWN_nameDef] profits from those who don't know the validity of these rumors (he may have spread a few himself), and has earned the skills necessary to capture the more resilient races of Middle Earth: dead or alive. -->
+  <LotRTTA_CHunter.description>Some say that the ground bones of an elf can cure impotence. Some say that furniture made of Ents never needs to be polished. [PAWN_nameDef] profits from those who don't know the validity of these rumors (he may have spread a few himself), and has earned the skills necessary to capture the more resilient races of Middle Earth: dead or alive.</LotRTTA_CHunter.description>
+  <!-- EN: Cruel hunter -->
+  <LotRTTA_CHunter.title>Cruel hunter</LotRTTA_CHunter.title>
+  <!-- EN: Hunter -->
+  <LotRTTA_CHunter.titleShort>Hunter</LotRTTA_CHunter.titleShort>
+  <!-- EN: [PAWN_nameDef] knows what steams your beans. [PAWN_pronoun] knows the three essential ways of preparing po-ta-toes. [PAWN_pronoun] can also manage all manner of eggs like an artist. No settlement is complete without [PAWN_objective]. -->
+  <LotRTTA_Cook.description>[PAWN_nameDef] knows what steams your beans. [PAWN_pronoun] knows the three essential ways of preparing po-ta-toes. [PAWN_pronoun] can also manage all manner of eggs like an artist. No settlement is complete without [PAWN_objective].</LotRTTA_Cook.description>
+  <!-- EN: Cook -->
+  <LotRTTA_Cook.title>Cook</LotRTTA_Cook.title>
+  <!-- EN: Cook -->
+  <LotRTTA_Cook.titleShort>Cook</LotRTTA_Cook.titleShort>
+  <!-- EN: [PAWN_nameDef] was raised in a family devoid of compassion for [PAWN_objective], and especially no compassion for other races. [PAWN_pronoun] took [PAWN_objective] anger out on other children and anyone remotely different. -->
+  <LotRTTA_CPrejudiced.description>[PAWN_nameDef] was raised in a family devoid of compassion for [PAWN_objective], and especially no compassion for other races. [PAWN_pronoun] took [PAWN_objective] anger out on other children and anyone remotely different.</LotRTTA_CPrejudiced.description>
+  <!-- EN: Prejudiced -->
+  <LotRTTA_CPrejudiced.title>Prejudiced</LotRTTA_CPrejudiced.title>
+  <!-- EN: Prejudiced -->
+  <LotRTTA_CPrejudiced.titleShort>Prejudiced</LotRTTA_CPrejudiced.titleShort>
+  <!-- EN: [PAWN_nameDef] looks to viciously purge the lands of dragons and their ilk.  [PAWN_pronoun]  prefers traps and longbows over melee weapons and [PAWN_pronoun]  is not a stranger to cunning traps.  [PAWN_possessive] destructive tendencies are a hindrance to finer skills. -->
+  <LotRTTA_DHunter.description>[PAWN_nameDef] looks to viciously purge the lands of dragons and their ilk.  [PAWN_pronoun]  prefers traps and longbows over melee weapons and [PAWN_pronoun]  is not a stranger to cunning traps.  [PAWN_possessive] destructive tendencies are a hindrance to finer skills.</LotRTTA_DHunter.description>
+  <!-- EN: Dragon hunter -->
+  <LotRTTA_DHunter.title>Dragon hunter</LotRTTA_DHunter.title>
+  <!-- EN: Hunter -->
+  <LotRTTA_DHunter.titleShort>Hunter</LotRTTA_DHunter.titleShort>
+  <!-- EN: [PAWN_nameDef] specialized in keeping good relations with other settlements for the good of all. After many years, [PAWN_pronoun] became a master at negotiation. -->
+  <LotRTTA_Diplomat.description>[PAWN_nameDef] specialized in keeping good relations with other settlements for the good of all. After many years, [PAWN_pronoun] became a master at negotiation.</LotRTTA_Diplomat.description>
+  <!-- EN: Diplomat -->
+  <LotRTTA_Diplomat.title>Diplomat</LotRTTA_Diplomat.title>
+  <!-- EN: Diplomat -->
+  <LotRTTA_Diplomat.titleShort>Diplomat</LotRTTA_Diplomat.titleShort>
+  <!-- EN: [PAWN_nameDef] was born into a long line of blacksmiths, and, not satisfied with making weapons, [PAWN_pronoun] decided that [PAWN_pronoun] would rather wield a sword than make them. So [PAWN_pronoun] ran away from home in order to pursue [PAWN_possessive] dreams, and become well known for their skills wielding a blade. [PAWN_pronoun] honed their skills by challenging strangers to duels in the streets. -->
+  <LotRTTA_Duelist.description>[PAWN_nameDef] was born into a long line of blacksmiths, and, not satisfied with making weapons, [PAWN_pronoun] decided that [PAWN_pronoun] would rather wield a sword than make them. So [PAWN_pronoun] ran away from home in order to pursue [PAWN_possessive] dreams, and become well known for their skills wielding a blade. [PAWN_pronoun] honed their skills by challenging strangers to duels in the streets.</LotRTTA_Duelist.description>
+  <!-- EN: Duelist -->
+  <LotRTTA_Duelist.title>Duelist</LotRTTA_Duelist.title>
+  <!-- EN: Duelist -->
+  <LotRTTA_Duelist.titleShort>Duelist</LotRTTA_Duelist.titleShort>
+  <!-- EN: [PAWN_nameDef] was a slave captured in a conflict long forgotten and raised in a dungeon. [PAWN_pronoun] had always been nothing; [PAWN_pronoun] was nothing; [PAWN_pronoun] would be nothing. At least that's what [PAWN_pronoun] let his guards believe, [PAWN_possessive] time would come. Escape was inevitable. -->
+  <LotRTTA_DungeonChild.description>[PAWN_nameDef] was a slave captured in a conflict long forgotten and raised in a dungeon. [PAWN_pronoun] had always been nothing; [PAWN_pronoun] was nothing; [PAWN_pronoun] would be nothing. At least that's what [PAWN_pronoun] let his guards believe, [PAWN_possessive] time would come. Escape was inevitable.</LotRTTA_DungeonChild.description>
+  <!-- EN: Dungeon-born -->
+  <LotRTTA_DungeonChild.title>Dungeon-born</LotRTTA_DungeonChild.title>
+  <!-- EN: Dungeon-born -->
+  <LotRTTA_DungeonChild.titleShort>Dungeon-born</LotRTTA_DungeonChild.titleShort>
+  <!-- EN: [PAWN_nameDef] has come to adore the elven race. [PAWN_pronoun] models [PAWN_objective]self after them by treating animals with care and taking excellent care of [PAWN_possessive] garden, -->
+  <LotRTTA_EAdmirer.description>[PAWN_nameDef] has come to adore the elven race. [PAWN_pronoun] models [PAWN_objective]self after them by treating animals with care and taking excellent care of [PAWN_possessive] garden,</LotRTTA_EAdmirer.description>
+  <!-- EN: Elf admirer -->
+  <LotRTTA_EAdmirer.title>Elf admirer</LotRTTA_EAdmirer.title>
+  <!-- EN: Admirer -->
+  <LotRTTA_EAdmirer.titleShort>Admirer</LotRTTA_EAdmirer.titleShort>
+  <!-- EN: [PAWN_nameDef] was sent to fell trees for [PAWN_possessive] town's palisade to keep out the evils of the world. Little did [PAWN_pronoun] know, the forest didn't want visitors anymore than [PAWN_pronoun] did. [PAWN_nameDef] saw fellow villagers devastated by newly awoken Ents and was forced deeper into the forest to escape. [PAWN_pronoun] left the woods with a hatred of trees and the ravenous creatures that inhabit them. -->
+  <LotRTTA_EForest.description>[PAWN_nameDef] was sent to fell trees for [PAWN_possessive] town's palisade to keep out the evils of the world. Little did [PAWN_pronoun] know, the forest didn't want visitors anymore than [PAWN_pronoun] did. [PAWN_nameDef] saw fellow villagers devastated by newly awoken Ents and was forced deeper into the forest to escape. [PAWN_pronoun] left the woods with a hatred of trees and the ravenous creatures that inhabit them.</LotRTTA_EForest.description>
+  <!-- EN: Enemy of the forest -->
+  <LotRTTA_EForest.title>Enemy of the forest</LotRTTA_EForest.title>
+  <!-- EN: Forrestenemy -->
+  <LotRTTA_EForest.titleShort>Forrestenemy</LotRTTA_EForest.titleShort>
+  <!-- EN: [PAWN_nameDef] denies involvement in the crimes that brought about [PAWN_possessive] imprisonment in the dungeons. [PAWN_pronoun] escaped by tunnelling beneath the fort using a soup spoon. -->
+  <LotRTTA_Escapee.description>[PAWN_nameDef] denies involvement in the crimes that brought about [PAWN_possessive] imprisonment in the dungeons. [PAWN_pronoun] escaped by tunnelling beneath the fort using a soup spoon.</LotRTTA_Escapee.description>
+  <!-- EN: Escaped criminal -->
+  <LotRTTA_Escapee.title>Escaped criminal</LotRTTA_Escapee.title>
+  <!-- EN: Criminal -->
+  <LotRTTA_Escapee.titleShort>Criminal</LotRTTA_Escapee.titleShort>
+  <!-- EN: [PAWN_nameDef] spent their childhood taking care of chickens and minding after the weeds by the crops. [PAWN_pronoun] learned to take care of all sorts of plants and animals over their childhood. -->
+  <LotRTTA_FarmChild.description>[PAWN_nameDef] spent their childhood taking care of chickens and minding after the weeds by the crops. [PAWN_pronoun] learned to take care of all sorts of plants and animals over their childhood.</LotRTTA_FarmChild.description>
+  <!-- EN: Farm boy -->
+  <LotRTTA_FarmChild.title>Farm boy</LotRTTA_FarmChild.title>
+  <!-- EN: Farm girl -->
+  <LotRTTA_FarmChild.titleFemale>Farm girl</LotRTTA_FarmChild.titleFemale>
+  <!-- EN: Farmhand -->
+  <LotRTTA_FarmChild.titleShort>Farmhand</LotRTTA_FarmChild.titleShort>
+  <!-- EN: [PAWN_nameDef] was a simple farmer. [PAWN_pronoun] specialized in all things agricultural, and preferred the smell of fresh soil, the crow of the rooster, and the sight of peaceful blue skies. Unfortunately, such a lifestyle limited [PAWN_possessive] education. -->
+  <LotRTTA_Farmer.description>[PAWN_nameDef] was a simple farmer. [PAWN_pronoun] specialized in all things agricultural, and preferred the smell of fresh soil, the crow of the rooster, and the sight of peaceful blue skies. Unfortunately, such a lifestyle limited [PAWN_possessive] education.</LotRTTA_Farmer.description>
+  <!-- EN: Farmer -->
+  <LotRTTA_Farmer.title>Farmer</LotRTTA_Farmer.title>
+  <!-- EN: Farmer -->
+  <LotRTTA_Farmer.titleShort>Farmer</LotRTTA_Farmer.titleShort>
+  <!-- EN: Some would say the walls have eyes and ears. [PAWN_nameDef] was those eyes and ears. [PAWN_pronoun] worked throughout their childhood for extra bits of coin in exchange for information gleened from alleyways and sidestreets where business was being conducted away from those that might pry. -->
+  <LotRTTA_FlyOnTheWall.description>Some would say the walls have eyes and ears. [PAWN_nameDef] was those eyes and ears. [PAWN_pronoun] worked throughout their childhood for extra bits of coin in exchange for information gleened from alleyways and sidestreets where business was being conducted away from those that might pry.</LotRTTA_FlyOnTheWall.description>
+  <!-- EN: Fly on the wall -->
+  <LotRTTA_FlyOnTheWall.title>Fly on the wall</LotRTTA_FlyOnTheWall.title>
+  <!-- EN: Nobody -->
+  <LotRTTA_FlyOnTheWall.titleShort>Nobody</LotRTTA_FlyOnTheWall.titleShort>
+  <!-- EN: [PAWN_nameDef] served in the Gondorian military for many years until [PAWN_pronoun] retired. -->
+  <LotRTTA_GVeteran.description>[PAWN_nameDef] served in the Gondorian military for many years until [PAWN_pronoun] retired.</LotRTTA_GVeteran.description>
+  <!-- EN: Veteran of Gondor -->
+  <LotRTTA_GVeteran.title>Veteran of Gondor</LotRTTA_GVeteran.title>
+  <!-- EN: Veteran -->
+  <LotRTTA_GVeteran.titleShort>Veteran</LotRTTA_GVeteran.titleShort>
+  <!-- EN: [PAWN_nameDef] fought against evil for Gondor, [PAWN_pronoun] saved many of [PAWN_possessive] comrades and was recognized as a war hero by the steward. -->
+  <LotRTTA_GWarHero.description>[PAWN_nameDef] fought against evil for Gondor, [PAWN_pronoun] saved many of [PAWN_possessive] comrades and was recognized as a war hero by the steward.</LotRTTA_GWarHero.description>
+  <!-- EN: Warrior of Gondor -->
+  <LotRTTA_GWarHero.title>Warrior of Gondor</LotRTTA_GWarHero.title>
+  <!-- EN: Warrior -->
+  <LotRTTA_GWarHero.titleShort>Warrior</LotRTTA_GWarHero.titleShort>
+  <!-- EN: [PAWN_nameDef] works as the local healer for the village. Injuries can be mended with the right herbs applied with the right pressures and the proper leeching. [PAWN_possessive] clinic's motto exclaims the more blood out, the better you'll feel. Guaranteed! -->
+  <LotRTTA_Healer.description>[PAWN_nameDef] works as the local healer for the village. Injuries can be mended with the right herbs applied with the right pressures and the proper leeching. [PAWN_possessive] clinic's motto exclaims the more blood out, the better you'll feel. Guaranteed!</LotRTTA_Healer.description>
+  <!-- EN: Healer -->
+  <LotRTTA_Healer.title>Healer</LotRTTA_Healer.title>
+  <!-- EN: Healer -->
+  <LotRTTA_Healer.titleShort>Healer</LotRTTA_Healer.titleShort>
+  <!-- EN: [PAWN_nameDef] swore off living in towns after seeing the sickening opulance of nobility. Finding [PAWN_possessive]  place in the woods, [PAWN_pronoun] became self-sufficient. -->
+  <LotRTTA_Hermit.description>[PAWN_nameDef] swore off living in towns after seeing the sickening opulance of nobility. Finding [PAWN_possessive]  place in the woods, [PAWN_pronoun] became self-sufficient.</LotRTTA_Hermit.description>
+  <!-- EN: Hermit -->
+  <LotRTTA_Hermit.title>Hermit</LotRTTA_Hermit.title>
+  <!-- EN: Hermit -->
+  <LotRTTA_Hermit.titleShort>Hermit</LotRTTA_Hermit.titleShort>
+  <!-- EN: [PAWN_nameDef] hunted wildlife for a living. The thrill of the hunt filled [PAWN_objective] with great joy, but even moreso, the rewards of patience gratified [PAWN_objective]. [PAWN_pronoun] learned valuable skills, such as tracking, foraging, sharpshooting, and making use of the remains of the hunt. -->
+  <LotRTTA_Hunter.description>[PAWN_nameDef] hunted wildlife for a living. The thrill of the hunt filled [PAWN_objective] with great joy, but even moreso, the rewards of patience gratified [PAWN_objective]. [PAWN_pronoun] learned valuable skills, such as tracking, foraging, sharpshooting, and making use of the remains of the hunt.</LotRTTA_Hunter.description>
+  <!-- EN: Hunter -->
+  <LotRTTA_Hunter.title>Hunter</LotRTTA_Hunter.title>
+  <!-- EN: Hunter -->
+  <LotRTTA_Hunter.titleShort>Hunter</LotRTTA_Hunter.titleShort>
+  <!-- EN: [PAWN_nameDef] owned the local village inn.  [PAWN_pronoun] spent [PAWN_possessive] days pouring drinks and listening to the tales of [PAWN_possessive] patrons.  On occasion, [PAWN_pronoun] would cook for [PAWN_possessive] patrons when [PAWN_possessive] cook was not working. -->
+  <LotRTTA_Innkeeper.description>[PAWN_nameDef] owned the local village inn.  [PAWN_pronoun] spent [PAWN_possessive] days pouring drinks and listening to the tales of [PAWN_possessive] patrons.  On occasion, [PAWN_pronoun] would cook for [PAWN_possessive] patrons when [PAWN_possessive] cook was not working.</LotRTTA_Innkeeper.description>
+  <!-- EN: Innkeeper -->
+  <LotRTTA_Innkeeper.title>Innkeeper</LotRTTA_Innkeeper.title>
+  <!-- EN: Innkeeper -->
+  <LotRTTA_Innkeeper.titleShort>Innkeeper</LotRTTA_Innkeeper.titleShort>
+  <!-- EN: [PAWN_nameDef] managed to join a large Merchant Guild in Esgaroth. There [PAWN_pronoun] lived [PAWN_possessive] life as a merchant selling [PAWN_possessive] goods to both dwarves and elves alike. -->
+  <LotRTTA_MerchantLake.description>[PAWN_nameDef] managed to join a large Merchant Guild in Esgaroth. There [PAWN_pronoun] lived [PAWN_possessive] life as a merchant selling [PAWN_possessive] goods to both dwarves and elves alike.</LotRTTA_MerchantLake.description>
+  <!-- EN: Lake-Town merchant -->
+  <LotRTTA_MerchantLake.title>Lake-Town merchant</LotRTTA_MerchantLake.title>
+  <!-- EN: Merchant -->
+  <LotRTTA_MerchantLake.titleShort>Merchant</LotRTTA_MerchantLake.titleShort>
+  <!-- EN: [PAWN_nameDef] defended against the dangers of the night, so that the inhabitants of their village could sleep soundly at night. Due to a good share of boring nights, [PAWN_pronoun] was well-known among [PAWN_possessive] fellow guards for [PAWN_possessive] ability to hit sleeping birds using only [PAWN_possessive] silhouette. -->
+  <LotRTTA_NGuard.description>[PAWN_nameDef] defended against the dangers of the night, so that the inhabitants of their village could sleep soundly at night. Due to a good share of boring nights, [PAWN_pronoun] was well-known among [PAWN_possessive] fellow guards for [PAWN_possessive] ability to hit sleeping birds using only [PAWN_possessive] silhouette.</LotRTTA_NGuard.description>
+  <!-- EN: Night guard -->
+  <LotRTTA_NGuard.title>Night guard</LotRTTA_NGuard.title>
+  <!-- EN: Guard -->
+  <LotRTTA_NGuard.titleShort>Guard</LotRTTA_NGuard.titleShort>
+  <!-- EN: [PAWN_nameDef] spent [PAWN_possessive] nights keeping watch from the highest tower in the town. [PAWN_possessive]  job was often tedious, but was also very important. If trouble was spotted, it was [PAWN_possessive] job to notify the town of danger using [PAWN_possessive] horn kept always at [PAWN_possessive] side. -->
+  <LotRTTA_NightWatch.description>[PAWN_nameDef] spent [PAWN_possessive] nights keeping watch from the highest tower in the town. [PAWN_possessive]  job was often tedious, but was also very important. If trouble was spotted, it was [PAWN_possessive] job to notify the town of danger using [PAWN_possessive] horn kept always at [PAWN_possessive] side.</LotRTTA_NightWatch.description>
+  <!-- EN: Night watch -->
+  <LotRTTA_NightWatch.title>Night watch</LotRTTA_NightWatch.title>
+  <!-- EN: Watcher -->
+  <LotRTTA_NightWatch.titleShort>Watcher</LotRTTA_NightWatch.titleShort>
+  <!-- EN: [PAWN_nameDef] was raised to be part of the elite of society. [PAWN_pronoun] can't stand anything not fitting the proper social settings. [PAWN_pronoun] also finds it difficult, if not impossible, to handle menial tasks that should be left for the help. -->
+  <LotRTTA_Noble.description>[PAWN_nameDef] was raised to be part of the elite of society. [PAWN_pronoun] can't stand anything not fitting the proper social settings. [PAWN_pronoun] also finds it difficult, if not impossible, to handle menial tasks that should be left for the help.</LotRTTA_Noble.description>
+  <!-- EN: Noble -->
+  <LotRTTA_Noble.title>Noble</LotRTTA_Noble.title>
+  <!-- EN: Noble -->
+  <LotRTTA_Noble.titleShort>Noble</LotRTTA_Noble.titleShort>
+  <!-- EN: [PAWN_nameDef] was a young child when a dragon desolated their home. They were the only one to escape the burning wreckage. During the following years, [PAWN_pronoun] was tasked with rebuilding incinerated buildings, caring for charred survivors, and fishing to provide for the town. -->
+  <LotRTTA_Orphan.description>[PAWN_nameDef] was a young child when a dragon desolated their home. They were the only one to escape the burning wreckage. During the following years, [PAWN_pronoun] was tasked with rebuilding incinerated buildings, caring for charred survivors, and fishing to provide for the town.</LotRTTA_Orphan.description>
+  <!-- EN: Desolation orphan -->
+  <LotRTTA_Orphan.title>Desolation orphan</LotRTTA_Orphan.title>
+  <!-- EN: Orphan -->
+  <LotRTTA_Orphan.titleShort>Orphan</LotRTTA_Orphan.titleShort>
+  <!-- EN: [PAWN_nameDef] threw fists for sport and cash as a child in a pit fighting arena. From this [PAWN_pronoun] learned the value of coin, how to throw a punch, and how to tend to [PAWN_possessive] own wounds. -->
+  <LotRTTA_PitChild.description>[PAWN_nameDef] threw fists for sport and cash as a child in a pit fighting arena. From this [PAWN_pronoun] learned the value of coin, how to throw a punch, and how to tend to [PAWN_possessive] own wounds.</LotRTTA_PitChild.description>
+  <!-- EN: Pit child -->
+  <LotRTTA_PitChild.title>Pit child</LotRTTA_PitChild.title>
+  <!-- EN: Pit child -->
+  <LotRTTA_PitChild.titleShort>Pit child</LotRTTA_PitChild.titleShort>
+  <!-- EN: [PAWN_nameDef] spends most of their day chit-chatting away with others about who is doing what wrong. [PAWN_pronoun] detests all things [PAWN_pronoun] deems improper and is very easily offended. -->
+  <LotRTTA_Prude.description>[PAWN_nameDef] spends most of their day chit-chatting away with others about who is doing what wrong. [PAWN_pronoun] detests all things [PAWN_pronoun] deems improper and is very easily offended.</LotRTTA_Prude.description>
+  <!-- EN: Prude -->
+  <LotRTTA_Prude.title>Prude</LotRTTA_Prude.title>
+  <!-- EN: Prude -->
+  <LotRTTA_Prude.titleFemale>Prude</LotRTTA_Prude.titleFemale>
+  <!-- EN: Prude -->
+  <LotRTTA_Prude.titleShort>Prude</LotRTTA_Prude.titleShort>
+  <!-- EN: [PAWN_nameDef] was a member of a gang of trouble makers. [PAWN_possessive] actions, not only gave [PAWN_objective] a reason to run from lawmakers from time to time, but also gave [PAWN_objective] a repertoire of useful skills. -->
+  <LotRTTA_PublicMenace.description>[PAWN_nameDef] was a member of a gang of trouble makers. [PAWN_possessive] actions, not only gave [PAWN_objective] a reason to run from lawmakers from time to time, but also gave [PAWN_objective] a repertoire of useful skills.</LotRTTA_PublicMenace.description>
+  <!-- EN: Public menace -->
+  <LotRTTA_PublicMenace.title>Public menace</LotRTTA_PublicMenace.title>
+  <!-- EN: Menace -->
+  <LotRTTA_PublicMenace.titleShort>Menace</LotRTTA_PublicMenace.titleShort>
+  <!-- EN: At a young age [PAWN_nameDef] became a ranger as [PAWN_pronoun] was related to the peoples of Ithilien  and was chosen therefore to become a ranger. After spending many years attacking and killing the enemy's of Gondor, [PAWN_pronoun] decided to journey off on [PAWN_possessive] own and seek a better life. -->
+  <LotRTTA_RangerIthilien.description>At a young age [PAWN_nameDef] became a ranger as [PAWN_pronoun] was related to the peoples of Ithilien  and was chosen therefore to become a ranger. After spending many years attacking and killing the enemy's of Gondor, [PAWN_pronoun] decided to journey off on [PAWN_possessive] own and seek a better life.</LotRTTA_RangerIthilien.description>
+  <!-- EN: Ithilien deserter -->
+  <LotRTTA_RangerIthilien.title>Ithilien deserter</LotRTTA_RangerIthilien.title>
+  <!-- EN: Deserter -->
+  <LotRTTA_RangerIthilien.titleShort>Deserter</LotRTTA_RangerIthilien.titleShort>
+  <!-- EN: [PAWN_nameDef] spent much of [PAWN_possessive] adult life wandering the lands in the north.  [PAWN_pronoun] protected these lands with [PAWN_possessive] life, but [PAWN_possessive] secretive nature made others consider [PAWN_objective] dangerous and distrustful. -->
+  <LotRTTA_RangerNorth.description>[PAWN_nameDef] spent much of [PAWN_possessive] adult life wandering the lands in the north.  [PAWN_pronoun] protected these lands with [PAWN_possessive] life, but [PAWN_possessive] secretive nature made others consider [PAWN_objective] dangerous and distrustful.</LotRTTA_RangerNorth.description>
+  <!-- EN: Ranger of the North -->
+  <LotRTTA_RangerNorth.title>Ranger of the North</LotRTTA_RangerNorth.title>
+  <!-- EN: Ranger -->
+  <LotRTTA_RangerNorth.titleShort>Ranger</LotRTTA_RangerNorth.titleShort>
+  <!-- EN: [PAWN_nameDef]'s twin sibling was born tall and strong. [PAWN_nameDef] wasn't as lucky. [PAWN_pronoun] found solace in building sculptures and playing with toys. -->
+  <LotRTTA_Runt.description>[PAWN_nameDef]'s twin sibling was born tall and strong. [PAWN_nameDef] wasn't as lucky. [PAWN_pronoun] found solace in building sculptures and playing with toys.</LotRTTA_Runt.description>
+  <!-- EN: Runt -->
+  <LotRTTA_Runt.title>Runt</LotRTTA_Runt.title>
+  <!-- EN: Runt -->
+  <LotRTTA_Runt.titleShort>Runt</LotRTTA_Runt.titleShort>
+  <!-- EN: [PAWN_nameDef] considers [PAWN_objective]self a scholar. The scholar is generally a peaceful member of society. [PAWN_pronoun] learned the art of calligraphy, gathered information and is skilled in the knowledge of arcane lore. The history of the Rim is recorded in their papers as [PAWN_possessive] research progresses. -->
+  <LotRTTA_Scholar.description>[PAWN_nameDef] considers [PAWN_objective]self a scholar. The scholar is generally a peaceful member of society. [PAWN_pronoun] learned the art of calligraphy, gathered information and is skilled in the knowledge of arcane lore. The history of the Rim is recorded in their papers as [PAWN_possessive] research progresses.</LotRTTA_Scholar.description>
+  <!-- EN: Scholar -->
+  <LotRTTA_Scholar.title>Scholar</LotRTTA_Scholar.title>
+  <!-- EN: Scholar -->
+  <LotRTTA_Scholar.titleShort>Scholar</LotRTTA_Scholar.titleShort>
+  <!-- EN: [PAWN_nameDef] took on odd jobs to protect locations, fleece merchants, and kill targets without mercy for purses filled with solid coins. Coin mattered above all else, after all. -->
+  <LotRTTA_Sellsword.description>[PAWN_nameDef] took on odd jobs to protect locations, fleece merchants, and kill targets without mercy for purses filled with solid coins. Coin mattered above all else, after all.</LotRTTA_Sellsword.description>
+  <!-- EN: Sellsword -->
+  <LotRTTA_Sellsword.title>Sellsword</LotRTTA_Sellsword.title>
+  <!-- EN: Sellsword -->
+  <LotRTTA_Sellsword.titleShort>Sellsword</LotRTTA_Sellsword.titleShort>
+  <!-- EN: [PAWN_nameDef] had turned out incapable of most work [PAWN_possessive] family needed. When [PAWN_pronoun] came of age, [PAWN_possessive] parents bought [PAWN_objective] a small piece of land and a sheep and said good riddence. Initially discouraged, [PAWN_pronoun] found comfort in his new sheep friend. Through the years, [PAWN_pronoun] became one of the owners of one of the biggest flocks of sheep in all of the land. -->
+  <LotRTTA_Shepherd.description>[PAWN_nameDef] had turned out incapable of most work [PAWN_possessive] family needed. When [PAWN_pronoun] came of age, [PAWN_possessive] parents bought [PAWN_objective] a small piece of land and a sheep and said good riddence. Initially discouraged, [PAWN_pronoun] found comfort in his new sheep friend. Through the years, [PAWN_pronoun] became one of the owners of one of the biggest flocks of sheep in all of the land.</LotRTTA_Shepherd.description>
+  <!-- EN: Shepherd -->
+  <LotRTTA_Shepherd.title>Shepherd</LotRTTA_Shepherd.title>
+  <!-- EN: Shepherd -->
+  <LotRTTA_Shepherd.titleShort>Shepherd</LotRTTA_Shepherd.titleShort>
+  <!-- EN: [PAWN_nameDef] proved to be more helpful than any dog on the shepherd's ranch. [PAWN_pronoun] kept the herd together and learned how to take care of the animals to have glistening coats ready for shaving. -->
+  <LotRTTA_ShepherdChild.description>[PAWN_nameDef] proved to be more helpful than any dog on the shepherd's ranch. [PAWN_pronoun] kept the herd together and learned how to take care of the animals to have glistening coats ready for shaving.</LotRTTA_ShepherdChild.description>
+  <!-- EN: Shepherd boy -->
+  <LotRTTA_ShepherdChild.title>Shepherd boy</LotRTTA_ShepherdChild.title>
+  <!-- EN: Shepherd girl -->
+  <LotRTTA_ShepherdChild.titleFemale>Shepherd girl</LotRTTA_ShepherdChild.titleFemale>
+  <!-- EN: Shepherd -->
+  <LotRTTA_ShepherdChild.titleShort>Shepherd</LotRTTA_ShepherdChild.titleShort>
+  <!-- EN: [PAWN_nameDef] started off with just rope and logs, but eventually, [PAWN_pronoun] learned highly sought after techniques from the local boatmaking masters. Before long, [PAWN_pronoun] was leading the local boating community with the best boats around. -->
+  <LotRTTA_Shipwright.description>[PAWN_nameDef] started off with just rope and logs, but eventually, [PAWN_pronoun] learned highly sought after techniques from the local boatmaking masters. Before long, [PAWN_pronoun] was leading the local boating community with the best boats around.</LotRTTA_Shipwright.description>
+  <!-- EN: Shipwright -->
+  <LotRTTA_Shipwright.title>Shipwright</LotRTTA_Shipwright.title>
+  <!-- EN: Shipwright -->
+  <LotRTTA_Shipwright.titleShort>Shipwright</LotRTTA_Shipwright.titleShort>
+  <!-- EN: [PAWN_nameDef] suffered a serious illness throughout [PAWN_possessive] childhood. [PAWN_possessive] strongly supportive and caring family did their best to take care of [PAWN_objective], and eventually [PAWN_pronoun] recovered. While the damage was irreversible, [PAWN_pronoun] never gave up hope. -->
+  <LotRTTA_SicklyChild.description>[PAWN_nameDef] suffered a serious illness throughout [PAWN_possessive] childhood. [PAWN_possessive] strongly supportive and caring family did their best to take care of [PAWN_objective], and eventually [PAWN_pronoun] recovered. While the damage was irreversible, [PAWN_pronoun] never gave up hope.</LotRTTA_SicklyChild.description>
+  <!-- EN: Sickly child -->
+  <LotRTTA_SicklyChild.title>Sickly child</LotRTTA_SicklyChild.title>
+  <!-- EN: Sickly -->
+  <LotRTTA_SicklyChild.titleShort>Sickly</LotRTTA_SicklyChild.titleShort>
+  <!-- EN: [PAWN_nameDef] spent [PAWN_possessive] days tending to horses and mules. [PAWN_pronoun] would make sure they were fed, brushed, and generally content. -->
+  <LotRTTA_StableBoy.description>[PAWN_nameDef] spent [PAWN_possessive] days tending to horses and mules. [PAWN_pronoun] would make sure they were fed, brushed, and generally content.</LotRTTA_StableBoy.description>
+  <!-- EN: Stable boy -->
+  <LotRTTA_StableBoy.title>Stable boy</LotRTTA_StableBoy.title>
+  <!-- EN: Stable girl -->
+  <LotRTTA_StableBoy.titleFemale>Stable girl</LotRTTA_StableBoy.titleFemale>
+  <!-- EN: Stable -->
+  <LotRTTA_StableBoy.titleShort>Stable</LotRTTA_StableBoy.titleShort>
+  <!-- EN: [PAWN_nameDef] was a storyteller. [PAWN_pronoun] chose to spend [PAWN_possessive] nights beside the fire, telling of far off lands and heroes time forgot. During the days, [PAWN_pronoun] also took to writing both histories and the tales that needed to be told. -->
+  <LotRTTA_Storyteller.description>[PAWN_nameDef] was a storyteller. [PAWN_pronoun] chose to spend [PAWN_possessive] nights beside the fire, telling of far off lands and heroes time forgot. During the days, [PAWN_pronoun] also took to writing both histories and the tales that needed to be told.</LotRTTA_Storyteller.description>
+  <!-- EN: Storyteller -->
+  <LotRTTA_Storyteller.title>Storyteller</LotRTTA_Storyteller.title>
+  <!-- EN: Storyteller -->
+  <LotRTTA_Storyteller.titleShort>Storyteller</LotRTTA_Storyteller.titleShort>
+  <!-- EN: [PAWN_nameDef] was always there to help. [PAWN_pronoun] could pick up most any object and hoist it over [PAWN_possessive] shoulder. Friends and family alike came to trust, not only putting objects on [PAWN_possessive] shoulders, but also their trust. -->
+  <LotRTTA_StrongChild.description>[PAWN_nameDef] was always there to help. [PAWN_pronoun] could pick up most any object and hoist it over [PAWN_possessive] shoulder. Friends and family alike came to trust, not only putting objects on [PAWN_possessive] shoulders, but also their trust.</LotRTTA_StrongChild.description>
+  <!-- EN: Strong lad -->
+  <LotRTTA_StrongChild.title>Strong lad</LotRTTA_StrongChild.title>
+  <!-- EN: Strong lass -->
+  <LotRTTA_StrongChild.titleFemale>Strong lass</LotRTTA_StrongChild.titleFemale>
+  <!-- EN: Strong -->
+  <LotRTTA_StrongChild.titleShort>Strong</LotRTTA_StrongChild.titleShort>
+  <!-- EN: [PAWN_nameDef] gave [PAWN_possessive] life to the way of the sword. This is no mere technique, but an art to be followed. [PAWN_pronoun] strives to perfect [PAWN_possessive] skill in combat with the blade above all else. -->
+  <LotRTTA_Swordsman.description>[PAWN_nameDef] gave [PAWN_possessive] life to the way of the sword. This is no mere technique, but an art to be followed. [PAWN_pronoun] strives to perfect [PAWN_possessive] skill in combat with the blade above all else.</LotRTTA_Swordsman.description>
+  <!-- EN: Swordsman -->
+  <LotRTTA_Swordsman.title>Swordsman</LotRTTA_Swordsman.title>
+  <!-- EN: Sword maiden -->
+  <LotRTTA_Swordsman.titleFemale>Sword maiden</LotRTTA_Swordsman.titleFemale>
+  <!-- EN: Swordsman -->
+  <LotRTTA_Swordsman.titleShort>Swordsman</LotRTTA_Swordsman.titleShort>
+  <!-- EN: [PAWN_nameDef] specialized in tailoring clothes for [PAWN_possessive] people. [PAWN_pronoun] was especially good at this, and was widely known for [PAWN_possessive] ability. [PAWN_pronoun] preferred to secure textiles by hunting for them with [PAWN_possessive] trusty bow and arrow. -->
+  <LotRTTA_Tailor.description>[PAWN_nameDef] specialized in tailoring clothes for [PAWN_possessive] people. [PAWN_pronoun] was especially good at this, and was widely known for [PAWN_possessive] ability. [PAWN_pronoun] preferred to secure textiles by hunting for them with [PAWN_possessive] trusty bow and arrow.</LotRTTA_Tailor.description>
+  <!-- EN: Tailor sharpshooter -->
+  <LotRTTA_Tailor.title>Tailor sharpshooter</LotRTTA_Tailor.title>
+  <!-- EN: Tailor -->
+  <LotRTTA_Tailor.titleShort>Tailor</LotRTTA_Tailor.titleShort>
+  <!-- EN: [PAWN_nameDef] grew up in a one of the human towns. [PAWN_pronoun] learned to read and write, helped out at the local shops, and spent most of [PAWN_possessive] childhood inside well-defended walls. -->
+  <LotRTTA_TownChild.description>[PAWN_nameDef] grew up in a one of the human towns. [PAWN_pronoun] learned to read and write, helped out at the local shops, and spent most of [PAWN_possessive] childhood inside well-defended walls.</LotRTTA_TownChild.description>
+  <!-- EN: Town boy -->
+  <LotRTTA_TownChild.title>Town boy</LotRTTA_TownChild.title>
+  <!-- EN: Town girl -->
+  <LotRTTA_TownChild.titleFemale>Town girl</LotRTTA_TownChild.titleFemale>
+  <!-- EN: Town boy -->
+  <LotRTTA_TownChild.titleShort>Town boy</LotRTTA_TownChild.titleShort>
+  <!-- EN: [PAWN_nameDef] took up arms to keep the town safe from outside threats. Shifts were long, boring, and devoid of intellectual persuits. [PAWN_pronoun] practiced fencing in [PAWN_possessive] free time to better defend [PAWN_possessive] post. -->
+  <LotRTTA_TownGuard.description>[PAWN_nameDef] took up arms to keep the town safe from outside threats. Shifts were long, boring, and devoid of intellectual persuits. [PAWN_pronoun] practiced fencing in [PAWN_possessive] free time to better defend [PAWN_possessive] post.</LotRTTA_TownGuard.description>
+  <!-- EN: Town guard -->
+  <LotRTTA_TownGuard.title>Town guard</LotRTTA_TownGuard.title>
+  <!-- EN: Guard -->
+  <LotRTTA_TownGuard.titleShort>Guard</LotRTTA_TownGuard.titleShort>
+  <!-- EN: [PAWN_nameDef] spent their youth among trees and animals. [PAWN_possessive] role was to trace the steps of wild animals to report back to others, so they could hunt them to feed the local village. -->
+  <LotRTTA_Tracker.description>[PAWN_nameDef] spent their youth among trees and animals. [PAWN_possessive] role was to trace the steps of wild animals to report back to others, so they could hunt them to feed the local village.</LotRTTA_Tracker.description>
+  <!-- EN: Tracker -->
+  <LotRTTA_Tracker.title>Tracker</LotRTTA_Tracker.title>
+  <!-- EN: Tracker -->
+  <LotRTTA_Tracker.titleShort>Tracker</LotRTTA_Tracker.titleShort>
+  <!-- EN: [PAWN_nameDef] isn't much for the ways of war, however, without [PAWN_objective], no war would actually exist. As a writer, [PAWN_pronoun] took it upon [PAWN_objective]self to share stories with [PAWN_possessive] community and others through the copying and authoring of books. -->
+  <LotRTTA_Writer.description>[PAWN_nameDef] isn't much for the ways of war, however, without [PAWN_objective], no war would actually exist. As a writer, [PAWN_pronoun] took it upon [PAWN_objective]self to share stories with [PAWN_possessive] community and others through the copying and authoring of books.</LotRTTA_Writer.description>
+  <!-- EN: Writer -->
+  <LotRTTA_Writer.title>Writer</LotRTTA_Writer.title>
+  <!-- EN: Writer -->
+  <LotRTTA_Writer.titleShort>Writer</LotRTTA_Writer.titleShort>
+</LanguageData>

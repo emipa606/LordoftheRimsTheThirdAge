@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: smelt steel from iron -->
+  <LotR_ExtractSteelFromIron.label>smelt steel from iron</LotR_ExtractSteelFromIron.label>
+  <!-- EN: Use heat to separate useful steel from iron. -->
+  <LotR_ExtractSteelFromIron.description>Use heat to separate useful steel from iron.</LotR_ExtractSteelFromIron.description>
+  <!-- EN: Smelting steel from iron. -->
+  <LotR_ExtractSteelFromIron.jobString>Smelting steel from iron.</LotR_ExtractSteelFromIron.jobString>
+</LanguageData>

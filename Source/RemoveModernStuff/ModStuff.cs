@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using Mlie;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -9,9 +10,13 @@ public class ModStuff : Mod
 {
     public static Settings Settings;
 
+    public static string CurrentVersion;
+
     public ModStuff(ModContentPack content) : base(content)
     {
         Settings = GetSettings<Settings>();
+
+        CurrentVersion = VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
         new Harmony("rimworld.lotr.thirdage").Patch(
             AccessTools.Method(typeof(DefGenerator), "GenerateImpliedDefs_PreResolve"), null,
             new HarmonyMethod(typeof(ModStuff), nameof(GenerateImpliedDefs_PreResolve)));

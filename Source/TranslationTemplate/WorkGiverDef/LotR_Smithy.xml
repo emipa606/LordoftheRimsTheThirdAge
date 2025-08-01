@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: smith -->
+  <LotR_DoSmithing.label>smith</LotR_DoSmithing.label>
+  <!-- EN: smithing at -->
+  <LotR_DoSmithing.gerund>smithing at</LotR_DoSmithing.gerund>
+  <!-- EN: smith -->
+  <LotR_DoSmithing.verb>smith</LotR_DoSmithing.verb>
+</LanguageData>

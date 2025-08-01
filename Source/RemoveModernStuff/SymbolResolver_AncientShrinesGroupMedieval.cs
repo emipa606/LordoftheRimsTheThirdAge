@@ -10,9 +10,9 @@ public class SymbolResolver_AncientShrinesGroupMedieval : SymbolResolver
 
     private const float SkipShrineChance = 0.25f;
 
-    public const int MarginCells = 1;
+    private const int MarginCells = 1;
 
-    public static readonly IntVec2 StandardAncientShrineSize = new IntVec2(4, 3);
+    public static readonly IntVec2 StandardAncientShrineSize = new(4, 3);
 
     public override void Resolve(ResolveParams rp)
     {

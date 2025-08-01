@@ -2,5 +2,17 @@
   "Continued": true,
   "CanAdd": "0",
   "CanRemove": "1",
-  "PreviewVersion": "1.5"
+  "PreviewVersion": "1.6",
+  "Patches": true,
+  "Defs": true,
+  "Assemblies": true,
+  "LinesOfCode": 70886,
+  "LinesOfXML": 85521,
+  "CodeBaseSize": 82,
+  "LastXmlCleaning": "2025-08-01T22:01:40.8670483+02:00",
+  "SocialImageSet": true,
+  "SearchTags": [
+    " medieval",
+    " rebalance"
+  ]
 }

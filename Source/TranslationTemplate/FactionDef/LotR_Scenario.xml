@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Medieval Village -->
+  <LotRPlayerColony.label>Medieval Village</LotRPlayerColony.label>
+  <!-- EN: Your own community. -->
+  <LotRPlayerColony.description>Your own community.</LotRPlayerColony.description>
+  <!-- EN: leader -->
+  <LotRPlayerColony.leaderTitle>leader</LotRPlayerColony.leaderTitle>
+  <!-- EN: {0} from {1} are attacking your {2}. -->
+  <LotRPlayerColony.messageDefendersAttacking>{0} from {1} are attacking your {2}.</LotRPlayerColony.messageDefendersAttacking>
+  <!-- EN: villager -->
+  <LotRPlayerColony.pawnSingular>villager</LotRPlayerColony.pawnSingular>
+  <!-- EN: villagers -->
+  <LotRPlayerColony.pawnsPlural>villagers</LotRPlayerColony.pawnsPlural>
+</LanguageData>
